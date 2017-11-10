@@ -375,7 +375,7 @@ var problems = [
         \\Phi_3 = -E_0 x
           + E_0(1-\\frac{\\epsilon_0}{\\epsilon})d
         =
-        E_0(1-\\frac{\\epsilon_0}{\\epsilon}-\\frac{x}{d}) d
+        E_0(d-\\frac{\\epsilon_0}{\\epsilon}d-x)
       `,
       explanation: "final potentials of all 3 regions"
     },
