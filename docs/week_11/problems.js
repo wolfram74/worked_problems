@@ -341,16 +341,16 @@ var problems = [
       explanation: "choosing the left side of the dielectric to be potential 0 and it's consequences for each of the potentials"
     },
     {
-      expression: `-\\epsilon_0\\partial_x \\Phi_1(-\\infty) = -\\epsilon_0\\partial_x \\Phi_3(\\infty) = E_0 \\rightarrow A_1=A_3 = -\\frac{E_0}{\\epsilon_0}`,
+      expression: `-\\epsilon_0\\partial_x \\Phi_1(-\\infty) = -\\epsilon_0\\partial_x \\Phi_3(\\infty) = \\epsilon_0 E_0 \\rightarrow A_1=A_3 = -E_0`,
       explanation: "the externally imposed field defines the coefficients for those regions"
     },
     {
       expression: `
       \\Phi_2(d)=\\Phi_3(d)
       \\rightarrow
-      A_2 d = -\\frac{E_0}{\\epsilon_0} d + B_3
+      A_2 d = -E_0 d + B_3
       \\\\
-      B_3 = (A_2+\\frac{E_0}{\\epsilon_0})d
+      B_3 = (A_2+E_0)d
       `,
       explanation: "continuity of potential gives us a relationship between gradient in the dielectric and constant in region 3"
     },
@@ -358,22 +358,24 @@ var problems = [
       expression: `
       -\\epsilon\\partial_x \\Phi_2(d) = -\\epsilon_0\\partial_x \\Phi_3(d)
       \\\\
-      -\\epsilon A_2 = E_0
+      -\\epsilon A_2 = \\epsilon_0 E_0
       \\\\
-      A_2 = -\\frac{E_0}{\\epsilon}
+      A_2 = -\\frac{\\epsilon_0 E_0}{\\epsilon}
       \\\\
-      B_3 = E_0(\\frac{1}{\\epsilon_0}-\\frac{1}{\\epsilon})d
+      B_3 = E_0(1-\\frac{\\epsilon_0}{\\epsilon})d
       `,
       explanation: "using displacement across the boundary is continuous if no free charge is present"
     },
     {
       expression: `
-        \\Phi_1 = -\\frac{E_0}{\\epsilon_0} x
+        \\Phi_1 = -E_0 x
         \\\\
-        \\Phi_2 = -\\frac{E_0}{\\epsilon} x
+        \\Phi_2 = -\\frac{\\epsilon_0 E_0}{\\epsilon} x
         \\\\
-        \\Phi_3 = -\\frac{E_0}{\\epsilon_0} x
-          + E_0(\\frac{1}{\\epsilon_0}-\\frac{1}{\\epsilon})d
+        \\Phi_3 = -E_0 x
+          + E_0(1-\\frac{\\epsilon_0}{\\epsilon})d
+        =
+        E_0(1-\\frac{\\epsilon_0}{\\epsilon}-\\frac{x}{d}) d
       `,
       explanation: "final potentials of all 3 regions"
     },
@@ -381,16 +383,16 @@ var problems = [
       expression: `
         \\vec D_i = -\\epsilon_i \\nabla \\Phi_i
         \\\\
-        \\vec D_1 = E_0
+        \\vec D_1 = \\epsilon_0 E_0
         \\\\
-        \\vec D_2 = E_0
+        \\vec D_2 = \\epsilon_0 E_0
         \\\\
-        \\vec D_3 = E_0
+        \\vec D_3 = \\epsilon_0 E_0
       `,
       explanation: "displacement for all 3 regions"
     },
     {
-      expression: `\\vec P_2 = (1-\\frac{\\epsilon_0}{\\epsilon}) E_0`,
+      expression: `\\vec P_2 = (1-\\frac{\\epsilon_0}{\\epsilon}) \\epsilon_0 E_0`,
       explanation: "the only non-zero polarization"
     },
     {
