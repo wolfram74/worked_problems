@@ -132,7 +132,7 @@ var problems = [
         \\gamma^2(1+z^2/4k^2)
         \\\\
       `,
-      explanation: "if $&\\gamma^2=k&$ then the guessed expression for $&\\rho&$ satisfies the euler lagrange equation and will be an extremal curve"
+      explanation: "if $&\\gamma^2=k&$ then the guessed expression for $&\\rho&$ satisfies the euler lagrange equation and will be an extremal curve."
     },
     {
       expression: `NA`,
