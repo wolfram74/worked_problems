@@ -162,20 +162,41 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`Handout from dr. Fejer`,
+    description:"Find the extremal curve and stationary values for $&\\int_0^{\\pi/2}(y'^2+2yx-y^2)dx&$ with boundary values of y of 0 and pi/2",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      F=(y'^2+2yx-y^2)
+      \\\\
+      \\partial_yF-\\frac{d}{dx}(\\partial_{y'}F)=0
+      \\\\
+      2x-2y-\\frac{d}{dx}(2y')=0
+      \\\\
+      2x-2y-2y''=0
+      `,//'
+      explanation: "Euler lagrange equation for this integrand"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `y=x, y''=0
+      \\\\
+      2x-2(x)-2(0)=0
+      `,
+      explanation: "a curve that satisfies the euler lagrange equation"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\int_0^{\\pi/2}(y'^2+2yx-y^2)dx=
+      \\\\
+      \\int_0^{\\pi/2}(1^2+2*x*x-x^2)dx=
+      \\\\
+      \\int_0^{\\pi/2}(1+x^2)dx=
+      \\\\
+      (x+x^3/3)|_0^{\\pi/2}=
+      (\\pi/2+(\\pi/2)^3/3)=
+      \\frac{\\pi}{2}(1+\\frac{\\pi^2}{12})
+      `,//'
+      explanation: "evaluatiing the extremal curve to find the extremal value"
     },
     {
       expression: `NA`,
@@ -227,20 +248,55 @@ var problems = [
     },]
   },
   {
-    location:`NA`,
-    description:"NA",
+    location:`Handout from Dr. Fejer`,
+    description:"Find the extremal curve and stationary values for $&\\int_0^{\\pi}(2 y sin(x)+y'^2)dx&$ with boundary values of y of pi and 0",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+        F=2ysin(x)+y'^2
+        \\\\
+        \\partial_yF - \\frac{d}{dx}(\\partial_{y'}F)=0
+        \\\\
+        2sin(x) - \\frac{d}{dx}(2y')=0
+        \\\\
+        2sin(x) - 2y''=0=sin(x) - y''
+        `,//'
+      explanation: "the euler lagrange equation that needs satisfying"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+        y=-sin(x)+mx+b \\rightarrow y''=sin(x)
+        \\\\
+        y(0)=\\pi \\rightarrow b=\\pi
+        \\\\
+        y(\\pi)=0 \\rightarrow m=-1
+        \\\\
+        y=\\pi-sin(x)-x, y'=-cos(x)-1
+        `,//'
+      explanation: "The extremal curve satisfying the euler lagrange equations and boundary conditions"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+        I=\\int_0^{\\pi}(2 y sin(x)+y'^2)dx=
+        \\\\
+        \\int_0^{\\pi}(2 (\\pi-sin(x)-x) sin(x)+(-cos(x)-1)^2)dx=
+        \\\\
+        \\int_0^{\\pi}(
+          2 \\pi sin(x)-2sin(x)^2-2xsin(x)
+          +cos(x)^2+1-2cos(x)
+          )dx
+        \\\\
+        cos(x)^2+1-2sin(x)^2=
+        cos(x)^2+1-2sin(x)^2+sin(x)^2-sin(x)^2=
+        2-3sin(x)^2
+        \\\\
+        I=\\int_0^{\\pi}(
+          2-3sin(x)^2
+          +2 \\pi sin(x)-2cos(x)
+          -2xsin(x)
+          )dx=\\frac{5}{2}\\pi
+      `,//'
+      explanation: "The extremal value for the integrand with these boundary conditions"
     },
     {
       expression: `NA`,
