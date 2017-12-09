@@ -100,13 +100,23 @@ var problems = [
     },
     {
       expression: `
-        F = \\rho^{1/2}(1+\\rho'^2)^{1/2}\\\\
-        F-\\rho' \\partial_{\\rho'} F = \\gamma\\\\
+        F = \\rho^{1/2}(1+\\rho'^2)^{1/2}
+        \\\\
+        F-\\rho' \\partial_{\\rho'} F = \\gamma
+        \\\\
         \\rho^{1/2}(1+\\rho'^2)^{1/2}
-        -\\rho' \\frac{\\rho'\\rho^{1/2}}{(1+\\rho'^2)^{1/2}} = \\gamma\\\\
-        (1+\\rho'^2)^{1/2}
-        -\\frac{\\rho'^2}{(1+\\rho'^2)^{1/2}} = \\gamma\\rho^{-1/2}\\\\
-      `,//'
+        -\\rho' \\frac{\\rho'\\rho^{1/2}}{(1+\\rho'^2)^{1/2}} = \\gamma
+        \\\\
+        \\frac{\\rho^{1/2}(1+\\rho'^2)}{(1+\\rho'^2)^{1/2}}
+        - \\frac{\\rho'^2\\rho^{1/2}}{(1+\\rho'^2)^{1/2}} = \\gamma
+        \\\\
+        \\frac{\\rho^{1/2}+\\rho'^2\\rho^{1/2}}{(1+\\rho'^2)^{1/2}}
+        - \\frac{\\rho'^2\\rho^{1/2}}{(1+\\rho'^2)^{1/2}} = \\gamma
+        \\\\
+        \\frac{\\rho^{1/2}}{(1+\\rho'^2)^{1/2}} = \\gamma
+        \\\\
+        \\frac{\\rho}{(1+\\rho'^2)} = \\gamma^2, \\rho = \\gamma^2(1+\\rho'^2)
+      `,
       explanation: "The simplified euler lagrange equation that must be satisfied to find extrema of our surface."
     },
     {
@@ -115,13 +125,14 @@ var problems = [
     },
     {
       expression: `
-        (1+(z/2k)^2)^{1/2}
-        -\\frac{(z/2k)^2}{(1+(z/2k)^2)^{1/2}} = \\gamma(k+z^2/(4k))^{-1/2}\\\\
-        (1+z^2/4k^2)^{1/2}
-        -\\frac{z^2/4k^2}{(1+z^2/4k^2)^{1/2}} = \\gamma(k+z^2/(4k))^{-1/2}\\\\
-
+        k+z^2/(4k) =
+        \\gamma^2(1+(z/2k)^2)
+        \\\\
+        k+z^2/(4k) =
+        \\gamma^2(1+z^2/4k^2)
+        \\\\
       `,
-      explanation: "warning sign: the left hand side is asymptotically linear in z while the right hand side is inverse linear in z"
+      explanation: "if $&\\gamma^2=k&$ then the guessed expression for $&\\rho&$ satisfies the euler lagrange equation and will be an extremal curve"
     },
     {
       expression: `NA`,
