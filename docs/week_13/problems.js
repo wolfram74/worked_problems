@@ -78,7 +78,7 @@ var problems = [
   },
 
   {
-    //12.1, 12.2, 12.5, 12.9, 12.15, 12.17
+    //12.1, 12.2, 12.9, 12.15, 12.17
     location:`Riley Mathematical methods 12.1`,
     description:"verify $&\\rho(z)=k+z^2/(4k)&$ minimizes the surface integral $&\\int \\rho^{-1/2}dS&$ subject to boundaries of joining 2 circles of radius a at distances c away from the origin along the z axis.",
     steps:[
@@ -348,19 +348,70 @@ var problems = [
     },]
   },
   {
-    location:`NA`,
-    description:"NA",
+    location:`Riley Mathematical methods problem 12.2`,
+    description:"verify the extremal value of $&\\int_{-1}^1\\frac{(1+y'^2)^{1/2}}{y}dx&$ is $&2ln(1+\\sqrt{2})&$ with boundary conditions of y(-1)=y(1)=1 ",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+        F=\\frac{(1+y'^2)^{1/2}}{y}=(1+y'^2)^{1/2}y^{-1}
+        \\\\
+        \\partial_yF -\\frac{d}{dx}(\\partial_{y'}F)=0
+        \\\\
+        -(1+y'^2)^{1/2}y^{-2} -\\frac{d}{dx}(2y'(1+y'^2)^{-1/2}y^{-1})=0
+        \\\\
+        -(1+y'^2)^{1/2}y^{-2} -
+        \\frac{2y*y''-4y'^4-4y'^2}{
+          y^3(y'^2+1)^{3/2}
+        }=0
+      `,
+      explanation: "The euler lagran equation to solve, it is ugly."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+        F-y'\\partial_{y'}F=\\gamma
+        \\\\
+        (1+y'^2)^{1/2}y^{-1} -
+        y'2y'(1+y'^2)^{-1/2}y^{-1}=\\gamma
+        \\\\
+        (1+y'^2)^{1/2} -
+        2y'^2(1+y'^2)^{-1/2}=\\gamma y
+        \\\\
+        1+y'^2 -
+        2y'^2=\\gamma y(1+y'^2)^{1/2}
+        \\\\
+        1-y'^2
+        =\\gamma y(1+y'^2)^{1/2}
+        \\\\
+        y = \\beta \\frac{1-y'^2}{(1+y'^2)^{1/2}}
+      `,
+      explanation: "taking advantage of no explicit x dependence to make a simpler euler lagrange equation"
     },
     {
-      expression: `NA`,
+      expression: `
+        1-y'^2
+        =\\gamma y(1+y'^2)^{1/2}
+        \\\\
+        1+y'^4-2y'^2
+        =
+        \\gamma^2 y^2 (1+y'^2)
+        \\\\
+        y'^4-y'^2(2+\\gamma^2 y^2)
+        =
+        \\gamma^2 y^2 -1
+        \\\\
+        y'^4
+        -y'^2(2+\\gamma^2 y^2)
+        -(\\gamma^2 y^2 -1)
+        =
+        0
+        \\\\
+        u=y'^2 \\rightarrow u =
+        \\frac{
+          (2+\\gamma^2 y^2)\\pm \\sqrt{(2+\\gamma^2 y^2)^2+4 (\\gamma^2 y^2 -1)}
+        }{
+          2
+        }
+      `,
       explanation: "NA"
     },
     {
