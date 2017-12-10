@@ -76,9 +76,9 @@ var problems = [
       explanation: "NA"
     },]
   },
-
+    //12.1√, 12.2~, 12.9, 12.15, 12.17
+    //custom probs 1a√, 1b√, 2√, 3, 4
   {
-    //12.1, 12.2, 12.9, 12.15, 12.17
     location:`Riley Mathematical methods 12.1`,
     description:"verify $&\\rho(z)=k+z^2/(4k)&$ minimizes the surface integral $&\\int \\rho^{-1/2}dS&$ subject to boundaries of joining 2 circles of radius a at distances c away from the origin along the z axis.",
     steps:[
@@ -475,16 +475,44 @@ var problems = [
     },]
   },
   {
-    location:`NA`,
-    description:"NA",
+    location:`From handout from Dr. Fejer`,
+    description:"Find the extremal curve associated with $&\\int_0^1(\\frac{y'^2}{1+y^2})dx&$ with boundary conditions of y(0)=0 and y(1)=2",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      F= \\frac{y'^2}{1+y^2}
+      \\\\
+      F -y'\\partial_{y'}F=c
+      \\\\
+      \\frac{y'^2}{1+y^2} -y'\\frac{2y'}{1+y^2}=c
+      \\\\
+      \\frac{y'^2}{1+y^2} -\\frac{2y'^2}{1+y^2}=c
+      \\\\
+      -\\frac{y'^2}{1+y^2}=c
+      \\\\
+      -y'^2=c(1+y^2)
+      \\\\
+      y'=-c(1+y^2)^{1/2}
+      `,//'
+      explanation: "the euler lagrange equation needed to satisfy for extremizing the integral."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      y'=-c(1+y^2)^{1/2}
+      \\\\
+      \\int (1+y^2)^{1/2} dy = -\\int c dx
+      \\\\
+      asinh(y) = -cx+b
+      \\\\
+      y = sinh(-cx+b)
+      \\\\
+      y(0)=0 \\rightarrow b=0
+      \\\\
+      y(1)=2 \\rightarrow -c=asinh(2)
+      \\\\
+      y(x) = sinh(asinh(2)x)
+      `,//'
+      explanation: "finding the form of the extremal curve and fitting it to boundary conditions"
     },
     {
       expression: `NA`,
@@ -540,11 +568,15 @@ var problems = [
     },]
   },
   {
-    location:`NA`,
-    description:"NA",
+    location:`Dr. Fejer handout`,
+    description:"extremize the integral $&\\int_0^{\\pi/2}(y'^2+2xyy')dx&$ subject to the constraints y(0)=0, $&y(\\pi/2)=1&$ and $&\\int_0^{\\pi/2} ydx = \\pi/2 -1&$",
     steps:[
     {
-      expression: `NA`,
+      expression: `
+      F+kG=y'^2+2xyy'+ky
+      \\\\
+      \\partial_yF + k\\partial_yG - \\frac{d}{dx}\\partial_{y'}F -k \\frac{d}{dx}\\partial_{y'}G=0
+      `,
       explanation: "NA"
     },
     {
