@@ -77,7 +77,7 @@ var problems = [
     },]
   },
     //12.1√, 12.2~, 12.9, 12.15, 12.17
-    //custom probs 1a√, 1b√, 2√, 3, 4
+    //custom probs 1a√, 1b√, 2√, 3√, 4
   {
     location:`Riley Mathematical methods 12.1`,
     description:"verify $&\\rho(z)=k+z^2/(4k)&$ minimizes the surface integral $&\\int \\rho^{-1/2}dS&$ subject to boundaries of joining 2 circles of radius a at distances c away from the origin along the z axis.",
@@ -576,7 +576,101 @@ var problems = [
       F+kG=y'^2+2xyy'+ky
       \\\\
       \\partial_yF + k\\partial_yG - \\frac{d}{dx}\\partial_{y'}F -k \\frac{d}{dx}\\partial_{y'}G=0
+      \\\\
+      2xy' + k(1) - \\frac{d}{dx}(2y'+2xy) -k \\frac{d}{dx}(0)=0
+      \\\\
+      2xy' + k - 2y'' - 2y - 2xy'=0
+      \\\\
+      k - 2y'' - 2y=0
+      \\\\
+      k = 2y'' + 2y
+      \\\\
+      k/2 = l = y'' + y
       `,
+      explanation: "the joint euler lagrange equation for the constraint"
+    },
+    {
+      expression: `
+      y=Acos(x)+Bsin(x)+ l
+      `,
+      explanation: "The general form of solutions to that equation"
+    },
+    {
+      expression: `
+      \\int_0^{\\pi/2} ydx = \\pi/2 -1
+      \\\\
+      \\pi/2 -1=
+      \\int_0^{\\pi/2} Acos(x)+Bsin(x)+ l dx =
+      \\\\
+      (Asin(x)-Bcos(x)+ lx)|_0^{\\pi/2} =
+      \\\\
+      (A(1)-B(0)+ l(\\pi/2))-(A(0)-B(1)+ l0) =\\pi/2 -1
+      \\\\
+      A+ l(\\pi/2) + B =\\pi/2 -1
+      `,
+      explanation: "The integral constraint on the parameters"
+    },
+    {
+      expression: `
+      y=Acos(x)+Bsin(x)+ l
+      \\\\
+      y(0)=0 \\rightarrow A+l=0
+      \\\\
+      y(\\pi/2)=1 \\rightarrow B+l=1
+      `,
+      explanation: "The boundary constraints on the parameters"
+    },
+    {
+      expression: `y=-cos(x)+0sin(x)+ 1`,
+      explanation: "The specific solution for y satisfying the boundary conditions"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },]
+  },
+  {
+    location:`NA`,
+    description:"NA",
+    steps:[
+    {
+      expression: `NA`,
       explanation: "NA"
     },
     {
@@ -636,4 +730,135 @@ var problems = [
       explanation: "NA"
     },]
   },
+  {
+    location:`NA`,
+    description:"NA",
+    steps:[
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },]
+  },
+  {
+    location:`NA`,
+    description:"NA",
+    steps:[
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },]
+  },
+
 ]
