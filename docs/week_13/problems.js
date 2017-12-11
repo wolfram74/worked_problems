@@ -666,28 +666,54 @@ var problems = [
     },]
   },
   {
-    location:`NA`,
-    description:"NA",
+    location:`Riley's math methods 12.17`,//'
+    description:"find appropriate guess function and estimated lowest eigenvalue for $&y''+\\lambda x y = 0&$ given $&y(0)=y(\\pi)=0&$",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `y_g=sin(x)`,
+      explanation: "a guess for y that satisfies the boundary conditions"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\frac{d}{dx}(py')+qy+\\lambda\\rho y = 0 \\rightarrow y''+\\lambda x y = 0
+      \\\\
+      p=1, q=0, \\rho=x
+      `,//'
+      explanation: "recasting operator in terms of a strum-louisville equation"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\lambda_0 \\leq I/J
+      \\\\
+      I= \\int_0^\\pi (py'^2-qy^2) dx = \\int_0^\\pi y'^2 dx
+      \\\\
+      J= \\int_0^\\pi (\\rho y^2) dx
+      `,
+      explanation: "taking advantage of the superposition of eigen functions in any expression y"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
-    },
+      expression: `
+      \\int_0^\\pi y'^2 dx =
+      \\\\
+      \\int_0^\\pi cos(x)^2 dx = \\frac{\\pi}{2} = I
+      \\\\
+      \\int_0^\\pi (\\rho y^2) dx=
+      \\\\
+      \\int_0^\\pi (x sin(x)^2) dx= \\frac{\\pi^2}{2^2}=J=I^{2}
+      \\\\
+      \\lambda_0 \\leq I/J=I^{-1}=\\frac{2}{\\pi}
+      `,
+      explanation: "an estimate for the lowest eigenvalue"
+    },//'
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      (\\frac{d}{dx})^2sin(x)+\\frac{2}{\\pi} x sin(x)=
+      \\\\
+      -sin(x)+\\frac{2}{\\pi} x sin(x)=
+      \\\\
+      (\\frac{2}{\\pi} x-1) sin(x)\\neq 0
+      `,
+      explanation: "verifying that our guess function and it's associated value was not an eigen function, thus showing that our $&\\lambda_{guess}\\neq \\lambda_0&$"
     },
     {
       expression: `NA`,
