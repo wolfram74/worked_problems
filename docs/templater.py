@@ -45,10 +45,10 @@ view_template = '''
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-<script type="text/javascript" src='../scripts/vue@2.2.1.js'></script>
+<script type="text/javascript" src='../../scripts/vue@2.2.1.js'></script>
 <script type="text/javascript" src='./problems.js'></script>
-<script type="text/javascript" src='../scripts/runner.js'></script>
-<link rel='stylesheet' type="text/css" href='../scripts/styles.css'>
+<script type="text/javascript" src='../../scripts/runner.js'></script>
+<link rel='stylesheet' type="text/css" href='../../scripts/styles.css'>
 
 </html>
 
