@@ -14,7 +14,9 @@ var problems = [
       explanation: "some assumptions about the nature of the plasma flow, that is is homogeneous and single speed. "
     },
     {
-      expression: `\\vec A = A_{\\theta_e} = M \\frac{\\mu_0 }{4\\pi}\\frac{sin(\\theta_p)}{r^2}`,
+      expression: `\\vec A = A_{\\theta_e} =
+      M \\frac{\\mu_0 }{4\\pi}\\frac{sin(\\theta_p)}{r^2}
+      `,
       explanation: "equation 3.7.22 from gurnett and bhattacharjee (G+B) describing the vector potential of a dipole. the subscripts on thetas denote equatorial angle and polar angle respectively."
     },
     {
@@ -64,15 +66,152 @@ var problems = [
           \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
           )^2
         )+qA_{\\theta_e}r sin(\\theta_p) \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
+      \\\\
+      =
+      \\frac{1}{2}m(
+        (\\frac{p_r}{m})^2
+        + r^2 (\\frac{p_{\\theta_p}}{mr^2})^2
+        + \\frac{r^2 sin(\\theta_p)^2}{
+           (mr^2 sin(\\theta_p)^2)^2
+        } (
+          p_{\\theta_e}
+          - qA_{\\theta_e}r sin(\\theta_p)
+          )^2
+        )+qA_{\\theta_e}r sin(\\theta_p) \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
+      \\\\
+      =
+      \\frac{1}{2}m(
+        (\\frac{p_r}{m})^2
+        + r^2 (\\frac{p_{\\theta_p}}{mr^2})^2
+        + \\frac{r^2 sin(\\theta_p)^2}{
+           (mr^2 sin(\\theta_p)^2)^2
+        } (
+          p_{\\theta_e}^2
+          + q^2A_{\\theta_e}^2r^2 sin(\\theta_p)^2
+          - 2qA_{\\theta_e}r sin(\\theta_p) p_{\\theta_e}
+          )
+        )+qA_{\\theta_e}r sin(\\theta_p) \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
+      \\\\
+      =
+        \\frac{p_r^2}{2m}
+        + \\frac{p_{\\theta_p}^2}{2mr^2}
+        + \\frac{
+          p_{\\theta_e}
+          - qA_{\\theta_e}r sin(\\theta_p)
+        }{
+           mr^2 sin(\\theta_p)^2
+        }\\frac{1}{2} (
+          p_{\\theta_e}
+          - qA_{\\theta_e}r sin(\\theta_p)
+          )
+        +qA_{\\theta_e}r sin(\\theta_p) \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
+      \\\\
+      =
+        \\frac{p_r^2}{2m}
+        + \\frac{p_{\\theta_p}^2}{2mr^2}
+        + (\\frac{1}{2} (
+          p_{\\theta_e}
+          - qA_{\\theta_e}r sin(\\theta_p)
+          )
+        +qA_{\\theta_e}r sin(\\theta_p)) \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
+      \\\\
+      =
+        \\frac{p_r^2}{2m}
+        + \\frac{p_{\\theta_p}^2}{2mr^2}
+        + \\frac{1}{2} (
+          p_{\\theta_e}
+          + qA_{\\theta_e}r sin(\\theta_p)
+          )
+        \\frac{p_{\\theta_e} - qA_{\\theta_e}r sin(\\theta_p)}{mr^2 sin(\\theta_p)^2}
+      \\\\
+      =
+        \\frac{p_r^2}{2m}
+        + \\frac{p_{\\theta_p}^2}{2mr^2}
+        + \\frac{1}{2}
+        \\frac{
+          p_{\\theta_e}^2
+          - (qA_{\\theta_e}r sin(\\theta_p))^2
+        }{ mr^2 sin(\\theta_p)^2 }
+      \\\\
+      =
+        \\frac{p_r^2}{2m}
+        + \\frac{p_{\\theta_p}^2}{2mr^2}
+        + \\frac{1}{2}
+        \\frac{
+          p_{\\theta_e}^2
+        }{ mr^2 sin(\\theta_p)^2 }
+        - \\frac{1}{2}
+        \\frac{
+          (qr sin(\\theta_p)A_{\\theta_e})^2
+        }{ mr^2 sin(\\theta_p)^2 }
+      \\\\
+      =
+        \\frac{p_r^2}{2m}
+        + \\frac{p_{\\theta_p}^2}{2mr^2}
+        + \\frac{1}{2}
+        \\frac{
+          p_{\\theta_e}^2
+        }{ mr^2 sin(\\theta_p)^2 }
+        - \\frac{1}{2}
+        \\frac{
+          (
+            qr sin(\\theta_p)
+            M \\frac{\\mu_0 }{4\\pi}\\frac{sin(\\theta_p)}{r^2}
+            )^2
+        }{ mr^2 sin(\\theta_p)^2 }
       `,
-      explanation: "NA"
+      explanation: "the hamiltonian in terms of conjugate momenta"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\psi(r,\\theta_p)=
+      \\frac{1}{2}
+        \\frac{
+          (
+            qr sin(\\theta_p)
+            M \\frac{\\mu_0 }{4\\pi}\\frac{sin(\\theta_p)}{r^2}
+            )^2
+        }{ mr^2 sin(\\theta_p)^2 }
+      \\\\
+      =
+      \\frac{1}{2}
+      \\frac{(qM \\frac{\\mu_0 }{4\\pi})^2}{m}
+        \\frac{
+          (
+            r sin(\\theta_p)
+            \\frac{sin(\\theta_p)}{r^2}
+            )^2
+        }{ r^2 sin(\\theta_p)^2 }
+      \\\\
+      =
+      \\frac{1}{2}
+      \\frac{(qM \\frac{\\mu_0 }{4\\pi})^2}{m}
+        \\frac{
+          (
+            \\frac{sin(\\theta_p)}{r^2}
+            )^2
+        }{1}
+      \\\\
+      =
+      \\frac{1}{2}
+      \\frac{(qM \\frac{\\mu_0 }{4\\pi})^2}{m}
+      \\frac{sin(\\theta_p)^2}{r^4}
+      `,
+      explanation: "simplifying one of the potential terms"
     },
     {
-      expression: `NA`,
+      expression: `H=
+      =
+        \\frac{1}{2}(
+          \\frac{p_r^2}{m}
+          + \\frac{p_{\\theta_p}^2}{mr^2}
+          +\\frac{
+            p_{\\theta_e}^2
+          }{ mr^2 sin(\\theta_p)^2 }
+          -\\frac{(qM \\frac{\\mu_0 }{4\\pi})^2}{m}
+          \\frac{sin(\\theta_p)^2}{r^4}
+          )
+      `,
       explanation: "NA"
     },
     {
