@@ -200,7 +200,8 @@ var problems = [
       explanation: "simplifying one of the potential terms"
     },
     {
-      expression: `H=
+      expression: `
+      H
       =
         \\frac{1}{2}(
           \\frac{p_r^2}{m}
@@ -208,14 +209,20 @@ var problems = [
           +\\frac{
             p_{\\theta_e}^2
           }{ mr^2 sin(\\theta_p)^2 }
-          -\\frac{(qM \\frac{\\mu_0 }{4\\pi})^2}{m}
+          -\\frac{\\gamma}{m}
           \\frac{sin(\\theta_p)^2}{r^4}
           )
+      \\\\
+      \\gamma=(qM \\frac{\\mu_0 }{4\\pi})^2
       `,
-      explanation: "NA"
+      explanation: "A concise expression of the hamiltonian."
     },
     {
-      expression: `NA`,
+      expression: `
+      \\partial_t H = 0 \\rightarrow E(t)=E_0
+      \\\\
+      \\partial_{\\theta_e} H = 0 \\rightarrow p_{\\theta_e}(t)=p_{\\theta_e0}
+      `,
       explanation: "NA"
     },
     {
@@ -249,12 +256,26 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`own notion`,
+    description:"Convert a vector field from polar coordinates to cylindrical",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+        \\vec V =
+        V_{\\rho} \\hat \\rho
+        +V_{z} \\hat z
+        +V_{\\theta} \\hat \\theta
+        \\\\
+        =V_{r} \\hat r
+        +V_{\\theta_p} \\hat \\theta_p
+        +V_{\\theta_e} \\hat \\theta_e
+        \\\\
+        =
+        V_{x} \\hat x
+        +V_{y} \\hat y
+        +V_{z} \\hat z
+        `,
+      explanation: "A vector field can be expressed equivalently in any coordinate system"
     },
     {
       expression: `NA`,
