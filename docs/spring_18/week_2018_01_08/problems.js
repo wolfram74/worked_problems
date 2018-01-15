@@ -278,11 +278,40 @@ var problems = [
       explanation: "A vector field can be expressed equivalently in any coordinate system"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      V_{z}
+      = V_{r}cos(\\theta_p)-V_{\\theta_p}sin(\\theta_p)
+      \\\\
+      V_{x}
+      = (V_{r}sin(\\theta_p)+V_{\\theta_p}cos(\\theta_p))cos(\\theta_e)
+      -V_{\\theta_e}sin(\\theta_e)
+      \\\\
+      V_{y}
+      = -(V_{r}sin(\\theta_p)+V_{\\theta_p}cos(\\theta_p))sin(\\theta_e)
+      +V_{\\theta_e}cos(\\theta_e)
+      `,
+      explanation: "A spherical vector field recast in cartesian coordinates"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\begin{bmatrix}
+        \\rho \\\\
+        \\theta \\\\
+        z
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        \\rho & r \\\\
+        \\theta & b\\\\
+        z & c
+      \\end{bmatrix}
+      \\begin{bmatrix}
+        r \\\\
+        \\theta_{p} \\\\
+        \\theta_{e}
+      \\end{bmatrix}
+
+      `,
       explanation: "NA"
     },
     {
