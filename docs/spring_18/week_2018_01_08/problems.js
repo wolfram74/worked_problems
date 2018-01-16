@@ -301,25 +301,111 @@ var problems = [
       \\end{bmatrix}
       =
       \\begin{bmatrix}
-        \\rho & r \\\\
-        \\theta & b\\\\
-        z & c
+        r sin(\\theta_{p}) \\\\
+        \\theta_{e} \\\\
+        r cos(\\theta_{p})
       \\end{bmatrix}
+      ,
       \\begin{bmatrix}
         r \\\\
-        \\theta_{p} \\\\
-        \\theta_{e}
+        \\theta_{\\theta_p} \\\\
+        \\theta_{\\theta_e}
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        (\\rho^2+z^2)^{1/2} \\\\
+        atan(z/\\rho) \\\\
+        \\theta
       \\end{bmatrix}
 
       `,
-      explanation: "NA"
+      explanation: "Expressions for cylindrical coordinates in terms of spherical"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\begin{bmatrix}
+        \\hat \\rho \\\\
+        \\hat  \\theta \\\\
+        \\hat z
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        \\partial_{ r } \\rho
+        & \\partial_{ \\theta_{p} } \\rho
+        & \\partial_{ \\theta_{e} } \\rho
+        \\\\
+        \\partial_{ r } \\theta
+        & \\partial_{ \\theta_{p} } \\theta
+        & \\partial_{ \\theta_{e} } \\theta
+        \\\\
+        \\partial_{ r } z
+        & \\partial_{ \\theta_{p} } z
+        & \\partial_{ \\theta_{e} } z
+      \\end{bmatrix}
+      \\begin{bmatrix}
+        \\hat r \\\\
+        \\hat \\theta_{p} \\\\
+        \\hat \\theta_{e}
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        sin(\\theta_{p})
+        & r cos(\\theta_{p})
+        & 0
+        \\\\
+        0
+        & 0
+        & 1
+        \\\\
+        cos(\\theta_{p})
+        & -r sin(\\theta_{p})
+        & 0
+      \\end{bmatrix}
+      \\begin{bmatrix}
+        \\hat r \\\\
+        \\hat \\theta_{p} \\\\
+        \\hat \\theta_{e}
+      \\end{bmatrix}
+      `,
+      explanation: "A transformation from spherical unit vectors to cylindrical, the jacobian of which is simply r, as appropriate for cylindrical coordinates"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\begin{bmatrix}
+        V_\\rho \\\\
+        V_\\theta \\\\
+        V_z
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        sin(\\theta_{p})
+        & r cos(\\theta_{p})
+        & 0
+        \\\\
+        0
+        & 0
+        & 1
+        \\\\
+        cos(\\theta_{p})
+        & -r sin(\\theta_{p})
+        & 0
+      \\end{bmatrix}
+      \\begin{bmatrix}
+        V_r \\\\
+        V_{\\theta_{p}} \\\\
+        V_{\\theta_{e}}
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        sin(\\theta_{p})V_r
+        +r cos(\\theta_{p})V_{\\theta_{p}}
+        +0 V_{\\theta_{e}}
+        \\\\
+        V_{\\theta_{p}}
+        \\\\
+        V_{\\theta_{e}}
+      \\end{bmatrix}
+      `,
       explanation: "NA"
     },
     {
