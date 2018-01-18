@@ -340,11 +340,47 @@ var problems = [
         \\hat \\theta_{p} \\\\
         \\hat \\theta_{e}
       \\end{bmatrix}
+      \\\\
+      \\begin{bmatrix}
+        \\hat r \\\\
+        \\hat \\theta_{p} \\\\
+        \\hat \\theta_{e}
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        cos(\\theta_p)
+        & sin(\\theta_p)
+        & 0
+        \\\\
+        -sin(\\theta_p)
+        & cos(\\theta_p)
+        & 0
+        \\\\
+        0
+        & 0
+        & 1
+      \\end{bmatrix}
+      \\begin{bmatrix}
+        \\hat z \\\\
+        \\hat \\rho \\\\
+        \\hat  \\theta
+      \\end{bmatrix}
       `,
       explanation: "A transformation from spherical unit vectors to cylindrical, that it is obviously unitary supports the notion that it preserves orthonormality."
     },
     {
-      expression: `NA`,
+      expression: `\\vec V =
+        V_{r} \\hat r
+        +V_{\\theta_p} \\hat \\theta_p
+        +V_{\\theta_e} \\hat \\theta_e
+        =
+        \\\\
+        V_{r} (\\hat r)
+        +V_{\\theta_p} \\hat \\theta_p
+        +V_{\\theta_e} \\hat \\theta_e
+        =
+        \\\\
+      `,
       explanation: "NA"
     },
     {
