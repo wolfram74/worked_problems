@@ -275,7 +275,81 @@ var problems = [
         +V_{y} \\hat y
         +V_{z} \\hat z
         `,
-      explanation: "A vector field can be expressed equivalently in any coordinate system"
+      explanation: "A vector field can be expressed equivalently in any orthonormal coordinate system"
+    },
+    {
+      expression: `
+      V_x
+      =
+      \\vec V \\cdot \\hat x
+      =
+      V_{r} \\hat r \\cdot \\hat x
+      +V_{\\theta_p} \\hat \\theta_p \\cdot \\hat x
+      +V_{\\theta_e} \\hat \\theta_e \\cdot \\hat x
+      \\\\
+      =
+      V_{r}
+      (
+        f_{xr}(r, \\theta_p, \\theta_p)\\hat x+
+        f_{yr}(r, \\theta_p, \\theta_p)\\hat y+
+        f_{zr}(r, \\theta_p, \\theta_p)\\hat z
+      )
+      \\cdot \\hat x
+      \\\\
+      +V_{\\theta_p}
+      (
+        f_{x\\theta_p}(r, \\theta_p, \\theta_p)\\hat x+
+        f_{y\\theta_p}(r, \\theta_p, \\theta_p)\\hat y+
+        f_{z\\theta_p}(r, \\theta_p, \\theta_p)\\hat z
+      )
+      \\cdot \\hat x
+      \\\\
+      +V_{\\theta_e}
+      (
+        f_{x\\theta_e}(r, \\theta_p, \\theta_p)\\hat x+
+        f_{y\\theta_e}(r, \\theta_p, \\theta_p)\\hat y+
+        f_{z\\theta_e}(r, \\theta_p, \\theta_p)\\hat z
+      )
+      \\cdot \\hat x
+      `,
+      explanation: "determining a vector component in cartesian components from spherical. Expressions for decomposing the source unit vectors in terms of the target unit vectors are needed."
+    },
+    {
+      expression: `
+      \\begin{bmatrix}
+        \\hat z \\\\
+        \\hat \\rho \\\\
+        \\hat  \\theta
+      \\end{bmatrix}
+      =
+      \\begin{bmatrix}
+        cos(\\theta_p)
+        & -sin(\\theta_p)
+        & 0
+        \\\\
+        sin(\\theta_p)
+        & cos(\\theta_p)
+        & 0
+        \\\\
+        0
+        & 0
+        & 1
+      \\end{bmatrix}
+      \\begin{bmatrix}
+        \\hat r \\\\
+        \\hat \\theta_{p} \\\\
+        \\hat \\theta_{e}
+      \\end{bmatrix}
+      `,
+      explanation: "A transformation from spherical unit vectors to cylindrical, that it is obviously unitary supports the notion that it preserves orthonormality."
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
     },
     {
       expression: `
