@@ -131,15 +131,30 @@ var problems = [
     },
     {
       expression: `
-      r < a
+      r \\le a
       \\rightarrow E*2\\pi r z = \\frac{\\rho}{\\epsilon_0} \\pi r^2 z
       \\rightarrow E(r) = \\frac{\\rho}{2 \\epsilon_0}r
       `,
-      explanation: "NA"
+      explanation: "An expression for the electric field intensity in terms of r out to r=a"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\hat r \\times \\hat \\theta = \\hat z
+      \\rightarrow
+      \\hat z \\times \\hat r = \\hat \\theta
+      \\rightarrow
+      \\hat r \\times \\hat z = -\\hat \\theta
+      \\\\
+      \\vec E \\times \\vec B = E_rB_z (\\hat r \\times \\hat z)
+      =
+      \\frac{\\rho B_0}{2 \\epsilon_0}r (-\\hat \\theta)
+      \\\\
+      \\vec V_d = \\frac{\\vec E \\times \\vec B}{|B^2|}
+      =\\frac{-\\rho }{2 \\epsilon_0 B_0}r \\hat \\theta
+      =\\frac{-(-q*n) }{2 \\epsilon_0 B_0}r \\hat \\theta
+      =\\frac{qna }{2 \\epsilon_0 B_0} \\hat \\theta
+      \\approx 4.5E3 \\hat \\theta`,
+      explanation: "calculated drift velocity for the beam."
     },
     {
       expression: `NA`,
@@ -188,20 +203,28 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`chen 1984 p2-11 page 35`,
+    description:"a plasma with an isotropic velocity distribution and no collisions is confined by a magnetic mirror with $&R_m=4&$, find what fractions of particles are confined.",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `f_v(v_x,v_y,v_z)=f_v(v_r)`,
+      explanation: "A working definition of an isotropic velocity distribution"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `sin(\\alpha)^2=\\frac{1}{R_m}`,
+      explanation: "an expression for the angle of the loss cone. If a particles velocity points along the highlighted by the loss cone it will escape."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\int_{0,0}^{\\pi, 2\\pi} d\\theta_p d\\theta_e sin(\\theta_p)=4\\pi
+      \\\\
+      \\frac{1}{4\\pi}\\int_{\\alpha,0}^{\\pi-\\alpha, 2\\pi} d\\theta_p d\\theta_e sin(\\theta_p)=n_{confined}
+      \\\\
+      \\frac{1}{2\\pi}\\int_{\\alpha,0}^{\\pi/2, 2\\pi} d\\theta_p d\\theta_e sin(\\theta_p)=n_{confined}
+      \\\\
+      \\frac{1}{2\\pi}\\int_{0,0}^{\\alpha, 2\\pi} d\\theta_p d\\theta_e sin(\\theta_p)=n_{escaped}
+      `,
+      explanation: "a few expressions for normalized quantties indicating what fraction lie within or without the loss cone"
     },
     {
       expression: `NA`,
