@@ -375,9 +375,9 @@ var problems = [
         +V_{\\theta_e} \\hat \\theta_e
         =
         \\\\
-        V_{r} (\\hat r)
-        +V_{\\theta_p} \\hat \\theta_p
-        +V_{\\theta_e} \\hat \\theta_e
+        V_{r} (cos(\\theta_p ) \\hat z + sin(\\theta_p ) \\hat \\rho )
+        +V_{\\theta_p} (-sin(\\theta_p ) \\hat z + cos(\\theta_p ) \\hat \\rho )
+        +V_{\\theta_e} (1 \\hat \\theta)
         =
         \\\\
       `,
