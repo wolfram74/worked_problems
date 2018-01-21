@@ -20,19 +20,54 @@ var problems = [
       explanation: "equation 3.7.22 from gurnett and bhattacharjee (G+B) describing the vector potential of a dipole. the subscripts on thetas denote equatorial angle and polar angle respectively."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      z = cos(\\theta_p) r, \\rho = sin(\\theta_p)r, \\theta = \\theta_e
+      \\rightarrow
+      \\\\
+      \\vec A
+      = A_\\theta
+      = M \\frac{\\mu_0 }{4\\pi}\\frac{sin(\\theta_p)}{r^2}
+      = M \\frac{\\mu_0 }{4\\pi}\\frac{\\rho}{r^3}
+      \\\\
+      = M \\frac{\\mu_0 }{4\\pi}\\frac{\\rho}{(z^2+\\rho^2)^{3/2}}
+      `,
+      explanation: "Recasting the potential in cylindrical coordinates"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      L= KE-PE =
+      \\\\
+      \\frac{1}{2}m(\\dot z ^2 + \\dot \\rho ^2 + \\rho ^2 \\dot \\theta^2)
+      -q\\rho \\dot \\theta A_\\theta
+      `,
+      explanation: "Lagrangian for this system"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\partial_{\\dot e_i} L= p_{e_i}
+      \\\\
+      \\partial_{\\dot z} L= p_{z} = m \\dot z
+      \\\\
+      \\partial_{\\dot \\rho} L= p_{\\rho} = m \\dot \\rho
+      \\\\
+      \\partial_{\\dot \\theta} L= p_{\\theta} =
+      m \\rho ^2 \\dot \\theta - q \\rho A_\\theta
+      `,
+      explanation: "Finding the conjugate momenta for our coordinate system"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\dot z
+      = p_{z}/m
+      \\\\
+      \\dot \\rho
+      = p_{\\rho}/m
+      \\\\
+      \\dot \\theta
+      = (p_{\\theta}+q \\rho A_\\theta)\\frac{1}{m\\rho^2}
+      = \\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}
+      \\\\
+      `,
       explanation: "NA"
     },
     {
