@@ -68,14 +68,98 @@ var problems = [
       = \\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}
       \\\\
       `,
-      explanation: "NA"
+      explanation: "Velocities for substituing later"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      H= KE+PE =
+      \\\\
+      \\frac{1}{2}m(\\dot z ^2 + \\dot \\rho ^2 + \\rho ^2 \\dot \\theta^2)
+      +q\\rho \\dot \\theta A_\\theta
+      =
+      \\\\
+      \\frac{1}{2}m(
+        (p_{z}/m) ^2
+        + (p_{\\rho}/m) ^2
+        + \\rho ^2 (\\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2})^2
+        )
+      +q\\rho (\\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}) A_\\theta
+      =
+      \\\\
+      \\frac{1}{2m}(
+        p_{z}^2
+        + p_{\\rho} ^2
+        )
+      + \\frac{m\\rho ^2}{2} (\\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2})^2
+      + q\\rho (\\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}) A_\\theta
+      =
+      \\\\
+      \\frac{1}{2m}(
+        p_{z}^2
+        + p_{\\rho} ^2
+        )
+      +(
+        \\frac{m\\rho ^2}{2} \\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}
+        + q\\rho  A_\\theta
+        ) (
+        \\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}
+        )
+      =
+      \\\\
+      \\frac{1}{2m}(
+        p_{z}^2
+        + p_{\\rho} ^2
+        )
+      +
+      \\frac{1}{2}
+      (
+        p_{\\theta}+q \\rho A_\\theta
+        + \\frac{q\\rho  A_\\theta}{2}
+        ) (
+        \\frac{p_{\\theta}+q \\rho A_\\theta}{m\\rho^2}
+        )
+      =
+      \\\\
+      \\frac{1}{2m}(
+        p_{z}^2
+        + p_{\\rho} ^2
+        +
+        (
+          p_{\\theta}
+          + \\frac{3q\\rho  A_\\theta}{2}
+        ) (
+          \\frac{p_{\\theta}+q \\rho A_\\theta}{\\rho^2}
+        )
+      )
+      `,
+      explanation: "Expressing the Hamiltonian in terms of momenta"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\Psi
+      =
+        (
+          p_{\\theta}
+          + \\frac{3q\\rho  A_\\theta}{2}
+        ) (
+          \\frac{p_{\\theta}+q \\rho A_\\theta}{\\rho^2}
+        )
+      \\\\
+      =
+        (
+          p_{\\theta}
+          + \\frac{3q\\rho}{2}(M \\frac{\\mu_0 }{4\\pi}\\frac{\\rho}{(z^2+\\rho^2)^{3/2}})
+        ) (
+          \\frac{1}{\\rho^2}
+          (p_{\\theta}+q \\rho (M \\frac{\\mu_0 }{4\\pi}\\frac{\\rho}{(z^2+\\rho^2)^{3/2}}))
+        )
+      \\\\
+      =
+      (\\frac{3 M^{2} \\mu_{0}^{2} q^{2} \\rho^{2}}{32 \\pi^{2} \\left(\\rho^{2} + z^{2}\\right)^{3}}
+      + \\frac{5 M \\mu_{0} p_{\\theta} q}{8 \\pi \\left(\\rho^{2} + z^{2}\\right)^{\\frac{3}{2}}}
+      + \\frac{p_{\\theta}^{2}}{\\rho^{2}})
+      \\\\
+      `,
       explanation: "NA"
     },
     {
