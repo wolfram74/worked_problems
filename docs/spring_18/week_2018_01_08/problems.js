@@ -143,7 +143,8 @@ var problems = [
           + \\frac{3q\\rho  A_\\theta}{2}
         ) (
           \\frac{p_{\\theta}+q \\rho A_\\theta}{\\rho^2}
-        )
+        ) =
+
       \\\\
       =
         (
@@ -160,7 +161,7 @@ var problems = [
       + \\frac{p_{\\theta}^{2}}{\\rho^{2}})
       \\\\
       `,
-      explanation: "NA"
+      explanation: "explore and expanding the psudeo potential"
     },
     {
       expression: `NA`,
