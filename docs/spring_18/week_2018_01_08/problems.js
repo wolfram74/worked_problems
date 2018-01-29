@@ -144,7 +144,10 @@ var problems = [
         ) (
           \\frac{p_{\\theta}+q \\rho A_\\theta}{\\rho^2}
         ) =
-
+        (
+          3 q^2 A_\\theta^2 \\rho^2
+          + 5 p_\\theta A_\\theta \\rho
+          + 2 p_\\theta^2)\\frac{1}{2\\rho^2}
       \\\\
       =
         (
@@ -160,13 +163,50 @@ var problems = [
       + \\frac{5 M \\mu_{0} p_{\\theta} q}{8 \\pi \\left(\\rho^{2} + z^{2}\\right)^{\\frac{3}{2}}}
       + \\frac{p_{\\theta}^{2}}{\\rho^{2}})
       \\\\
+      \\gamma = \\frac{M \\mu_0 q}{\\pi}
       `,
-      explanation: "explore and expanding the psudeo potential"
+      explanation: "explore and expanding the psudeo potential and defining a convenient place holder"
+    },
+    {
+      expression: `
+      \\partial_t p_{e_i} = \\partial_{q_{e_i}} H
+      \\\\
+      \\partial_t p_{\\rho} = \\partial_{\\rho} H =
+      - \\frac{3 M^{2} \\mu_{0}^{2} q^{2} \\rho^{3}}{8 \\pi^{2} \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      + \\frac{3 M^{2} \\mu_{0}^{2} q^{2} \\rho z^{2}}{16 \\pi^{2} \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      - \\frac{15 M \\mu_{0} p_{\\theta} q \\rho}{8 \\pi \\left(\\rho^{2} + z^{2}\\right)^{\\frac{5}{2}}}
+      - \\frac{2 p_{\\theta}^{2} z^{2}}{\\rho^{5} + \\rho^{3} z^{2}}
+      - \\frac{2 p_{\\theta}^{2}}{\\rho^{3} + \\rho z^{2}} =
+      \\\\
+      - \\frac{3 \\gamma^{2} \\rho^{3}}{8 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      + \\frac{3 \\gamma^{2} \\rho z^{2}}{16 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      - \\frac{15 \\gamma p_{\\theta} \\rho}{8 \\left(\\rho^{2} + z^{2}\\right)^{\\frac{5}{2}}}
+      - \\frac{2 p_{\\theta}^{2} z^{2}}{\\rho^{5} + \\rho^{3} z^{2}}
+      - \\frac{2 p_{\\theta}^{2}}{\\rho^{3} + \\rho z^{2}}
+      \\\\
+      \\partial_t p_{z} = \\partial_{q_z} H =
+      - \\frac{
+        3 \\gamma z
+      }{
+        16 \\pi \\left(\\rho^{2} + z^{2}\\right)^{4}
+      } \\left(
+        3 \\pi \\gamma \\rho^{2} + 10 \\pi p_{\\theta} \\left(\\rho^{2} + z^{2}\\right)^{\\frac{3}{2}}
+        \\right)
+      \\\\
+      \\partial_t p_{\\theta} = \\partial_{\\theta} H =0
+      \\\\
+      `,
+      explanation: "The Equations of motion for our system."
     },
     {
       expression: `NA`,
       explanation: "NA"
-    },]
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    ]
   },
 
   {
