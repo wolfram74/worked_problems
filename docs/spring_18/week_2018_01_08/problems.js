@@ -2,7 +2,7 @@ var problems = [
 
   {
     location:`Current events`,
-    description:"come to some conclusions about the dragon on a dipole magnet in a uniform plasma flow.",
+    description:"come to some conclusions about the drag on a dipole magnet in a uniform plasma flow.",
     steps:[
     {
       expression: `

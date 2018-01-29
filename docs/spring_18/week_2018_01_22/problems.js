@@ -248,10 +248,6 @@ var problems = [
     {
       expression: `NA`,
       explanation: "NA"
-    },
-    {
-      expression: `NA`,
-      explanation: "NA"
     },]
   },
 ]

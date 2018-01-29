@@ -18,8 +18,8 @@ def dipole():
     PEs = (ptht+3*q*rho*Atht/2)*(ptht+q*rho*Atht)/rho**2
     sympy.pprint(PEs)
     sympy.pprint(PEs.simplify())
-    sympy.pprint((PEs.simplify()*rho**2).expand())
-    print(sympy.latex(PEs.simplify())**2)
+    sympy.pprint((PEs.simplify()).expand())
+    print(sympy.latex(PEs.simplify()))
     return
 
 if __name__=='__main__':
