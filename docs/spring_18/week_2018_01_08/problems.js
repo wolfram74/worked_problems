@@ -14,6 +14,30 @@ var problems = [
       explanation: "some assumptions about the nature of the plasma flow, that is is homogeneous and single speed. "
     },
     {
+      expression: `
+      \\vec v(t=-\\infty)= v_0\\hat z = \\vec v_i
+      \\\\
+      \\vec v(t=\\infty) = v_0(\\alpha \\hat \\rho + \\beta \\hat z + \\gamma \\hat \\theta) = \\vec v_f
+      \\\\
+      \\alpha^2+\\beta^2+\\gamma^2=1
+      `,
+      explanation: "Some observations about velocity of a particle at some later point assuming a conservative potential that goes to 0 at large distances, if angular momentum is also conserved then $&\\gamma=0&$ as well. This will be justified later."
+    },
+    {
+      expression: `
+      \\frac{\\vec v_i \\cdot \\vec v_f}{v_0^2}=cos(\\theta_d) = \\beta
+      \\\\
+      (1-\\beta)v_0m=\\Delta p_z
+      `,
+      explanation: "Given the deflection angle how much momentum in the z axis is transferred to the dipole by a single particle."
+    },
+    {
+      expression: `
+      n v_0 m \\int_{0}^{\\infty}\\int_{0}^{2\\pi} b d\\theta db (1 - cos(\\theta_d(b) ) = F_{drag}
+      `,
+      explanation: "Assuming scattering potential is rotationally symmetric the deflection angle will depend only on the impact parameter, b. Integrating over all b's and multiplying by the density and initial momentum will determine total drag on the dipole."
+    },
+    {
       expression: `\\vec A = A_{\\theta_e} =
       M \\frac{\\mu_0 }{4\\pi}\\frac{sin(\\theta_p)}{r^2}
       `,
@@ -196,11 +220,42 @@ var problems = [
       \\partial_t p_{\\theta} = \\partial_{\\theta} H =0
       \\\\
       `,
-      explanation: "The Equations of motion for our system."
+      explanation: "The Equations of motion for our system. Note that $&p_\\theta&$ is invariant in time."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\partial_t p_{\\rho} =
+      \\frac{3 \\gamma^{2} \\rho z^{2}}{16 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      - \\frac{3 \\gamma^{2} \\rho^{3}}{8 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      =
+      \\\\
+      \\frac{3 \\gamma^{2} \\rho z^{2}}{16 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      - \\frac{6 \\gamma^{2} \\rho^{3}}{16 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      =
+      \\\\
+      \\frac{
+        3 \\gamma^{2} \\rho(
+          z^{2}
+          -2 \\rho^{2}
+          )
+      }{16 \\left(\\rho^{2} + z^{2}\\right)^{4}}
+      \\\\
+      \\partial_t p_{z} =
+      - \\frac{
+        3 \\gamma z
+      }{
+        16 \\pi \\left(\\rho^{2} + z^{2}\\right)^{4}
+      } \\left(
+        3 \\pi \\gamma \\rho^{2}
+        \\right)
+      =
+      - \\frac{
+        9 \\gamma^2 z  \\rho^{2}
+      }{
+        16  \\left(\\rho^{2} + z^{2}\\right)^{4}
+      }
+      `,
+      explanation: "Taking some of our assumptions about initial conditions and applying them to generate simpler equations of motion."
     },
     {
       expression: `NA`,

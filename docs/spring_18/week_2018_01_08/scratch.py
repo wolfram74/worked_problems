@@ -49,5 +49,17 @@ def dipole():
     print(sympy.latex((KEh+PEs).diff(tht).simplify().subs(gam_block, gam)).replace('\\', '\\\\'))
     return
 
+def curl_check():
+    rho, z = sympy.symbols('rho, z', real=True)
+    frho = 3*rho*(z**2-2*rho**2)/(rho**2+z**2)**4
+    fz = -9*z*rho**2/(rho**2+z**2)**4
+    sympy.pprint(frho)
+    sympy.pprint(fz)
+    sympy.pprint(frho.diff(z))
+    sympy.pprint(fz.diff(rho))
+    sympy.pprint((frho.diff(z)-fz.diff(rho)).simplify())
+
+
 if __name__=='__main__':
-    dipole()
+    # dipole()
+    curl_check()
