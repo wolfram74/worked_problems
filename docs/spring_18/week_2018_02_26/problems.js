@@ -1,54 +1,61 @@
-// candidate chen problems
-// 4.1 is kind of interesting pg81
-// 4.2 relaxing an assumption about plasma freq calculation pg 86
-// 4.4 determining the dielectric
-// 4.6 rederiving electron wave with collisions pg 94
-// 4.8 relaxing in-plane constraint electrostatic waves with B pg108
 var problems = [
+/*
+thoughts on problem 2
+  write function that takes as inputs vectors length n+1 values and locations of value (y and x) and query location
+  returns vector with first value being interpolated value and rest is some kind of error estimate?
+thoughts on problem 3
+  will need:
+    a dot product for 2 vectors
+    a magnitude of 1 vector
+    a mag-delta between two vectors
+  have:
+    9 unknowns
+    8 equations
+      define a 8x9 matrix
+*/
   {
-    location:`chen 1984 problem 4.1`,
-    description:"given a relationship between a density perturbation and potential perturbation $&\\frac{n_1}{n_0}=\\frac{e\\phi_1}{KT_e}\\frac{\\omega_p + ia}{\\omega+ia}&$ find an expression for the phase shift between potential and density, and if $&\\omega_p > \\omega&$ does the potential lag or lead density.",
+    location:`from Numerical Methods handout`,
+    description:"state the error estimate for a linear fit. Calcuate the error estimate associated with estimating $&e^x&$ as a quadratic based on values from x=(0, .1, .3) when interpolating the value at x=.2",
     steps:[
     {
-      expression: `\\phi_1 = \\alpha n_1 e^{i\\delta}`,
-      explanation: "expressing phi in terms of density and a phase shift."
-    },
-    {
       expression: `
-      \\phi_1 = \\alpha n_1 e^{i\\delta}
-      =
-      \\frac{1}{n_0}\\frac{KT_e}{e}n_1\\frac{\\omega+ia}{\\omega_p + ia}
+      f(x)-P_n(x) = \\frac{1}{(n+1)!}f^{n+1}(\\xi) \\Pi_{i=0}^n(x-x_i)
       `,
-      explanation: "isolating phi to one side"
+      explanation: "The general error estimate expression. We'll be interested in cases of n=1 and n=2."
     },
     {
       expression: `
-      \\frac{\\omega+ia}{\\omega_p + ia}
-      =
-      \\frac{\\omega+ia}{\\omega_p + ia}\\frac{\\omega_p - ia}{\\omega_p - ia}
-      =
-      \\frac{(\\omega+ia)(\\omega_p-ia)}{\\omega_p^2 - a^2}
-      =
-      \\frac{a^2+ia \\omega_p + \\omega\\omega_p-\\omega ia}{\\omega_p^2 - a^2}
-      =
-      \\frac{1}{\\omega_p^2 - a^2}(a^2+ \\omega\\omega_p +ia (\\omega_p -\\omega) )
-      =\\frac{1}{\\omega_p^2 - a^2}  Z
-      `,
-      explanation: "Isolating the complex portion of the expression in 2"
-    },
-    {
-      expression: `
-      Z=x+iy=re^{i\\delta}=a^2+ \\omega\\omega_p +ia (\\omega_p -\\omega)
+      f(x)-P_1(x) \\approx \\frac{1}{(1+1)!}f^{1+1}(\\xi) \\Pi_{i=0}^1(x-x_i)
       \\\\
-      \\delta = atan(\\frac{y}{x}) = atan(\\frac{a(\\omega_p -\\omega)}{a^2+ \\omega\\omega_p})
+      = \\frac{1}{2}f^{2}(\\xi) (x-x_0)(x-x_1)
       `,
-      explanation: "An expression for the phase shift in terms of known parametes."
+      explanation: "Where f is an assertion about the function we are interpolating. To be most pessimistic about our interpolation, we should choose the largest value of the second derivative of f within our range."
     },
     {
       expression: `
-      \\omega_p > \\omega \\rightarrow (\\omega_p -\\omega) > 0 \\rightarrow \\delta > 0
+      f(x)-P_2(x) \\approx \\frac{1}{(2+1)!}f^{2+1}(\\xi) \\Pi_{i=0}^2(x-x_i)
+      \\\\
+      =\\frac{1}{6}f^{3}(\\xi) \\Pi_{i=0}^2(x-x_i)
+      \\\\
+      \\partial_x^3 (e^x)=e^x
+      \\\\
+      E(x)=e^{\\xi}*(x-0)(x-.1)(x-.3)/6
+      \\\\
+      E(x)=e^{\\xi}*(.2-0)(.2-.1)(.2-.3)/6
+      \\\\
+      E(x)=e^{\\xi}*(.2)(.1)(-.1)/6=e^{\\xi}*(-3.3*10^{-4})
+      \\\\
+      E_min =(-3.3*10^{-4}), E_max =(-4.5*10^{-4})
       `,
-      explanation: "as the phase shift is positive, potential leads density in this circumstance."
+      explanation: "1.2218 vs 1.2214"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
     },
     {
       expression: `NA`,
@@ -93,11 +100,11 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`from Numerical Methods handout`,
+    description:"Implement neville's algorithm",
     steps:[
     {
-      expression: `NA`,
+      expression: `.`,
       explanation: "NA"
     },
     {
@@ -159,7 +166,7 @@ var problems = [
   },
 
   {
-    location:`NA`,
+    location:`from Numerical Methods handout`,
     description:"NA",
     steps:[
     {
