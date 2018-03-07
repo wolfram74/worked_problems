@@ -59,7 +59,8 @@ var problems = [
       \\\\
       -C_2(r_1r'^{-1}-1)+D_2(r_2r'^{-1}-1)
       \\\\
-      D_2=C_2\\frac{r_1r'^{-1}-1}{r_2r'^{-1}-1} = C_2\\frac{r_1-r'}{r_2-r'}
+      D_2=C_2\\frac{r_1r'^{-1}-1}{r_2r'^{-1}-1} = C_2 \\frac{r_1-r'}{r_2-r'}
+      \\\\
       `,
       explanation: "Specifying another coefficient based on the continuity constraint."
     },
@@ -81,7 +82,41 @@ var problems = [
       explanation: "The discontinuity at the r=r' boundary condition"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\partial_r\\Phi_{Gr}(r=r')-\\partial_r\\Phi_{Gl}(r=r')=-4\\pi
+      \\\\
+      \\Phi_{Gl}(r)=-C_2(r_1r^{-1}-1)
+      \\\\
+      \\Phi_{Gr}(r)=-C_2 \\frac{r_1-r'}{r_2-r'}(r_2r^{-1}-1)
+      \\\\
+      (C_2 \\frac{r_1-r'}{r_2-r'}r_2r^{-2})|_{r'}
+      -(+C_2r_1r^{-2})|_{r'} =
+      -4\\pi
+      \\\\
+      C_2 (\\frac{r_1-r'}{r_2-r'}r_2r'^{-2}
+      -r_1r'^{-2}) =
+      -4\\pi
+      \\\\
+      C_2
+      =
+      -4\\pi\\frac{1}{
+        \\frac{r_1-r'}{r_2-r'}r_2r'^{-2}-r_1r'^{-2}
+      }
+      =
+      -4\\pi\\frac{1}{
+        (\\frac{r_1-r'}{r_2-r'}r_2-r_1)r'^{-2}
+      }
+      =
+      -4\\pi\\frac{r'^{2}}{
+        (\\frac{r_1-r'}{r_2-r'}r_2-r_1)
+      }
+      \\\\
+      =
+      -4\\pi\\frac{r'^{2}}{
+        (\\frac{r_1-r'}{r_2-r'}\\frac{r_2}{r_1}-1)r_1
+      }
+
+      `,
       explanation: "NA"
     },
     {
