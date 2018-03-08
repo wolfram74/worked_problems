@@ -115,7 +115,7 @@ var problems = [
       -4\\pi\\frac{r'^{2}}{
         (\\frac{r_1-r'}{r_2-r'}\\frac{r_2}{r_1}-1)r_1
       }
-
+      =
       `,
       explanation: "NA"
     },
@@ -148,30 +148,57 @@ var problems = [
       explanation: "NA"
     },]
   },
-
+//'
   {
-    location:`NA`,
-    description:"NA",
+    location:`self generated`,
+    description:"Listing the fundamental equations for finding wave solutions to plasma problems and how a few assumptions simplify them.",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\nabla\\cdot{\\vec E} = \\rho/\\epsilon_0
+      \\\\
+      \\nabla\\cdot{\\vec B} = 0
+      \\\\
+      \\nabla\\times{\\vec E} = -\\dot{\\vec B}
+      \\\\
+      \\nabla\\times{\\vec B} = (\vec J + \\epsilon_0 \\dot{\\vec E})/\\mu_0
+      `,
+      explanation: "Differential form of maxwell's equations"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot n_i + \\nabla \\cdot ( \\vec u_i n_i) = 0
+      \\\\
+      \\dot n_e + \\nabla \\cdot ( \\vec u_e n_e) = 0
+      `,
+      explanation: "continuity of particle density"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      m_s n_s(
+        \\partial_t \\vec{u_s} + (\\vec{u_s} \\cdot \\nabla)\\vec{u_s}
+        )=
+      q_sn_s(\\vec E + \\vec{u_s} \\times \\vec B) + \\nabla P -\\nu n \\vec{u_s}
+      `,
+      explanation: "Continuity of momentum"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      f = f_0+f_1e^{i(\\vec k \\cdot \\vec r -\\omega t)}
+      `,
+      explanation: "Assuming any quantity of interest can be expressed as some constant plus a term varying like a planewave."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\nabla f_1 = i\\vec k f_1
+      \\\\
+      \\partial_t f_1 = -i\\omega f_1
+      \\\\
+      \\nabla \\cdot \\vec f_1 = i\\vec k \\cdot \\vec f_1
+      \\\\
+      \\nabla \\times \\vec f_1 = i\\vec k \\times \\vec f_1
+      `,
+      explanation: "consequences of various differential operators resulting from assumptions about our solutions."
     },
     {
       expression: `NA`,
