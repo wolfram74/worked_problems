@@ -115,13 +115,23 @@ var problems = [
       -4\\pi\\frac{r'^{2}}{
         (\\frac{r_1-r'}{r_2-r'}\\frac{r_2}{r_1}-1)r_1
       }
-      =
+
       `,
-      explanation: "NA"
+      explanation: "Specifying the final coefficient"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\Phi_G(r, r')=
+       \\begin{cases}
+        4\\pi\\frac{r'^{2}}{
+        (\\frac{r_1-r'}{r_2-r'}\\frac{r_2}{r_1}-1)r_1
+      }(r_1r'^{-1}-1) & r < r' \\\\
+        4\\pi\\frac{r'^{2}}{
+        (\\frac{r_1-r'}{r_2-r'}\\frac{r_2}{r_1}-1)r_1
+      } \\frac{r_1-r'}{r_2-r'}(r_2r^{-1}-1) & r > r'
+      \\end{cases}
+      `,
+      explanation: "The final green's function for the "
     },
     {
       expression: `NA`,
