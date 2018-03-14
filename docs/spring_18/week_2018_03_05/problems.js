@@ -131,7 +131,7 @@ var problems = [
       } \\frac{r_1-r'}{r_2-r'}(r_2r^{-1}-1) & r > r'
       \\end{cases}
       `,
-      explanation: "The final green's function for the "
+      explanation: "The final green\'s function for the "
     },
     {
       expression: `NA`,
@@ -157,8 +157,7 @@ var problems = [
       expression: `NA`,
       explanation: "NA"
     },]
-  },
-//'
+  },//'
   {
     location:`self generated`,
     description:"Listing the fundamental equations for finding wave solutions to plasma problems and how a few assumptions simplify them.",
@@ -171,7 +170,7 @@ var problems = [
       \\\\
       \\nabla\\times{\\vec E} = -\\dot{\\vec B}
       \\\\
-      \\nabla\\times{\\vec B} = (\vec J + \\epsilon_0 \\dot{\\vec E})/\\mu_0
+      \\nabla\\times{\\vec B} = (\\vec J + \\epsilon_0 \\dot{\\vec E})\\mu_0
       `,
       explanation: "Differential form of maxwell's equations"
     },
@@ -211,15 +210,50 @@ var problems = [
       explanation: "consequences of various differential operators resulting from assumptions about our solutions."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      i\\vec k\\cdot{\\vec E} = \\rho/\\epsilon_0
+      \\\\
+      i\\vec k \\cdot{\\vec B} = 0
+      \\\\
+      i\\vec k\\times{\\vec E} = i\\omega{\\vec B}
+      \\\\
+      i\\vec k\\times{\\vec B} = (\\vec J -i\\epsilon_0 \\omega{\\vec E})\\mu_0
+      `,
+      explanation: "recasting maxwell's equations in light of our oscillatory assumption of solutions"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      -i\\omega n_s + i\\vec k \\cdot ( \\vec u_s n_s) = 0
+      \\\\
+      m_s n_s(
+        -i\\omega \\vec{u_s} + (\\vec{u_s} \\cdot i \\vec k)\\vec{u_s}
+        )=
+      q_sn_s(\\vec E + \\vec{u_s} \\times \\vec B) + i\\vec k P -\\nu n \\vec{u_s}
+      `,
+      explanation: "particle and momentum continuity in this context"
     },
     {
-      expression: `NA`,
+      expression: `
+      i\\vec k\\times{\\vec E} = i\\omega{\\vec B}
+      \\rightarrow
+      \\frac{1}{\\omega}\\vec k\\times \\vec k\\times{\\vec E}
+      = \\vec k\\times{\\vec B} \\rightarrow
+      \\\\
+      \\vec k\\times{\\vec B} = (-i\\vec J -\\epsilon_0 \\omega{\\vec E})\\mu_0
+      =
+      \\\\
+      \\frac{1}{\\omega}\\vec k\\times \\vec k\\times{\\vec E}
+      \\\\
+      \\frac{1}{\\omega}\\vec k\\times \\vec k\\times{\\vec E} =
+      (-i\\vec J -\\epsilon_0 \\omega{\\vec E})\\mu_0
+      \\\\
+      \\frac{1}{\\omega}(
+        \\vec k (\\vec k \\cdot \\vec E)
+        -k^2\\vec E
+        ) =
+      (-i\\vec J -\\epsilon_0 \\omega{\\vec E})\\mu_0
+
+      `,
       explanation: "NA"
     },
     {
@@ -318,3 +352,4 @@ var problems = [
     },]
   },
 ]
+https://www.youtube.com/watch?v=3ieaDfD_h6s
