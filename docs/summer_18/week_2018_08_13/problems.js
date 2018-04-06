@@ -1,11 +1,11 @@
 var problems = [
 
   {
-    location:`self devised`,
-    description:"estimate a natural frequency for particle in a collection of particles with an interaction potential $&u_0e^{-|\\vec r_i - \\vec r_j|^2/l^2}&$",
+    location:`NA`,
+    description:"NA",
     steps:[
     {
-      expression: `-`,
+      expression: `NA`,
       explanation: "NA"
     },
     {
