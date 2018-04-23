@@ -118,18 +118,41 @@ var problems = [
 
   {
     location:`Chen 1984 5-17`,
-    description:"Calculate the resistive damping of alfvén waves  by deriving the dispersion relation from single fluid equations 5-85 and 5-91 and maxwell's equations 4-72 and 4-77. linearizing and neglecting gravity, displacement currents and pressure gradients. Verify the dispersion relation is $&\\frac{\\omega^2}{k^2} = c^2 \\epsilon_0(\\frac{B_0^2}{\\rho_0}-i\\omega \\eta)&$ and find the imaginary component of k with real frequency and small $&\\eta&$",
+    description:"Calculate the resistive damping of alfven waves  by deriving the dispersion relation from single fluid equations 5-85 and 5-91 and maxwell's equations 4-72 and 4-77. linearizing and neglecting gravity, displacement currents and pressure gradients. Verify the dispersion relation is $&\\frac{\\omega^2}{k^2} = c^2 \\epsilon_0(\\frac{B_0^2}{\\rho_0}-i\\omega \\eta)&$ and find the imaginary component of k with real frequency and small $&\\eta&$",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\rho \\partial_t \\vec v = \\vec j \\times \\vec B - \\nabla p + \\rho \\vec g
+      \\\\
+      \\vec E + \\vec v \\times \\vec B = \\eta \\vec j
+      \\\\
+      \\nabla \\times \\vec E =  -\\partial_t \\vec B
+      \\\\
+      \\nabla \\times \\vec B =  (\\vec J + \\epsilon_0 \\partial_t \\vec E) \\mu_0
+      `,
+      explanation: "continuity of momentum and current as well as dynamical maxwell's equations"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\rho (-i\\omega) \\vec v = \\vec j \\times \\vec B - (i \\vec k) p + \\rho \\vec g
+      \\\\
+      \\vec E + \\vec v \\times \\vec B = \\eta \\vec j
+      \\\\
+      (i \\vec k) \\times \\vec E =  -(-i\\omega) \\vec B
+      \\\\
+      (i \\vec k) \\times \\vec B =  (\\vec J + \\epsilon_0 (-i\\omega) \\vec E) \\mu_0
+      `,
+      explanation: "Assuming wave like solutions"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\frac{k}{\\omega} \\hat k \\times \\vec E =   \\vec B
+      \\rightarrow
+      \\\\
+      \\vec E + \\vec v \\times (\\frac{k}{\\omega} \\hat k \\times \\vec E) = \\eta \\vec j
+      \\\\
+      \\vec E + \\frac{k}{\\omega} \\vec v \\times ( \\hat k \\times \\vec E) = \\eta \\vec j
+      `,
       explanation: "NA"
     },
     {
