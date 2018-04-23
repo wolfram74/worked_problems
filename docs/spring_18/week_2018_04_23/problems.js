@@ -17,8 +17,8 @@ var problems = [
       explanation: "Plotting the step size as a function of radius you can see at very small radii close to the singularity the step size gets quite small. You can also observe a hysteresis effect coming from the stricter conditions on making step size smaller vs letting step size get bigger in this particular implementation."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `-`,
+      explanation: "projecting the paths for numerous comets a relative error under 2% over various eccentricities and expected periods. Larger eccentricities would likely lead to more problems as the range of forces will grow more and more extreme."
     },
     {
       expression: `NA`,
@@ -67,12 +67,12 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`numerical methods assignment`,
+    description:"Observe the sensitivity to initial conditions",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `-`,
+      explanation: "In the appendix is the plot of x vs t for the two different starting conditions. z=20 is on the left, z=20.01 is on the right. The trajectories are qualitatively distinct by t~10."
     },
     {
       expression: `NA`,
