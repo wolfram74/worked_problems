@@ -164,23 +164,115 @@ var problems = [
       explanation: "An expression for the total potential energy of the two dipoles in terms of relative positioning."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\vec R = \\frac{m_1 \\vec r_1+m_2 \\vec r_2}{m_1+m_2}, m_t = m_1+m_2
+      \\\\
+      \\ r = \\vec r_{21} = r \\hat r(\\theta)
+      \\\\
+      \\theta = \\arctan(\\frac{y_2-R_y}{x_2-R_x})
+      \\\\
+      \\vec r_1 = \\vec R - \\frac{m_2}{m_t} \\vec r
+      \\\\
+      \\vec r_2 = \\vec R + \\frac{m_1}{m_t} \\vec r
+      \\\\
+      m_r  = \\frac{m_1m_2}{m_t}
+      `,
+      explanation: "new system coordinates to take advantage of the found potential energy."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      T =
+      \\frac{1}{2}(
+        m_t \\dot{ \\vec R^2} +
+        m_r \\dot{ \\vec r^2}
+        )
+      + \\frac{1}{2} I_1 \\dot \\phi_1^2
+      + \\frac{1}{2} I_2 \\dot \\phi_2^2
+      \\\\
+      =
+      \\frac{1}{2}(
+        m_t (\\dot{ R_x^2} + \\dot{ R_y^2}) +
+        m_r (\\dot{ r^2}+\\dot{ \\theta^2}r^2)
+        )
+      + \\frac{1}{2} I_1 \\dot \\phi_1^2
+      + \\frac{1}{2} I_2 \\dot \\phi_2^2
+      `,
+      explanation: "kinetic energy in terms of the new variables"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      U =
+      \\frac{2\\gamma}{r^3}(
+        \\mu_1 \\mu_2 (
+          cos(\\phi_1)cos(\\phi_2)
+          +sin(\\phi_1)sin(\\phi_2)
+          )
+        -3
+        \\mu_1 (
+          cos(\\phi_1)cos(\\theta)
+          +sin(\\phi_1)sin(\\theta)
+          )
+        \\mu_2 (
+          cos(\\phi_2)cos(\\theta)
+          +sin(\\phi_2)sin(\\theta)
+          )
+        )
+      \\\\
+      =
+      - \\frac{\\gamma \\mu_{1} \\mu_{2}}{2 r^{3}}
+      \\left(
+        \\cos{\\left (\\phi_{1} - \\phi_{2} \\right )} + 3 \\cos{\\left (\\phi_{1} + \\phi_{2} - 2 \\theta \\right )}
+        \\right)
+      `,
+      explanation: "A compact expression for the potential energy in the new coordinates. Noticing the center of mass coordinates don't feature their associated conjugate momenta are constants and will be ignored further."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      L = T - U =
+      \\\\
+        \\frac{m_r}{2} (\\dot{ r^2}+\\dot{ \\theta^2}r^2)
+      + \\frac{1}{2} I_1 \\dot \\phi_1^2
+      + \\frac{1}{2} I_2 \\dot \\phi_2^2
+      - U(r, \\theta, \\phi_1, \\phi_2)
+      \\\\
+      \\partial_{\\dot r} L = p_r = m_r \\dot r
+      \\rightarrow
+      \\dot r =\\frac{p_r}{m_r}
+      \\\\
+      \\partial_{\\dot \\theta} L = p_\\theta = m_r r^2 \\dot \\theta
+      \\rightarrow
+      \\dot \\theta = \\frac{p_\\theta}{m_r r^2}
+      \\\\
+      \\partial_{\\dot \\phi_1} L = p_{\\phi_1} = I_1 \\dot \\phi_1
+      \\rightarrow
+      \\dot \\phi_1 = \\frac{p_{\\phi_1}}{I_1}
+      \\\\
+      \\partial_{\\dot \\phi_2} L = p_{\\phi_2} = I_2 \\dot \\phi_2
+      \\rightarrow
+      \\dot \\phi_2 = \\frac{p_{\\phi_2}}{I_2}
+      `,
+      explanation: "Conjugate momenta in terms of velocities and vice versa"
     },
     {
-      expression: `NA`,
+      expression: `
+      H = T+U =
+      \\\\
+      \\frac{m_r}{2} (
+        (\\frac{p_r}{m_r})^2+(\\frac{p_\\theta}{m_r r^2})^2r^2)
+      + \\frac{1}{2} I_1 (\\frac{p_{\\phi_1}}{I_1})^2
+      + \\frac{1}{2} I_2 (\\frac{p_{\\phi_2}}{I_2})^2
+      + U(r, \\theta, \\phi_1, \\phi_2)
+      \\\\
+      =
+      \\frac{1}{2} (
+        \\frac{p_r^2}{m_r}+ \\frac{p_\\theta^2}{m_r r^2})
+      + \\frac{1}{2} \\frac{p_{\\phi_1}^2}{I_1}
+      + \\frac{1}{2} \\frac{p_{\\phi_2}^2}{I_2}
+      - \\frac{\\gamma \\mu_{1} \\mu_{2}}{2 r^{3}}
+      \\left(
+        \\cos{\\left (\\phi_{1} - \\phi_{2} \\right )} + 3 \\cos{\\left (\\phi_{1} + \\phi_{2} - 2 \\theta \\right )}
+        \\right)
+      `,
       explanation: "NA"
     },
     {
