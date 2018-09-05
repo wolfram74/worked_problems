@@ -386,33 +386,87 @@ var problems = [
       expression: `NA`,
       explanation: "NA"
     },]
-  },  {
-    location:`NA`,
-    description:"NA",
+  },
+    {
+    location:`Problem set 1`,
+    description:"Given a definition of torque, show a closed system has conserved net angular momentum.",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\vec N_i =
+      \\Sigma_{j\\neq i}^n (\\vec r_i(t)-\\vec R)\\times \\vec F_{ij}(t)
+      `,
+      explanation: "Net torque on a particle."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\vec N_{tot}=
+      \\Sigma_i^n \\vec N_i =
+      \\Sigma_i^n\\Sigma_{j\\neq i}^n (\\vec r_i(t)-\\vec R)\\times \\vec F_{ij}(t)
+      `,
+      explanation: "Total torque on the system"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      (\\vec A - \\vec B) \\times \\vec C
+      =
+      \\vec A\\times \\vec C - \\vec B \\times \\vec C
+      \\\\
+      \\rightarrow
+      \\\\
+      \\vec N_{tot}=
+      \\Sigma_i^n\\Sigma_{j\\neq i}^n
+      \\vec r_i(t)\\times \\vec F_{ij}(t)
+      -\\vec R\\times \\vec F_{ij}(t)
+      `,
+      explanation: "Noting distributivity of the cross product"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\vec F_{ij}(t) + \\vec F_{ji}(t) = 0
+      \\\\
+      \\rightarrow
+      \\\\
+      \\Sigma_i^n\\Sigma_{j\\neq i}^n
+      \\vec R\\times \\vec F_{ij}(t) = 0
+      `,
+      explanation: "Assuming newton's third law, part of the sum trivially goes to 0 by symmetry."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\vec N_{tot}=
+      \\Sigma_i^n\\Sigma_{j\\neq i}^n
+      \\vec r_i(t)\\times \\vec F_{ij}(t)
+      \\\\
+      \\vec r_i(t)\\times \\vec F_{ij}(t)
+      +\\vec r_j(t)\\times \\vec F_{ji}(t)
+      =
+      \\vec r_i(t)\\times \\vec F_{ij}(t)
+      -\\vec r_j(t)\\times \\vec F_{ij}(t)
+      =
+      (\\vec r_i(t)-\\vec r_j(t))\\times \\vec F_{ij}(t)
+      \\\\
+      \\vec N_{tot}=
+      \\Sigma_i^n\\Sigma_{j > i}^n
+      (\\vec r_i(t)-\\vec r_j(t))\\times \\vec F_{ij}(t)
+      `,
+      explanation: "adding the lower half of the i-j grid to the upper half."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\vec r_{ij} = (\\vec r_i(t)-\\vec r_j(t))
+      \\\\
+      \\hat r_{ij} = \\hat F_{ij}
+      \\\\
+      \\rightarrow
+      \\\\
+      (\\vec r_i(t)-\\vec r_j(t))\\times \\vec F_{ij}(t) = 0
+      \\\\
+      \\rightarrow
+      \\\\
+      \\vec N_{tot} = 0 = \\vec{ \\dot L}
+      `,
+      explanation: "Assuming that the force is along the line of displacement, the net torque goes to 0 and angular momentum for the system is a constant."
     },
     {
       expression: `NA`,
