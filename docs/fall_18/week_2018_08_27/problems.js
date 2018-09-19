@@ -159,6 +159,10 @@ var problems = [
       \\\\
       -\\partial_{\\phi_2} H =
       \\frac{\\gamma \\mu_{1} \\mu_{2}}{2 r^{3}} \\left(\\sin{\\left (\\phi_{1} - \\phi_{2} \\right )} - 3 \\sin{\\left (\\phi_{1} + \\phi_{2} - 2 \\theta \\right )}\\right)
+      \\\\
+      -\\partial_{r} H =
+      - \\frac{3 \\gamma \\mu_{1} \\mu_{2}}{2 r^{4}} \\left(\\cos{\\left (\\phi_{1} - \\phi_{2} \\right )} + 3 \\cos{\\left (\\phi_{1} + \\phi_{2} - 2 \\theta \\right )}\\right)
+      + \\frac{p_{\\theta}^{2}}{m_{r} r^{3}}
       `,
       explanation: "Assuming fixed r we determine the conjugate forces for the angular coordinates."
     },
