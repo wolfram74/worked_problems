@@ -1,16 +1,73 @@
 var problems = [
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`Problem set 3`,
+    description:"vary several actions and see if they behave differentally than from euler lagrange equations",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      S = \\int e^{a x^2}e^{b v^2} dt
+      \\\\
+      \\delta S =
+      \\int 2a xe^{a x^2}e^{b v^2}\\delta  x dt
+      +
+      \\int 2b ve^{a x^2}e^{b v^2}\\delta  v dt
+      \\\\
+      \\delta S =
+      \\int 2a xe^{a x^2}e^{b v^2}\\delta  x dt
+      -
+      \\int 2b \\dot v e^{a x^2}e^{b v^2}\\delta  x dt
+      -
+      \\int 4 a b x v^2e^{a x^2}e^{b v^2}\\delta  x dt
+      -
+      \\int 4b^2 v^2 \\dot ve^{a x^2}e^{b v^2}\\delta  x dt
+      \\\\
+      \\therefore
+      \\\\
+      2a xe^{a x^2}e^{b v^2}=
+      2b \\dot v e^{a x^2}e^{b v^2}+
+      4 a b x v^2e^{a x^2}e^{b v^2}+
+      4b^2 v^2 \\dot ve^{a x^2}e^{b v^2}
+      \\\\
+      2a x-4 a b x v^2=
+      (2b  +
+      4b^2 v^2) \\dot v
+      \\\\
+      \\dot v = \\frac{2a x-4 a b x v^2}{2b  +4b^2 v^2}
+      `,
+      explanation: "velocity dependent acceleration from first action."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\partial_x(e^{a x^2}e^{b v^2})
+      =
+      \\frac{d}{dt}\\partial_v(e^{a x^2}e^{b v^2})
+      \\\\
+      a2xe^{a x^2}e^{b v^2}
+      =
+      \\frac{d}{dt}2bve^{a x^2}e^{b v^2}
+      \\\\
+      a2xe^{a x^2}e^{b v^2}
+      =
+      2b\\dot v e^{a x^2}e^{b v^2}
+      +
+       2bv 2axv e^{a x^2} e^{b v^2}
+      +
+      2bve^{a x^2} 2bv\\dot ve^{b v^2}
+      \\\\
+      a2x
+      =
+      2b\\dot v
+      +
+      4abxv^2
+      +
+      4b^2v^2 \\dot v
+      \\\\
+      \\frac{a2x-4abxv^2}{2b + 4b^2v^2}
+      =
+      \\dot v
+      `,
+      explanation: "surprisingly the same equations of motion."
     },
     {
       expression: `NA`,
