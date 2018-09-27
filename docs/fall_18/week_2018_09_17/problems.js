@@ -1,5 +1,5 @@
 var problems = [
-
+//enough
   {
     location:`Problem set 3`,
     description:"vary several actions and see if they behave differentally than from euler lagrange equations",
@@ -400,8 +400,8 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`problem set 3`,
+    description:"examining the lagrangian $&L=\\frac{1}{2}e^{\\gamma t}(m\\vec {\\dot q^2} - k\\vec { q^2})&$ find a conserved quantity, find the equations of motion, perform a coordinate transformation.",
     steps:[
     {
       expression: `NA`,
@@ -464,7 +464,7 @@ var problems = [
       explanation: "NA"
     },]
   },
-
+//set up
   {
     location:`Problem set 3`,
     description:"Using lagrange multipliers to determine the movement of a block on a frictionless wedge.",
@@ -475,7 +475,7 @@ var problems = [
       \\\\
       U = mgy
       \\\\
-      tan(\\theta) = y/x \\rightarrow f(x,y) = y-xtan(\\theta) = 0
+      tan(\\theta) = y/(x-x_w) \\rightarrow f(x,y) = y-(x-x_w)tan(\\theta) = 0
       `,
       explanation: "The various terms we will use to form our lagrangian"
     },
