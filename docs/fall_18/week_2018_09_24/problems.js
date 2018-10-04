@@ -179,11 +179,16 @@ var problems = [
       expression: `
       \\Delta t = \\int_{r_0}^{r_0+\\Delta r} \\frac{dr}{\\dot r(r)}
       `,
-      explanation: "NA"
+      explanation: "the time elapsed is just the distance traveled over the velocity."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot r(r) =
+      (\\frac{2\\gamma}{m}
+        (\\frac{1}{r}-\\frac{1}{r_0})
+        )^{1/2}
+      `,
+      explanation: "velocity derived from the position based conservation of momentum"
     },
     {
       expression: `NA`,
