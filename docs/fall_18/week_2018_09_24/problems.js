@@ -431,70 +431,70 @@ var problems = [
     },]
   },
 
-  // {
-  //   location:`problem set 4`,
-  //   description:"Show that the potential $&V(r) = -kr^{-1}+hr^{-2}&$ is equivalent to the keplerian potential in a rotational reference frame. Show that for bound orbits the rotating frame period is $&\\frac{2\\pi m h }{l^2 \\tau}&$ ",
-  //   steps:[
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },
-  //   {
-  //     expression: `NA`,
-  //     explanation: "NA"
-  //   },]
-  // },
+  {
+    location:`problem set 4`,
+    description:"Show that the potential $&V(r) = -kr^{-1}+hr^{-2}&$ is equivalent to the keplerian potential in a rotational reference frame. Show that for bound orbits the rotating frame period is $&\\frac{2\\pi m h }{l^2 \\tau}&$ ",
+    steps:[
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },]
+  },
 
 ]
