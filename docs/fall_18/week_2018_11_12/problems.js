@@ -87,7 +87,9 @@ var problems = [
       explanation: "NA"
     },]
   },
-/*described*/
+/*described
+done
+*/
   {
     location:`Problem set 6`,
     description:"given a mass density $&\\rho = \\rho_0\\delta(z)&$ for x between 0 and a and y between 0 and b, otherwise 0. Calculate the momenta of inertia for rotation around the z axis",
@@ -167,20 +169,63 @@ var problems = [
     description:"find the moment of inertia tensor for a uniform cylinder about it's center of mass. Describe it's motion in time when the initial angular velocity is mostly along the long axis.",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\rho = \\frac{M}{\\pi R^2 H}
+      \\\\
+      M_{ij} = \\int \\rho (\\delta_{ij}(r^2)-e_i*e_j )dv
+      \\\\
+      x = cos(\\theta) r
+      \\\\
+      y = sin(\\theta) r
+      \\\\
+      dv = rd\\theta dr dz
+      `,
+      explanation: "Starting point for our analysis"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+    //Integrate[Integrate[Integrate[(z^2+r^2*sin(x)^2)r,x, 0, 2pi], r, 0, R], z, 0, H]
+      expression: `
+      M_{xx}
+      = \\int \\rho (z^2+y^2 )rd\\theta dr dz
+      \\\\
+      = \\rho \\int_{-H/2}^{H/2}\\int_0^R\\int_0^{2\\pi} (z^2+r^2sin(\\theta)^2 )rd\\theta dr dz
+      \\\\
+      = \\rho \\int_{-H/2}^{H/2}\\int_0^R\\int_0^{2\\pi} (z^2+r^2sin(\\theta)^2 )rd\\theta dr dz
+      \\\\
+      = \\rho \\pi \\int_{-H/2}^{H/2}\\int_0^R (2z^2+r^2 )r dr dz
+      \\\\
+      = \\rho \\frac{\\pi}{4}R^2 \\int_{-H/2}^{H/2} (4z^2+R^2 )  dz
+      \\\\
+      = \\frac{1}{12}\\rho \\pi R^2 H (H^2+3R^2 )
+      = \\frac{1}{12} M (H^2+3R^2 )
+      `,
+      explanation: "As we made no particular distinction between x and y axes, then $&M_{yy}&$ must be the same as well"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      M_{zz}
+      = \\int \\rho (x^2+y^2 )rd\\theta dr dz
+      \\\\
+      = \\rho \\int_{-H/2}^{H/2}\\int_0^R\\int_0^{2\\pi}
+      (r^2cos(\\theta)^2+r^2sin(\\theta)^2 )r
+      d\\theta dr dz
+      = \\rho \\int_{-H/2}^{H/2}\\int_0^R\\int_0^{2\\pi}
+      r^3
+      d\\theta dr dz
+      \\\\
+      =\\frac{1}{2} \\rho \\pi H R^2 R^2 = \\frac{1}{2} M R^2
+      `,
+      explanation: "spinning around the z axis we have as one would imagine no dependence on H once total mass is used"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `M_{xy}
+      = -\\int \\rho (xy )rd\\theta dr dz
+      \\\\
+      = -\\int \\rho (cos(\\theta)sin(\\theta) )r^3d\\theta dr dz=0
+      \\\\
+
+      `,
+      explanation: "we see the off diagonal terms are all 0 because they contain odd powers of sins and cosines."
     },
     {
       expression: `NA`,
@@ -319,6 +364,122 @@ var problems = [
     {
       expression: `NA`,
       explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },]
+  },
+ {
+    location:`exam`,
+    description:"find the path for the action $&\\dot y^2 y^2&$ given an initial position and velocity",
+    steps:[
+    {
+      expression: `
+      \\partial_y L = \\frac{d}{dt}(\\partial_{\\dot y L})
+      \\\\
+      2y\\dot y^2 = \\frac{d}{dt}(2y^2\\dot y)
+      \\\\
+      y\\dot y^2 = \\frac{d}{dt}(y^2\\dot y)
+      \\\\
+      f = y^2\\dot y
+      \\\\
+      f^2y^{-3} = \\frac{d}{dt}(f)
+      \\\\
+      fy^{-3} = \\dot f f^{-1}
+      \\\\
+      \\dot y y^{-1} =\\dot f f^{-1}
+      \\\\
+      \\dot y y^{-1} =\\dot f f^{-1}
+      `,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },
+    {
+      expression: `NA`,
+      explanation: "NA"
+    },]
+  },
+ {
+    location:`exam`,
+    description:"find the conserved quantities for the action $&\\frac{m}{2}(\\dot x^2\\dot y^2 + \\dot z^2)-\\frac{1}{2}(ax^2+bz^2)&$",
+    steps:[
+    {
+      expression: `
+      \\partial_y L=0 \\therefore p_y=\\partial_{\\dot y} L= m\\dot x^2 \\dot y
+      `,
+      explanation: "first constant of motion"
+    },
+    {
+      expression: `
+      \\partial_t L = 0 \\therefore \\dot H =\\frac{d}{dt} [\\Sigma p_i\\dot q_i) -L]=0
+      \\\\
+      H =
+      \\frac{1}{2}(ax^2+bz^2) + 2m\\dot x^2\\dot y^2 + m\\dot z^2
+      -\\frac{m}{2}(\\dot x^2\\dot y^2 + \\dot z^2)
+      \\\\
+      =\\frac{m}{2}(3\\dot x^2\\dot y^2 + \\dot z^2)+\\frac{1}{2}(ax^2+bz^2)
+      `,
+      explanation: "the hamiltonian constant of motion"
     },
     {
       expression: `NA`,
