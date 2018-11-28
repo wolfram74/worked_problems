@@ -173,12 +173,32 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    location:`self`,
+    description:"some comparison of other results from pollack and stump",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\omega_{0\\beta}^2 = \\frac{\\mu_0 \\mu^2}{4 \\pi I r^3}
+      \\\\
+      =
+      \\frac{3\\mu_0 \\mu^2}{2 \\pi I L_0^4}
+      \\frac{L_0}{6  I }
+      \\\\
+      =
+      F_0
+      \\frac{10 }{  m_1 L_0^2 }
+      \\frac{L_0}{ 6 }
+      =
+
+      \\frac{F_0 }{  m_1 L_0 }
+      \\frac{10 }{ 6 }
+      =
+      \\frac{5 }{ 3 }
+      \\frac{1}{  T_0^2 } = \\omega_{0\\beta}^2=\\omega_s
+      \\\\
+      \\omega_{0\\alpha}^2 = 3\\omega_s^2 = \\frac{5}{7}\\omega_o^2
+      `,
+      explanation: "in the dimensionless unit system and spherical moment of inertia assumed, the spinning mode agrees, and we see that by preventing orbital motion a chunk of restoring force is missing."
     },
     {
       expression: `NA`,
