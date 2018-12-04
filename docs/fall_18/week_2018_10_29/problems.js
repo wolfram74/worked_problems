@@ -128,27 +128,27 @@ var problems = [
       explanation: "NA"
     },]
   },
-
+//mostly donezo
   {
     location:`Problem set 6`,
     description:"analyze bosons in a 2-level system",
     steps:[
     {
       expression: `
-      |1> = |1, 0>,
-      |2> = |0, 1>
+      |1>_q = |1, 0>_o,
+      |2>_q = |0, 1>_o
       \\\\
-      |1,1,1> = |3, 0>
+      |1,1,1>_q = |3, 0>_o
       \\\\
-      |2,1,1> =
-      |1,2,1> =
-      |1,1,2> = |2, 1>
+      |2,1,1>_q =
+      |1,2,1>_q =
+      |1,1,2>_q = |2, 1>_o
       \\\\
-      |2,2,1> =
-      |1,2,2> =
-      |2,1,2> = |1, 2>
+      |2,2,1>_q =
+      |1,2,2>_q =
+      |2,1,2>_q = |1, 2>_o
       \\\\
-      |2,2,2> = |0, 3>
+      |2,2,2>_q = |0, 3>_o
       `,
       explanation: "The possible 1 and 3 particle states."
     },
@@ -216,7 +216,7 @@ var problems = [
     },
     {
       expression: `
-      \\phi = -kT ln(Z)
+      \\phi = -kT ln(\\mathcal{Z})
       = kT (
         ln(1-e^{-\\beta(\\epsilon_1 - \\mu)})
         +ln(1-e^{-\\beta(\\epsilon_2 - \\mu)})
@@ -313,30 +313,140 @@ var problems = [
       explanation: "NA"
     },]
   },
-
+//also donezish
   {
     location:`Problem set 6`,
     description:"analyze fermiions in a 2-level system",
     steps:[
     {
-      expression: `NA`,
+      expression: `
+      |1>_q = |1, 0>_o,
+      |2>_q = |0, 1>_o
+      \\\\
+      |1,2>_q = |1, 1>_o
+      `,
+      explanation: "The possible 1 and 3 particle states. Of importance is that for a 2 level system, there are no 3 particle states because of the pauli exclusion principle."
+    },
+    {
+      expression: `
+      N_i=N_{n_1,n_2} = n_1+n_2
+      `,
+      explanation: "tabulating the number of ways different occupancies can be achieved."
+    },
+    {
+      expression: `
+      E_i=E_{n_1,n_2} = n_1\\epsilon_1+n_2\\epsilon_2
+      `,
+      explanation: "The total energy in the various configurations."
+    },
+    {
+      expression: `
+      \\mathcal{Z}
+      =
+      \\Sigma_i e^{-\\beta(E_i-\\mu N_i)}
+      =
+      \\Sigma_{k=0}^{1}\\Sigma_{j=0}^{1} e^{
+        -\\beta(n_k\\epsilon_1+n_j\\epsilon_2-\\mu(n_k+n_j) )
+      }
+      \\\\
+      =
+      \\Sigma_{k=0}^{1}\\Sigma_{j=0}^{1}
+      (e^{
+              -\\beta(\\epsilon_1 - \\mu)
+            })^{n_k}
+      (e^{
+              -\\beta(\\epsilon_2 - \\mu)
+            })^{n_j}
+      \\\\
+      =
+      1
+      +e^{-\\beta(\\epsilon_1 - \\mu)}
+      +e^{-\\beta(\\epsilon_2 - \\mu)}
+      +e^{-\\beta(\\epsilon_1+\\epsilon_2 - 2\\mu)}
+      =
+      (1+e^{-\\beta(\\epsilon_1 - \\mu)})(1+e^{-\\beta(\\epsilon_2 - \\mu)})
+      `,
+      //http://functions.wolfram.com/GeneralIdentities/12/ butts?
+      explanation: "As the infinite sum is now finite, no constraints on energy are needed for convergence."
+    },
+    {
+      expression: `
+      \\phi = -kT ln(\\mathcal{Z})
+      = -kT ln(
+      (1+e^{-\\beta(\\epsilon_1 - \\mu)})
+      (1+e^{-\\beta(\\epsilon_2 - \\mu)})
+      )
+      =
+      -kT ln(
+      (1+e^{-\\beta(\\epsilon_1 - \\mu)})
+      )
+      -kT ln(
+      (1+e^{-\\beta(\\epsilon_2 - \\mu)})
+      )
+
+      `,
       explanation: "NA"
     },
     {
-      expression: `NA`,
+      expression: `
+      p_i = e^{-\\beta(E_i-\\mu(n_1+n_2))}/\\mathcal{Z}
+      `,
       explanation: "NA"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      <n_1>
+      =
+      \\Sigma_{n_k=0}^1 \\Sigma_{n_j=0}^1
+      n_ke^{-\\beta(
+        \\epsilon_1 n_k+\\epsilon_2 n_j+-\\mu(n_k+n_j)
+        )}/\\mathcal{Z}
+      \\\\
+      =
+      \\mathcal{Z}^{-1}
+      \\Sigma_{n_k=0}^1 \\Sigma_{n_j=0}^1
+      (-\\beta)^{-1}
+      \\partial_{\\epsilon_1}e^{-\\beta(
+        \\epsilon_1 n_k+\\epsilon_2 n_j+-\\mu(n_k+n_j)
+        )}
+      \\\\
+      =
+      (-\\beta)^{-1}
+      \\mathcal{Z}^{-1}
+      \\partial_{\\epsilon_1} \\mathcal{Z}
+      =
+      (-\\beta)^{-1} \\partial_{\\epsilon_1} ln(\\mathcal{Z})
+      \\\\
+      <n_1> = \\frac{-e^{-\\beta(\\epsilon_1-\\mu)}}{1+e^{-\\beta(\\epsilon_1-\\mu)}}
+      \\\\
+      <n_2> = \\frac{-e^{-\\beta(\\epsilon_2-\\mu)}}{1+e^{-\\beta(\\epsilon_2-\\mu)}}
+      `,
+      explanation: "determining the expected occupation of state 1 and 2."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
-    },
-    {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `<U>
+      =
+      \\Sigma_{n_k=0}^1\\Sigma_{n_j=0}^1
+      (\\epsilon_1 n_k+\\epsilon_2 n_j)e^{-\\beta(
+        \\epsilon_1 n_k+\\epsilon_2 n_j+-\\mu(n_k+n_j)
+        )}/\\mathcal{Z}
+      \\\\
+      =
+      \\mathcal{Z}^{-1}
+      \\Sigma_{n_k=0}^1\\Sigma_{n_j=0}^1
+      (\\epsilon_1 n_k+\\epsilon_2 n_j)e^{-\\beta(
+        \\epsilon_1 n_k+\\epsilon_2 n_j
+        )}
+      e^{\\beta\\mu(n_k+n_j)}
+      \\\\
+      =
+      \\mathcal{Z}^{-1}
+      (-\\partial_\\beta \\mathcal{Z}|_{\\beta \\mu})
+      = -\\partial_\\beta ln(\\mathcal{Z})|_{\\beta \\mu}
+      \\\\
+
+      `,
+      explanation: "The total energy can be found assuming that the chemical potential varies inversely with temperature."
     },
     {
       expression: `NA`,
@@ -383,21 +493,135 @@ var problems = [
   {
     location:`Problem set 6`,
     description:"analyze bosons and fermions in an infinite level system",
+    /*
+    goals:
+      ln Z-
+      N
+      range of z=mu*beta
+      FD mu for T->0
+      polarization factor?
+      ch12-14 quantum systems
+    */
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\mathcal{Z}_B
+      =
+      \\Pi_{i=1}^{\\infty}
+      \\Sigma_{n_i=0}^\\infty
+      e^{-\\beta(\\epsilon_i-\\mu)n_i}
+      \\\\
+      =
+      \\Pi_{i=1}^{\\infty}
+      (1-e^{-\\beta(\\epsilon_i-\\mu)})^{-1}
+      =
+      \\Pi_{i=1}^{\\infty}
+      (1-e^{\\beta \\mu}e^{-\\beta\\epsilon_i})^{-1}
+      \\\\
+      ln(\\mathcal{Z}_B) = -\\Sigma_{i=1}^{\\infty}ln(1-ze^{-\\beta\\epsilon_i})
+      \\\\
+      \\mathcal{Z}_F
+      =
+      \\Pi_{i=1}^{\\infty}
+      \\Sigma_{n_i=0}^1
+      e^{-\\beta(\\epsilon_i-\\mu)n_i}
+      \\\\
+      =
+      \\Pi_{i=1}^{\\infty}
+      (1+e^{-\\beta(\\epsilon_i-\\mu)})
+      =
+      \\Pi_{i=1}^{\\infty}
+      (1+e^{\\beta \\mu}e^{-\\beta\\epsilon_i})
+      \\\\
+      ln(\\mathcal{Z}_F) = \\Sigma_{i=1}^{\\infty}ln(1+ze^{-\\beta\\epsilon_i})
+
+      `,
+      explanation: "The partition functions for fermions and bosons."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      -kTln(\\mathcal{Z}) = \\phi
+      \\\\
+      N = -\\partial_\\mu \\phi
+      \\\\
+      \\phi_B = \\Sigma_{i=1}^{\\infty}\\beta^{-1}ln(1-e^{\\mu \\beta}e^{-\\beta\\epsilon_i})
+      \\\\
+      N_B =
+      -\\partial_\\mu
+      \\Sigma_{i=1}^{\\infty}
+      \\beta^{-1}ln(1-e^{\\mu \\beta}e^{-\\beta\\epsilon_i})
+      =
+      \\Sigma_{i=1}^{\\infty}
+      \\beta^{-1}ln(1-e^{\\mu \\beta}e^{-\\beta\\epsilon_i})
+      \\\\
+      =
+      \\Sigma_{i=1}^{\\infty}
+      \\frac{1}{e^{-\\mu \\beta}e^{\\beta\\epsilon_i}-1}=
+      \\Sigma_{i=1}^{\\infty}
+      \\frac{1}{z^{-1}e^{\\beta\\epsilon_i}-1}
+      \\\\
+      N_F
+      =
+      \\Sigma_{i=1}^{\\infty}
+      \\frac{1}{z^{-1}e^{\\beta\\epsilon_i}+1}
+      `,
+      explanation: "Finding expressions for the total particles in the system. To Keep N positive finite, in the boson case $&0<Z<e^{\\beta \\epsilon_1}&$ while in the fermion case there is no limit assuming that the energy states go to infinite."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      N_F
+      =
+      \\Sigma_{i=1}^{\\infty}
+      \\frac{1}{z^{-1}e^{\\beta\\epsilon_i}+1}
+      =
+      \\Sigma_{i=1}^{\\infty}
+      \\frac{1}{e^{\\beta(\\epsilon_i-\\mu)}+1}
+      \\\\
+      T\\rightarrow 0 \\therefore \\beta \\rightarrow \\infty
+      \\\\
+      \\therefore \\mu \\rightarrow \\epsilon_N
+      `,
+      explanation: "as temperature approaches 0 the chemical potential will equal Nth energy state to match the fact that the N lowest states will be occupied to minimize system energy."
     },
     {
-      expression: `NA`,
+      expression: `
+      \\epsilon = p^2/(2m),
+      p = (2 m \\epsilon)^{1/2},
+      dp = (\\frac{m}{2\\epsilon})^{1/2} d \\epsilon,
+      u = \\beta \\epsilon, d\\epsilon = \\beta^{-1} du
+      \\\\
+      N_B
+      =
+      \\Sigma_{i=1}^{\\infty}
+      \\frac{1}{z^{-1}e^{\\beta\\epsilon_i}+1}
+      \\approx
+      \\frac{V}{h^3}\\int
+      \\frac{1}{z^{-1}e^{\\beta \\epsilon} -1} 4\\pi p^2 dp
+      \\\\
+      =
+      \\frac{V}{h^3}\\int
+        \\frac{1}{z^{-1}e^{\\beta \\epsilon} -1}
+        4\\pi 2 m \\epsilon (\\frac{m}{2\\epsilon})^{1/2}
+      d \\epsilon
+      \\\\
+      =
+      \\frac{V}{h^3}\\
+      4\\pi 2^{1/2} m^{3/2}
+      \\int
+        \\frac{
+          \\epsilon^{1/2}
+        }{z^{-1}e^{\\beta \\epsilon} -1}
+      d \\epsilon
+      \\\\
+      =
+      \\frac{V}{h^3}\\
+      2\\pi 2^{3/2} m^{3/2} \\beta^{-3/2}
+      \\int
+        \\frac{
+          u^{3/2-1}
+        }{z^{-1}e^{u} -1}
+      d u
+      `,
       explanation: "NA"
     },
     {
