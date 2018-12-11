@@ -588,12 +588,13 @@ var problems = [
       \\epsilon = p^2/(2m),
       p = (2 m \\epsilon)^{1/2},
       dp = (\\frac{m}{2\\epsilon})^{1/2} d \\epsilon,
-      u = \\beta \\epsilon, d\\epsilon = \\beta^{-1} du
+      u = \\beta \\epsilon, d\\epsilon = \\beta^{-1} du,
+      \\Gamma(3/2) = \\pi^{1/2}/2
       \\\\
       N_B
       =
       \\Sigma_{i=1}^{\\infty}
-      \\frac{1}{z^{-1}e^{\\beta\\epsilon_i}+1}
+      \\frac{1}{z^{-1}e^{\\beta\\epsilon_i}-1}
       \\approx
       \\frac{V}{h^3}\\int
       \\frac{1}{z^{-1}e^{\\beta \\epsilon} -1} 4\\pi p^2 dp
@@ -615,30 +616,160 @@ var problems = [
       \\\\
       =
       \\frac{V}{h^3}\\
-      2\\pi 2^{3/2} m^{3/2} \\beta^{-3/2}
+      2\\pi^{1/2} \\pi^{3/2} 2^{3/2} m^{3/2} \\beta^{-3/2}
       \\int
         \\frac{
           u^{3/2-1}
         }{z^{-1}e^{u} -1}
       d u
+      \\\\
+      \\lambda \\equiv \\frac{h}{(2\\pi m kt)^{1/2}}
+      \\\\
+      N_B
+      =
+      \\frac{V}{\\lambda^3}\\
+      2\\pi^{1/2}
+      \\int
+        \\frac{
+          u^{3/2-1}
+        }{z^{-1}e^{u} -1}
+      d u
+      =
+      \\frac{V}{\\lambda^3}\\
+      2\\pi^{1/2}
+      \\Gamma(3/2)g_{3/2}(z)
+      +\\frac{z}{1-z}
+      =
+      \\frac{V}{\\lambda^3}\\
+      \\pi
+      g_{3/2}(z)
+      +\\frac{z}{1-z}
+      \\\\
+      q\\equiv
+      ln(\\mathcal{Z}_B)
+      = -\\Sigma_{i=1}^{\\infty}ln(1-ze^{-\\beta\\epsilon_i})
+      \\approx
+        -\\frac{V}{h^3}
+        \\int ln(1-ze^{-\\beta\\epsilon_i}) 4 \\pi p^2 dp
       `,
-      explanation: "NA"
+      explanation: "various bits to obfuscate the physical terms as much as possible to get them into tidy mathematical forms."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      g_n(z) \\equiv
+      \\Gamma(n)^{-1}
+      \\int_0^\\infty
+      \\frac{1}{z^{-1}e^x-1} x^{n-1}
+      dx
+      \\\\
+      \\frac{1}{z^{-1}e^x-1}
+      =
+      \\frac{1}{z^{-1}e^x(1-ze^{-x})}
+      =
+      ze^{-x}\\frac{1}{(1-ze^{-x})}
+      =
+      ze^{-x}\\Sigma_{k=0}^\\infty z^k e^{-kx}
+      =
+      \\Sigma_{k=1}^\\infty z^k e^{-kx}
+      \\\\
+      \\Gamma(n)^{-1}
+      \\int_0^\\infty
+      x^{n-1} \\Sigma_{k=1}^\\infty z^k e^{-kx}
+      dx
+      =
+      \\Gamma(n)^{-1}
+      \\Sigma_{k=1}^\\infty z^k
+      \\int_0^\\infty
+      x^{n-1} e^{-kx}
+      dx
+      \\\\
+      y=kx \\rightarrow x^{n-1}dx = k^{-n}y^{n-1}dy
+      \\\\
+      \\Gamma(n)^{-1}
+      \\Sigma_{k=1}^\\infty z^k k^{-n}
+      \\int_0^\\infty
+      y^{n-1} e^{-y}
+      dy
+      =\\Sigma_{k=1}^\\infty z^k k^{-n} = g_n(z)
+      `,
+      explanation: "Recasting the g function as a series"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      f_n(z) \\equiv
+      \\Gamma(n)^{-1}
+      \\int_0^\\infty
+      \\frac{1}{z^{-1}e^x+1} x^{n-1}
+      dx
+      \\\\
+      \\frac{1}{z^{-1}e^x+1}
+      =
+      \\frac{1}{z^{-1}e^x(1+ze^{-x})}
+      =
+      ze^{-x}\\frac{1}{(1+ze^{-x})}
+      =
+      ze^{-x}\\Sigma_{k=0}^\\infty (-z)^k e^{-kx}
+      =
+      -\\Sigma_{k=1}^\\infty (-z)^k e^{-kx}
+      \\\\
+      \\Gamma(n)^{-1}
+      (-1)\\int_0^\\infty
+      x^{n-1} \\Sigma_{k=1}^\\infty (-z)^k e^{-kx}
+      dx
+      =
+      -\\Gamma(n)^{-1}
+      \\Sigma_{k=1}^\\infty (-z)^k
+      \\int_0^\\infty
+      x^{n-1} e^{-kx}
+      dx
+      \\\\
+      y=kx \\rightarrow x^{n-1}dx = k^{-n}y^{n-1}dy
+      \\\\
+      -\\Gamma(n)^{-1}
+      \\Sigma_{k=1}^\\infty (-1z)^k k^{-n}
+      \\int_0^\\infty
+      y^{n-1} e^{-y}
+      dy
+      =-\\Sigma_{k=1}^\\infty (-z)^k k^{-n} = f_n(z)
+      `,
+      explanation: "Similar process for the f function."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      N_B
+      = \\frac{V}{\\lambda^3}g_{3/2}(z) +\\frac{z}{1-z}
+      = \\frac{V}{\\lambda^3}
+        \\Sigma_{k=1}^\\infty z^k k^{-3/2}
+        +\\frac{z}{1-z}
+      \\\\
+      T \\rightarrow \\infty,
+      \\lambda \\rightarrow 0,
+      z \\rightarrow 0
+      `,
+      explanation: "to maintain a finite quantity in the boson case z must approach 0 at very large temperatures. Given the sum that governs fermions, the same applies, though since it's an alternating sum, z can approach 0 more slowly."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      T_c \\; \\; S.T. \\; \\;  N = \\frac{V}{\\lambda^3}\\zeta(3/2),
+      \\zeta(n) = g_n(1) = \\Sigma_{k=1}^\\infty 1^k k^{-n}
+      \\\\
+      \\partial_T U|_{V} =C_V
+      \\\\
+      U
+      = - \\partial_\\beta ln(\\mathcal{Z})
+      =\\frac{3}{2}kT \\frac{V}{\\lambda^3} g_{5/2}(z)
+      \\\\
+      C_V =
+      \\frac{3}{2}k\\frac{V}{\\lambda^3} \\zeta(5/2)
+      +\\frac{3}{2}kT V\\partial_T(\\frac{1}{\\lambda^3}) \\zeta(5/2)
+      \\\\
+      =
+      \\frac{3}{2}k\\frac{V}{\\lambda^3} \\zeta(5/2)
+      +\\frac{3}{2}kT V
+      \\frac{3\\pi mk}{h^2\\lambda}
+      \\zeta(5/2)
+      `,
+      explanation: "in this regime $&N_e\\approx0&$ and $&N_g\\approx N&$"
     },
     {
       expression: `NA`,
