@@ -48,6 +48,28 @@ def ham_vec():
     sympy.pprint(poisson(pos, momen, h_vec_y, h_vec_y))
     sympy.pprint(poisson(pos, momen, h_vec_z, h_vec_z))
 
+def ham_jacobi():
+    x,z, pix, piz, t = sympy.symbols('x z pi_x pi_z t', real=True)
+    qx,qz= sympy.symbols('q_x q_z', real=True)
+    m, g= sympy.symbols('m g', real=True,positive=True)
+    E, W, c0 = sympy.symbols('E w c0', real=True)
+    princ =pix*x +c0 -E*t+(
+        2*m*sympy.sqrt(2*g)*(piz**-1 - z)**(1.5)/(3)
+        )
+    E_equiv = pix**2/(2*m)+m*g/piz
+    W_equiv = 2*m**2*g/piz
+    princ = princ.subs(E, E_equiv)
+    princ = princ.subs(W, W_equiv)
+    gen_func = princ - qx*pix-qz*piz
+    sympy.pprint(princ)
+    print("simpl")
+    sympy.pprint(princ.simplify())
+    sympy.pprint(gen_func)
+    sympy.pprint(gen_func.diff(z))
+    sympy.pprint(gen_func.diff(piz))
+    sympy.pprint(princ.diff(piz))
+
 if __name__ == '__main__':
     # ham_vec()
-    relativistic()
+    ham_jacobi()
+    # relativistic()
