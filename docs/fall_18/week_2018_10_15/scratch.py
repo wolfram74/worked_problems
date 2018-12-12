@@ -64,10 +64,11 @@ def ham_jacobi():
     sympy.pprint(princ)
     print("simpl")
     sympy.pprint(princ.simplify())
-    sympy.pprint(gen_func)
-    sympy.pprint(gen_func.diff(z))
-    sympy.pprint(gen_func.diff(piz))
+    # sympy.pprint(gen_func)
+    # sympy.pprint(gen_func.diff(z))
+    # sympy.pprint(gen_func.diff(piz))
     sympy.pprint(princ.diff(piz))
+    sympy.pprint(princ.diff(pix))
 
 if __name__ == '__main__':
     # ham_vec()

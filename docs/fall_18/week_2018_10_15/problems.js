@@ -363,17 +363,17 @@ var problems = [
       \\\\
       E = \\frac{1}{2m}((\\partial_x S_x)^2 + (\\partial_z S_z)^2) + mgz
       \\\\
-      2mE-(\\partial_x S_x)^2 = (\\partial_z S_z)^2+2m^2gz
+      E-\\frac{1}{2m}(\\partial_x S_x)^2 = \\frac{1}{2m}(\\partial_z S_z)^2+mgz
       `,
       explanation: "as both sides of the equation are in independent variables, they must both equal to some other constant quantity."
     },
     {
       expression: `
-      2mE - (\\partial_x S_x)^2= W
+      E - \\frac{1}{2m}(\\partial_x S_x)^2= E_z
       \\\\
-      (2mE-W)^{1/2} = \\partial_x S_x
+      (2mE-2mE_z)^{1/2} = \\partial_x S_x
       \\\\
-      (2mE-W)^{1/2} = \\pi_x
+      (2mE-2mE_z)^{1/2} = \\pi_x
       \\\\
       S_x = \\pi_x x + c_x
       `,
@@ -381,17 +381,17 @@ var problems = [
     },
     {
       expression: `
-      (\\partial_z S_z)^2 = W-2m^2gz
+      (\\partial_z S_z)^2 = 2mE_z-2m^2gz
       \\\\
-      \\partial_z S_z = (W-2m^2gz)^{1/2}
+      \\partial_z S_z = (2mE_z-2m^2gz)^{1/2}
       \\\\
-      \\partial_z S_z = W^{1/2}(1-\\frac{2m^2g}{W}z)^{1/2}
+      \\partial_z S_z = (2mE_z)^{1/2}(1-\\frac{mg}{E_z}z)^{1/2}
       \\\\
-      S_z = W^{1/2}\\int (1-\\frac{2m^2g}{W}z)^{1/2} dz +c_z
+      S_z = (2mE_z)^{1/2}\\int (1-\\frac{mg}{E_z}z)^{1/2} dz +c_z
       \\\\
-      \\pi_z = \\frac{2m^2g}{W}, W = \\frac{2m^2g}{\\pi_z }
+      \\pi_z = \\frac{mg}{E_z}, E_z = \\frac{mg}{\\pi_z }
       \\\\
-      S_z = W^{1/2}\\frac{2(1-\\pi_z z)^{3/2}}{3\\pi_z} +c_z
+      S_z = (2mE_z)^{1/2}\\frac{2(1-\\pi_z z)^{3/2}}{3\\pi_z} +c_z
       `,
       explanation: "the general solution for $&S_z&$"
     },
@@ -401,12 +401,12 @@ var problems = [
       \\\\
       =
       \\pi_x x + c_x
-      + W^{1/2}\\frac{2(1-\\pi_z z)^{3/2}}{3\\pi_z} +c_z
+      + (2mE_z)^{1/2}\\frac{2(1-\\pi_z z)^{3/2}}{3\\pi_z} +c_z
       - Et
       \\\\
       =
       \\pi_x x
-      + W^{1/2}\\frac{2(1-\\pi_z z)^{3/2}}{3\\pi_z}
+      + (2mE_z)^{1/2}\\frac{2(1-\\pi_z z)^{3/2}}{3\\pi_z}
       - Et+c_0
       \\\\
       E= \\frac{\\pi_x^2}{2m}+\\frac{mg}{\\pi_z}
@@ -428,10 +428,6 @@ var problems = [
     },
     {
       expression: `
-      \\partial_{x^i} f = p_i
-      \\\\
-      -\\partial_{q^i} f = \\pi_i
-      \\\\
       \\partial_{\\pi_z} S = q_z =
       \\frac{gm}{\\pi_z^2}t
       -\\frac{m(2g)^{1/2}(\\pi_z^{-1}-z)^{1/2}}{\\pi_z^2}
@@ -467,8 +463,12 @@ var problems = [
       explanation: "Canonical transformations and the value of z as a function of time."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\partial_{\\pi_x} S = q_x = x- \\frac{\\pi_x}{m} t
+      \\\\
+      x = q_x -\\frac{\\pi_x}{m} t
+      `,
+      explanation: "The considerably simpler derivation for x of t."
     },
     {
       expression: `NA`,
