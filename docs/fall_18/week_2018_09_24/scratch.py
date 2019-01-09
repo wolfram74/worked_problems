@@ -37,5 +37,38 @@ def prob3():
     term1 = diff2*r**(-2)*l
     sympy.pprint(term1.subs(r, rp).expand().simplify())
 
+def rotator():
+    a1, a2, a3, a4 = sympy.symbols('a1 a2 a3 a4')
+    b1, b2, b3, b4 = sympy.symbols('b1 b2 b3 b4')
+    c1, c2, c3, c4 = sympy.symbols('c1 c2 c3 c4')
+    d1, d2, d3, d4 = sympy.symbols('d1 d2 d3 d4')
+    i_block = sympy.Matrix([
+        [0,1,0,0],
+        [0,1,0,0],
+        [0,1,0,0],
+        [0,1,0,0]
+        ])
+    # testor = sympy.Matrix([
+    #     [0,1,0,0],
+    #     [1,0,0,0],
+    #     [0,0,0,1],
+    #     [0,0,1,0]
+    #     ])
+    testor = sympy.Matrix([
+        [0,1,0,0],
+        [0,0,1,0],
+        [1,0,0,0],
+        [0,0,0,1]
+        ])
+    probe = sympy.Matrix([
+        [a1, a2, a3, a4],
+        [b1, b2, b3, b4],
+        [c1, c2, c3, c4],
+        [d1, d2, d3, d4]
+        ])
 
-prob3()
+    result = i_block*probe
+    sympy.pprint(result)
+
+# prob3()
+rotator()
