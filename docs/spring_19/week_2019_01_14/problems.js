@@ -103,11 +103,71 @@ steering notes
       (\\lambda_{2 3})^{2}_{\\ 0} = 0*0-1*(-1) =1
       `,
       // - delta_nu^rho eta_{mu sig}
-      explanation: "the excplicitly calculated $&\\lambda&$s can be derived that way."
+      explanation: "the explicitly calculated $&\\lambda&$s can be derived that way."
     },
     {
-      expression: `\\lambda_{\\nu \\mu}\\eta ^{\\mu \\alpha} + \\lambda_{\\mu \\nu}\\eta ^{\\mu \\alpha}`,
-      explanation: "NA"
+      expression: `
+      (\\lambda_{\\mu \\nu})^{\\rho}_{(\\alpha \\eta_{\\sigma})\\rho}
+      =
+      (\\lambda_{\\mu \\nu})^{\\rho}_{\\ \\sigma}
+      \\eta _{\\alpha \\rho}
+      + (\\lambda_{\\mu \\nu})^{\\rho}_{\\ \\alpha}
+      \\eta _{\\sigma \\rho}
+      =
+      \\\\
+      (\\delta_{\\mu}^{\\ \\rho} \\eta_{\\nu  \\sigma}
+            -\\delta_{\\nu}^{\\ \\rho} \\eta_{\\mu  \\sigma})
+      \\eta _{\\alpha \\rho}
+      +
+      (\\delta_{\\mu}^{\\ \\rho} \\eta_{\\nu  \\alpha}
+            -\\delta_{\\nu}^{\\ \\rho} \\eta_{\\mu  \\alpha})
+      \\eta _{\\sigma \\rho}
+      =
+      \\\\
+      \\delta_{\\mu}^{\\ \\rho}
+      \\eta_{\\nu  \\sigma}
+      \\eta _{\\alpha \\rho}
+      -\\delta_{\\nu}^{\\ \\rho}
+      \\eta_{\\mu  \\sigma}
+      \\eta _{\\alpha \\rho}
+      +
+      \\delta_{\\mu}^{\\ \\rho}
+      \\eta_{\\nu  \\alpha}
+      \\eta _{\\sigma \\rho}
+      -\\delta_{\\nu}^{\\ \\rho}
+      \\eta_{\\mu  \\alpha}
+      \\eta _{\\sigma \\rho}
+      \\\\
+      \\delta_{\\mu}^{\\ \\rho}
+      A_{\\gamma \\rho} = A_{\\gamma \\mu}
+      \\\\
+      \\eta_{\\nu  \\sigma}
+      \\eta _{\\alpha \\mu}
+      -
+      \\eta_{\\mu  \\sigma}
+      \\eta _{\\alpha \\nu}
+      +
+      \\eta_{\\nu  \\alpha}
+      \\eta _{\\sigma \\mu}
+      -
+      \\eta_{\\mu  \\alpha}
+      \\eta _{\\sigma \\nu}
+      \\\\
+      \\eta_{\\iota  \\omicron} = \\eta_{\\omicron  \\iota}
+      ,
+      \\eta_{\\nu  \\sigma}
+      \\eta _{\\alpha \\mu}
+      =
+      \\eta_{\\mu  \\alpha}
+      \\eta _{\\sigma \\nu}
+      \\therefore
+      (\\lambda_{\\mu \\nu})^{\\rho}_{\\ \\sigma}
+      \\eta _{\\alpha \\rho}
+      + (\\lambda_{\\mu \\nu})^{\\rho}_{\\ \\alpha}
+      \\eta _{\\sigma \\rho}
+      = 0
+      `,
+      explanation: "All the matrices are in the group."
     },
     {
       expression: `NA`,
@@ -161,15 +221,20 @@ steering notes
       =
       \\left[\\begin{matrix}-1 & 0 & 0 & 0\\\\0 & 1 & 0 & 0\\\\0 & 0 & 1 & 0\\\\0 & 0 & 0 & 1\\end{matrix}\\right]
       \\\\
-      T^{\\mu}_{-\\nu} =
+      T^{\\mu}_{ \\ \\  \\nu} =
       T^{\\mu \\beta} \\eta_{\\beta \\nu}
       =
-
+      \\left[\\begin{matrix}-2 & 0 & 1 & -1\\\\-1 & 0 & -3 & 2\\\\1 & 1 & 0 & 0\\\\-2 & 1 & -1 & 2\\end{matrix}\\right]
       `,
       explanation: "NA"
     },
     {
-      expression: `T^{-\\nu}_{\\mu}`,
+      expression: `
+      T^{\\ \\nu}_{\\mu}
+      =
+      T^{\\beta \\nu} \\eta_{\\mu \\beta}=
+      \\left[\\begin{matrix}-2 & 0 & -1 & 1\\\\1 & 0 & -3 & 2\\\\-1 & 1 & 0 & 0\\\\2 & 1 & -1 & 2\\end{matrix}\\right]
+      `,
       explanation: "NA"
     },
     {
@@ -210,11 +275,26 @@ steering notes
       explanation: "The symmetric part of $&T^{\\mu \\nu}&$"
     },
     {
-      expression: `T_{[\\mu \\nu]} \\equiv (T_{\\mu \\nu}-T_{\\nu \\mu})/2`,
+      expression: `
+      T_{[\\mu \\nu]}
+      \\equiv (T_{\\mu \\nu}-T_{\\nu \\mu})/2
+      =
+      (
+        \\eta_{\\mu \\alpha}T^{\\alpha \\beta}\\eta_{\\beta \\nu}
+        -
+        \\eta_{\\nu \\beta}T^{\\beta \\alpha}\\eta_{\\alpha \\mu}
+        )/2
+      =
+      \\left[\\begin{matrix}0 & \\frac{1}{2} & -1 & \\frac{3}{2}\\\\- \\frac{1}{2} & 0 & -2 & \\frac{1}{2}\\\\1 & 2 & 0 & \\frac{1}{2}\\\\- \\frac{3}{2} & - \\frac{1}{2} & - \\frac{1}{2} & 0\\end{matrix}\\right]
+      `,
       explanation: "NA"
     },
     {
-      expression: `T^{\\mu}_{-\\mu}`,
+      expression: `
+      T^{\\mu}_{\\ \\ \\mu}
+      =
+      T^{\\mu \\alpha}\\eta_{\\alpha \\gamma}\\delta^{\\gamma}_{\\mu}
+      `,
       explanation: "NA"
     },
     {

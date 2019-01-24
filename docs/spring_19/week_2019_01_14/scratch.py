@@ -71,6 +71,22 @@ def prob2():
         [0,0,1,0],
         [0,0,0,1],
         ])
+    sympy.pprint(T*eta)
+    mathjaxify(T*eta)
+    sympy.pprint(eta*T)
+    mathjaxify(eta*T)
+    T_low = eta*T*eta
+    sympy.pprint(T_low)
+    sympy.pprint(T_low-T_low.transpose())
+    sympy.pprint((T_low-T_low.transpose())/2)
+    mathjaxify((T_low-T_low.transpose())/2)
+
+
+if __name__ =='__main__':
+    # prob1()
+    prob2()
+
+'''
     # sympy.pprint(T)
     # mathjaxify(eta)
     # mathjaxify(T)
@@ -96,7 +112,4 @@ def prob2():
     # print(res)
     # print(res-a_T)
 
-
-if __name__ =='__main__':
-    prob1()
-    # prob2()
+'''
