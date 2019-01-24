@@ -170,7 +170,21 @@ steering notes
       explanation: "All the matrices are in the group."
     },
     {
-      expression: `NA`,
+      expression: `
+      if\\ [\\lambda_{\\mu \\nu}, \\lambda_{\\rho \\sigma}]
+        =
+      \\lambda_{\\mu \\nu} \\lambda_{\\rho \\sigma}
+      -
+      \\lambda_{\\nu \\mu} \\lambda_{\\sigma \\rho}
+      \\\\
+      =
+      (\\lambda_{\\mu \\nu} )
+      (\\lambda_{\\rho \\sigma})
+      -
+      \\lambda_{\\nu \\mu}
+      \\lambda_{\\sigma \\rho}
+
+        `,
       explanation: "NA"
     },
     {
@@ -294,6 +308,12 @@ steering notes
       T^{\\mu}_{\\ \\ \\mu}
       =
       T^{\\mu \\alpha}\\eta_{\\alpha \\gamma}\\delta^{\\gamma}_{\\mu}
+      =
+      \\left[\\begin{matrix}
+      -2 & 0 & 0 & 0\\\\
+      0 & 0 & 0 & 0\\\\
+      0 & 0 & 0 & 0\\\\
+      0 & 0 & 0 & 2\\end{matrix}\\right]
       `,
       explanation: "NA"
     },
@@ -306,19 +326,31 @@ steering notes
       explanation: "NA"
     },
     {
-      expression: `V_{\\mu} T^{\\nu \\mu}`,
+      expression: `
+      V_{\\nu} T^{\\nu \\mu}
+      =
+      \\eta_{\\nu \\alpha} V^\\alpha T^{\\nu \\mu}
+      =
+      [0, 5, -3, 4]
+      `,
       explanation: "NA"
     },
     {
-      expression: `T^{\\nu \\mu}V_{\\mu}`,
+      expression: `
+      T^{\\mu \\nu}V_{\\mu}
+      =
+      T^{\\mu \\nu}\\eta_{\\nu \\alpha}V^{\\alpha}
+      =
+      \\left[\\begin{matrix}-4\\\\3\\\\-1\\\\0\\end{matrix}\\right]
+      `,
       explanation: "NA"
     },
     {
-      expression: `V_{\\nu} T^{\\nu \\mu}`,
+      expression: `V_{\\nu} T^{\\nu \\mu} = A^{\\mu}`,
       explanation: "has vector properties"
     },
     {
-      expression: `V^{\\nu} T_{\\nu \\mu}`,
+      expression: `V^{\\nu} T_{\\nu \\mu} = A_{\\mu}`,
       explanation: "has co-vector properties"
     },
     {
