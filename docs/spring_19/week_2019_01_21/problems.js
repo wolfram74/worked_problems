@@ -294,7 +294,10 @@ var problems = [
     steps:[
     {
       expression: `
-      \\psi(r, \\theta_p, \\theta_e) = c_0[1-r sin(\\theta_p/2)^2]e^{-r/2}
+      \\psi(r, \\theta_p, \\theta_e)
+      = c_0[1-r sin(\\theta_p/2)^2]e^{-r/2}
+      \\\\
+      =c_0[1-\\frac{r}{2} (1-cos(\\theta_p))]e^{-r/2}
       `,
       explanation: "Our test function"
     },
