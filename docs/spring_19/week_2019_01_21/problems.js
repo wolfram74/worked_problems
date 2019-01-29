@@ -1,5 +1,5 @@
 var problems = [
-
+//donezo
   {
     location:`NA`,
     description:"derive the time independent schrodinger equation from the time  dependent variant",
@@ -133,23 +133,201 @@ var problems = [
       \\Psi \\Psi^*
       dx= \\dot I
       `,
-      explanation: "The norm of the the wave function"
+      explanation: "The norm of the the wave function and it's time derivative"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot I
+      =
+      \\int
+      \\frac{d}{dt}(\\Psi \\Psi^*)
+      dx
+      =
+      \\int
+      \\dot \\Psi \\Psi^*
+      + \\Psi \\dot \\Psi^*
+      dx
+      `,
+      explanation: "bringing the time derivative inside the integral as the integral is over space."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot \\Psi
+      =
+      (
+        \\frac{i\\hbar}{2m}
+        \\partial_x^2
+        -V\\frac{i}{\\hbar}
+        )\\Psi
+      \\\\
+      \\dot \\Psi ^*
+      =
+      (
+        -\\frac{i\\hbar}{2m}
+        \\partial_x^2
+        +V\\frac{i}{\\hbar}
+        )\\Psi^*
+      `,
+      explanation: "taking advantage of the schrodinger equation."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot I
+      =
+      \\int
+      (
+        \\frac{i\\hbar}{2m}
+        \\partial_x^2
+        -\\frac{i}{\\hbar}V
+        )\\Psi
+      \\Psi^*
+      +
+      \\Psi
+      (
+        -\\frac{i\\hbar}{2m}
+        \\partial_x^2
+        +\\frac{i}{\\hbar}V
+        )\\Psi^*
+      dx
+      \\\\
+      =
+      \\int
+      \\Psi^*
+      (
+        \\frac{i\\hbar}{2m}
+        \\partial_x^2
+        -\\frac{i}{\\hbar}V
+        )\\Psi
+      +
+      \\Psi
+      (
+        -\\frac{i\\hbar}{2m}
+        \\partial_x^2
+        +\\frac{i}{\\hbar}V
+        )\\Psi^*
+      dx
+      \\\\
+      =
+      \\int
+      \\Psi^*
+      (
+        -\\frac{i}{\\hbar}V
+        )\\Psi
+      +
+      \\Psi
+      (
+        +\\frac{i}{\\hbar}V
+        )\\Psi^*
+      dx
+      +
+      \\int
+      \\Psi^*
+      (
+        \\frac{i\\hbar}{2m}
+        \\partial_x^2
+        )\\Psi
+      +
+      \\Psi
+      (
+        -\\frac{i\\hbar}{2m}
+        \\partial_x^2
+        )\\Psi^*
+      dx
+      \\\\
+      =
+      0
+      +
+      \\int
+      \\Psi^*
+      (
+        \\frac{i\\hbar}{2m}
+        \\partial_x^2
+        )\\Psi
+      +
+      \\Psi
+      (
+        -\\frac{i\\hbar}{2m}
+        \\partial_x^2
+        )\\Psi^*
+      dx
+      `,
+      explanation: "We see the potential term drops out."
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\int
+      \\Psi^*
+      (
+        \\frac{i\\hbar}{2m}
+        \\partial_x^2
+        )\\Psi
+      dx
+      =
+      \\frac{i\\hbar}{2m}
+      \\int
+      \\Psi^*
+      \\partial_x^2
+      \\Psi
+      dx
+      \\\\
+      =
+      \\frac{i\\hbar}{2m}
+      (
+        \\Psi^*
+        \\partial_x
+        \\Psi
+        |_{\\infty}
+        -
+        \\int
+        \\partial_x
+        \\Psi^*
+        \\partial_x
+        \\Psi
+        dx
+      )
+      \\\\
+      =
+      \\frac{i\\hbar}{2m}
+      (
+        0
+        -
+        \\int
+        \\partial_x
+        \\Psi^*
+        \\partial_x
+        \\Psi
+        dx
+      )
+      \\\\
+      \\int
+      \\Psi
+      (
+        -\\frac{i\\hbar}{2m}
+        \\partial_x^2
+        )\\Psi^*
+      dx
+      =
+      -\\frac{i\\hbar}{2m}
+      \\int
+      \\Psi
+      (
+        \\partial_x^2
+        )\\Psi^*
+      dx
+      \\\\
+      =
+      -\\frac{i\\hbar}{2m}
+      (-1)
+      \\int
+      \\partial_x
+      \\Psi
+      \\partial_x
+      \\Psi^*
+      dx
+      \\\\
+      \\dot I = 0
+      `,
+      explanation: "The norm doesn't change over time."
     },
     {
       expression: `NA`,
@@ -287,7 +465,7 @@ var problems = [
       explanation: "NA"
     },]
   },
-
+//donezo
   {
     location:`NA`,
     description:"Show that a function satisfies the schrodinger equation for a hydrogen atom",
@@ -332,25 +510,36 @@ var problems = [
       \\\\
       T_r = sin(\\theta_p)\\partial_r(r^2\\partial_r \\psi)
       =
-      \\frac{c r}{8} \\left(r^{2} \\cos{\\left (\\theta_{p} \\right )} - r^{2} - 8 r \\cos{\\left (\\theta_{p} \\right )} + 10 r + 8 \\cos{\\left (\\theta_{p} \\right )} - 16\\right) e^{- \\frac{r}{2}} \\sin{\\left (\\theta_{p} \\right )}
+      \\frac{c r}{8} \\left(r^{2} \\cos{\\left (\\theta_{p} \\right )} - r^{2} - 8 r \\cos{\\left (\\theta_{p} \\right )} + 10 r + 8 \\cos{\\left (\\theta_{p} \\right )} - 16\\right) e^{- \\frac{r}{2}}
       \\\\
       sin(\\theta_p)
       \\partial_{\\theta_p} \\psi
       =
-      \\frac{c r}{4} \\left(\\cos{\\left (2 \\theta_{p} \\right )} - 1\\right) e^{- \\frac{r}{2}}
+      - \\frac{c r}{2} e^{- \\frac{r}{2}} \\sin^{2}{\\left (\\theta_{p} \\right )}
       \\\\
       T_{\\theta_p}
       =
       \\partial_{\\theta_p}(sin(\\theta_p)
             \\partial_{\\theta_p} \\psi)
       =
-      - \\frac{c r}{2} e^{- \\frac{r}{2}} \\sin{\\left (2 \\theta_{p} \\right )}
+      - c r e^{- \\frac{r}{2}} \\cos{\\left (\\theta_{p} \\right )}
+      \\\\
+      T_{tot} = \\frac{\\hbar^2}{2m}r^{-2}(T_r+T_{\\theta_p})
+      =
+      \\frac{c \\hbar^{2} e^{- \\frac{r}{2}}}{16 m r} \\left(r^{2} \\cos{\\left (\\theta_{p} \\right )} - r^{2} - 8 r \\cos{\\left (\\theta_{p} \\right )} + 10 r - 16\\right)
             `,
-      explanation: "NA"
+      explanation: "The kinetic energy like term in the schrodinger equation"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      RHS = U\\psi - T_{tot}
+      =
+      \\frac{c e^{- \\frac{r}{2}}}{16 m r} \\left(\\hbar^{2} r \\left(- r \\cos{\\left (\\theta_{p} \\right )} + r + 8 \\cos{\\left (\\theta_{p} \\right )} - 10\\right) + 16 \\hbar^{2} + 8 m q r \\left(- \\cos{\\left (\\theta_{p} \\right )} + 1\\right) - 16 m q\\right)
+      \\\\
+      RHS/\\psi = \\frac{1}{m r} \\left(- \\frac{\\hbar^{2} r}{8} + \\hbar^{2} - m q\\right)
+
+      `,
+      explanation: "for $&RHS/\\psi&$ to equal a constant and thus satisfy the schrodinger equation, then $&mq=\\hbar^2&$ and the energy of our system is $&-\\frac{1}{4}\\frac{\\hbar^2}{2m}&$"
     },
     {
       expression: `NA`,
