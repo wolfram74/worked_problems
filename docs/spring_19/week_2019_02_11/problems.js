@@ -264,11 +264,29 @@ var problems = [
       \\\\
       <e-||e-> =
       1 + \\frac{\\sin^{2}{\\left (\\theta \\right )}}{\\left(\\cos{\\left (\\theta \\right )} + 1\\right)^{2}}
+      \\\\
+      =
+      \\frac{2}{\\cos{\\left (\\theta \\right )} + 1}
       `,
       explanation: "The unormalized eigen vector and it's inner product"
     },
     {
-      expression: `NA`,
+      expression: `
+      |n->= \\frac{1}{(<e-||e->)^{1/2}} |e->
+      =
+      \\left[\\begin{matrix}
+      - \\frac{\\sqrt{2} e^{- i \\phi} \\sin{\\left (\\theta \\right )}}{2 \\sqrt{\\cos{\\left (\\theta \\right )} + 1}}
+      \\\\
+      \\frac{1}{2} \\sqrt{2 \\cos{\\left (\\theta \\right )} + 2}
+      \\end{matrix}\\right]
+      =
+      \\frac{\\sqrt{\\cos{\\left (\\theta \\right )} + 1}}{2^{1/2}}
+      \\left[\\begin{matrix}
+      - \\frac{e^{- i \\phi} \\sin{\\left (\\theta \\right )}}{\\cos{\\left (\\theta \\right )} + 1}
+      \\\\
+       1
+      \\end{matrix}\\right]
+      `,
       explanation: "NA"
     },
     {
@@ -321,11 +339,40 @@ var problems = [
   {
     location:`NA`,
     // sakurai 1.3.11 pdf 39 is relevant
-    // sakurai 1.3.31 pdf 39 is relevant
-    description:"NA",
+    // sakurai 1.3.31 pdf 42 is relevant
+    description:"Give the matrix representation of the identity matrix",
     steps:[
     {
-      expression: `NA`,
+      expression: `
+      \\widehat 1 =|+><+|+|-><-|
+      \\\\
+      =
+      \\left[\\begin{matrix}
+      <+||+><+||+>^* &<+||+><-||+>^* &\\\\
+      <-||+><+||+>^* &<-||+><-||+>^* &\\\\
+      \\end{matrix}\\right]
+      +
+      \\left[\\begin{matrix}
+      <+||-><+||->^* &<+||-><-||->^* &\\\\
+      <-||-><+||->^* &<-||-><-||->^* &\\\\
+      \\end{matrix}\\right]
+      \\\\
+      =
+      \\left[\\begin{matrix}
+      1*1 &1*0 &\\\\
+      0*1 &0*0 &\\\\
+      \\end{matrix}\\right]
+      +
+      \\left[\\begin{matrix}
+      0*0 &0*1 &\\\\
+      1*0 &1*1 &\\\\
+      \\end{matrix}\\right]
+      =
+      \\left[\\begin{matrix}
+      1 &0 &\\\\
+      0 &1 &\\\\
+      \\end{matrix}\\right]
+      `,
       explanation: "NA"
     },
     {
@@ -388,14 +435,61 @@ var problems = [
 
   {
     location:`NA`,
-    description:"NA",
+    description:"consider the raising and lowering operator in expressed in terms of the z basis",
     steps:[
     {
-      expression: `NA`,
+      expression: `
+      S+ =h|+><-|=
+      \\\\
+      h
+      \\left[\\begin{matrix}
+      <+||+><+||->^* &<+||+><-||->^* &\\\\
+      <-||+><+||->^* &<-||+><-||->^* &\\\\
+      \\end{matrix}\\right]
+      \\\\
+      =
+      h
+      \\left[\\begin{matrix}
+      1*0 &1*1 &\\\\
+      0*0 &0*1 &\\\\
+      \\end{matrix}\\right]
+      \\\\
+      =
+      h
+      \\left[\\begin{matrix}
+      0 &1 &\\\\
+      0 &0 &\\\\
+      \\end{matrix}\\right]
+
+      `,
       explanation: "NA"
     },
     {
-      expression: `NA`,
+      expression: `
+      S-
+      =
+      h
+      \\left[\\begin{matrix}
+      <+||-><+||+>^* &<+||-><-||+>^* &\\\\
+      <-||-><+||+>^* &<-||-><-||+>^* &\\\\
+      \\end{matrix}\\right]
+      \\\\
+      =
+      h
+      \\left[\\begin{matrix}
+      0*1 &0*0 &\\\\
+      1*1 &1*0 &\\\\
+      \\end{matrix}\\right]
+
+      \\\\
+      =
+      h
+      \\left[\\begin{matrix}
+      0 &0 &\\\\
+      1 &0 &\\\\
+      \\end{matrix}\\right]
+
+      `,
       explanation: "NA"
     },
     {
