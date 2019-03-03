@@ -13,18 +13,41 @@ ds^2 =
 */
   {
     location:`NA`,
-    description:"farts",
+    description:"given a line element, do a whole bunch of stuff",
     steps:[
     {
       expression: `
-      \\Gamma^r_{\\theta_p \\theta_p}
+      ds^2 =
+      g_{\\mu \\nu}dx^\\mu dx^\\nu
       =
-      \\frac{1}{2}g^{r\\alpha_{1}}(\\partial_{\\theta_{p}}g_{\\theta_{p} \\alpha_{1}}+\\partial_{\\theta_{p}}g_{\\alpha_{1} \\theta_{p}}-\\partial_{\\alpha_{1}}g_{\\theta_{p} \\theta_{p}})
+      -e^{2A}dt^2+e^{2B}dr^2+e^{2C}(d\\theta_p^2+sin(\\theta_p)^2 d\\theta_e^2)
+      \\\\
+      g_{t t} = -e^{2A},
+      g_{r r} = e^{2B},
+      g_{\\theta_p \\theta_p} = e^{2C},
+      g_{\\theta_e \\theta_e} = e^{2C} sin(\\theta_p)^2
+      \\\\
+      else, 0
+      \\\\
+      g_{\\mu \\alpha}g^{\\alpha \\nu} = \\delta^\\nu_\\mu \\therefore
+      \\\\
+      g^{t t} = -e^{-2A},
+      g^{r r} = e^{-2B},
+      g^{\\theta_p \\theta_p} = e^{-2C},
+      g^{\\theta_e \\theta_e} = e^{-2C} csc(\\theta_p)^2
       `,
       explanation: "NA"
     },
     {
-      expression: `NA`,
+      expression: `
+      \\Gamma^\\mu_{\\nu \\sigma}
+      =
+      \\frac{1}{2}g^{\\mu\\alpha_{1}}(
+        \\partial_{\\nu}g_{\\sigma \\alpha_{1}}
+        +\\partial_{\\sigma}g_{\\alpha_{1} \\nu}
+        -\\partial_{\\alpha_{1}}g_{\\nu \\sigma}
+        )
+      `,
       explanation: "NA"
     },
     {
