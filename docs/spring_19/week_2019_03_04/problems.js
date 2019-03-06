@@ -69,462 +69,137 @@ nabla/covariant derivative defined by 3.19 or 3.1
         -\\partial_{ \\mu}g_{\\nu \\sigma}
         )
       \\\\
-      \\Gamma^{t}_{t t}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{t}g_{t t}
-      +\\partial_{t}g_{t t}
-      -\\partial_{t}g_{t t}
-      ) = \\frac{1}{2}e^{-2A}(0+0-0)
-      \\\\
       \\Gamma^{t}_{t r}=
       \\frac{1}{2}g^{tt}(
       \\partial_{t}g_{r t}
       +\\partial_{r}g_{t t}
       -\\partial_{t}g_{t r}
-      ) = \\frac{1}{2}g^{tt}(0+2ae^{2A})
-      \\\\
-      \\Gamma^{t}_{t \\theta_{p}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{t}g_{\\theta_{p} t}
-      +\\partial_{\\theta_{p}}g_{t t}
-      -\\partial_{t}g_{t \\theta_{p}}
-      )=
-      \\frac{1}{2}g^{tt}(
-      0
-      +\\partial_{\\theta_{p}}g_{t t}
-      -0
       )
+      =
+      \\frac{d}{d r} A{\\left (r \\right )}
       \\\\
-      \\Gamma^{t}_{t \\theta_{e}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{t}g_{\\theta_{e} t}
-      +\\partial_{\\theta_{e}}g_{t t}
-      -\\partial_{t}g_{t \\theta_{e}}
-      )
-      \\\\
+
       \\Gamma^{t}_{r t}=
       \\frac{1}{2}g^{tt}(
       \\partial_{r}g_{t t}
       +\\partial_{t}g_{t r}
       -\\partial_{t}g_{r t}
       )
+      =
+      \\frac{d}{d r} A{\\left (r \\right )}
       \\\\
-      \\Gamma^{t}_{r r}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{r}g_{r t}
-      +\\partial_{r}g_{t r}
-      -\\partial_{t}g_{r r}
-      )
-      \\\\
-      \\Gamma^{t}_{r \\theta_{p}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{r}g_{\\theta_{p} t}
-      +\\partial_{\\theta_{p}}g_{t r}
-      -\\partial_{t}g_{r \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{t}_{r \\theta_{e}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{r}g_{\\theta_{e} t}
-      +\\partial_{\\theta_{e}}g_{t r}
-      -\\partial_{t}g_{r \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{p} t}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{p}}g_{t t}
-      +\\partial_{t}g_{t \\theta_{p}}
-      -\\partial_{t}g_{\\theta_{p} t}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{p} r}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{p}}g_{r t}
-      +\\partial_{r}g_{t \\theta_{p}}
-      -\\partial_{t}g_{\\theta_{p} r}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{p} \\theta_{p}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{p}}g_{\\theta_{p} t}
-      +\\partial_{\\theta_{p}}g_{t \\theta_{p}}
-      -\\partial_{t}g_{\\theta_{p} \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{p} \\theta_{e}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{p}}g_{\\theta_{e} t}
-      +\\partial_{\\theta_{e}}g_{t \\theta_{p}}
-      -\\partial_{t}g_{\\theta_{p} \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{e} t}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{e}}g_{t t}
-      +\\partial_{t}g_{t \\theta_{e}}
-      -\\partial_{t}g_{\\theta_{e} t}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{e} r}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{e}}g_{r t}
-      +\\partial_{r}g_{t \\theta_{e}}
-      -\\partial_{t}g_{\\theta_{e} r}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{e} \\theta_{p}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{e}}g_{\\theta_{p} t}
-      +\\partial_{\\theta_{p}}g_{t \\theta_{e}}
-      -\\partial_{t}g_{\\theta_{e} \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{t}_{\\theta_{e} \\theta_{e}}=
-      \\frac{1}{2}g^{tt}(
-      \\partial_{\\theta_{e}}g_{\\theta_{e} t}
-      +\\partial_{\\theta_{e}}g_{t \\theta_{e}}
-      -\\partial_{t}g_{\\theta_{e} \\theta_{e}}
-      )
-      \\\\
+
       \\Gamma^{r}_{t t}=
       \\frac{1}{2}g^{rr}(
       \\partial_{t}g_{t r}
       +\\partial_{t}g_{r t}
       -\\partial_{r}g_{t t}
       )
+      =
+      e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )}
       \\\\
-      \\Gamma^{r}_{t r}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{t}g_{r r}
-      +\\partial_{r}g_{r t}
-      -\\partial_{r}g_{t r}
-      )
-      \\\\
-      \\Gamma^{r}_{t \\theta_{p}}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{t}g_{\\theta_{p} r}
-      +\\partial_{\\theta_{p}}g_{r t}
-      -\\partial_{r}g_{t \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{r}_{t \\theta_{e}}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{t}g_{\\theta_{e} r}
-      +\\partial_{\\theta_{e}}g_{r t}
-      -\\partial_{r}g_{t \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{r}_{r t}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{r}g_{t r}
-      +\\partial_{t}g_{r r}
-      -\\partial_{r}g_{r t}
-      )
-      \\\\
+
       \\Gamma^{r}_{r r}=
       \\frac{1}{2}g^{rr}(
       \\partial_{r}g_{r r}
       +\\partial_{r}g_{r r}
       -\\partial_{r}g_{r r}
       )
+      =
+      \\frac{d}{d r} B{\\left (r \\right )}
       \\\\
-      \\Gamma^{r}_{r \\theta_{p}}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{r}g_{\\theta_{p} r}
-      +\\partial_{\\theta_{p}}g_{r r}
-      -\\partial_{r}g_{r \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{r}_{r \\theta_{e}}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{r}g_{\\theta_{e} r}
-      +\\partial_{\\theta_{e}}g_{r r}
-      -\\partial_{r}g_{r \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{r}_{\\theta_{p} t}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{\\theta_{p}}g_{t r}
-      +\\partial_{t}g_{r \\theta_{p}}
-      -\\partial_{r}g_{\\theta_{p} t}
-      )
-      \\\\
-      \\Gamma^{r}_{\\theta_{p} r}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{\\theta_{p}}g_{r r}
-      +\\partial_{r}g_{r \\theta_{p}}
-      -\\partial_{r}g_{\\theta_{p} r}
-      )
-      \\\\
+
       \\Gamma^{r}_{\\theta_{p} \\theta_{p}}=
       \\frac{1}{2}g^{rr}(
       \\partial_{\\theta_{p}}g_{\\theta_{p} r}
       +\\partial_{\\theta_{p}}g_{r \\theta_{p}}
       -\\partial_{r}g_{\\theta_{p} \\theta_{p}}
       )
+      =
+      - e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\frac{d}{d r} C{\\left (r \\right )}
       \\\\
-      \\Gamma^{r}_{\\theta_{p} \\theta_{e}}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{\\theta_{p}}g_{\\theta_{e} r}
-      +\\partial_{\\theta_{e}}g_{r \\theta_{p}}
-      -\\partial_{r}g_{\\theta_{p} \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{r}_{\\theta_{e} t}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{\\theta_{e}}g_{t r}
-      +\\partial_{t}g_{r \\theta_{e}}
-      -\\partial_{r}g_{\\theta_{e} t}
-      )
-      \\\\
-      \\Gamma^{r}_{\\theta_{e} r}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{\\theta_{e}}g_{r r}
-      +\\partial_{r}g_{r \\theta_{e}}
-      -\\partial_{r}g_{\\theta_{e} r}
-      )
-      \\\\
-      \\Gamma^{r}_{\\theta_{e} \\theta_{p}}=
-      \\frac{1}{2}g^{rr}(
-      \\partial_{\\theta_{e}}g_{\\theta_{p} r}
-      +\\partial_{\\theta_{p}}g_{r \\theta_{e}}
-      -\\partial_{r}g_{\\theta_{e} \\theta_{p}}
-      )
-      \\\\
+
       \\Gamma^{r}_{\\theta_{e} \\theta_{e}}=
       \\frac{1}{2}g^{rr}(
       \\partial_{\\theta_{e}}g_{\\theta_{e} r}
       +\\partial_{\\theta_{e}}g_{r \\theta_{e}}
       -\\partial_{r}g_{\\theta_{e} \\theta_{e}}
       )
+      =
+      - e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )} \\frac{d}{d r} C{\\left (r \\right )}
       \\\\
-      \\Gamma^{\\theta_{p}}_{t t}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{t}g_{t \\theta_{p}}
-      +\\partial_{t}g_{\\theta_{p} t}
-      -\\partial_{\\theta_{p}}g_{t t}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{t r}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{t}g_{r \\theta_{p}}
-      +\\partial_{r}g_{\\theta_{p} t}
-      -\\partial_{\\theta_{p}}g_{t r}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{t \\theta_{p}}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{t}g_{\\theta_{p} \\theta_{p}}
-      +\\partial_{\\theta_{p}}g_{\\theta_{p} t}
-      -\\partial_{\\theta_{p}}g_{t \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{t \\theta_{e}}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{t}g_{\\theta_{e} \\theta_{p}}
-      +\\partial_{\\theta_{e}}g_{\\theta_{p} t}
-      -\\partial_{\\theta_{p}}g_{t \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{r t}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{r}g_{t \\theta_{p}}
-      +\\partial_{t}g_{\\theta_{p} r}
-      -\\partial_{\\theta_{p}}g_{r t}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{r r}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{r}g_{r \\theta_{p}}
-      +\\partial_{r}g_{\\theta_{p} r}
-      -\\partial_{\\theta_{p}}g_{r r}
-      )
-      \\\\
+
       \\Gamma^{\\theta_{p}}_{r \\theta_{p}}=
       \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
       \\partial_{r}g_{\\theta_{p} \\theta_{p}}
       +\\partial_{\\theta_{p}}g_{\\theta_{p} r}
       -\\partial_{\\theta_{p}}g_{r \\theta_{p}}
       )
+      =
+      \\frac{d}{d r} C{\\left (r \\right )}
       \\\\
-      \\Gamma^{\\theta_{p}}_{r \\theta_{e}}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{r}g_{\\theta_{e} \\theta_{p}}
-      +\\partial_{\\theta_{e}}g_{\\theta_{p} r}
-      -\\partial_{\\theta_{p}}g_{r \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{\\theta_{p} t}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{\\theta_{p}}g_{t \\theta_{p}}
-      +\\partial_{t}g_{\\theta_{p} \\theta_{p}}
-      -\\partial_{\\theta_{p}}g_{\\theta_{p} t}
-      )
-      \\\\
+
       \\Gamma^{\\theta_{p}}_{\\theta_{p} r}=
       \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
       \\partial_{\\theta_{p}}g_{r \\theta_{p}}
       +\\partial_{r}g_{\\theta_{p} \\theta_{p}}
       -\\partial_{\\theta_{p}}g_{\\theta_{p} r}
       )
+      =
+      \\frac{d}{d r} C{\\left (r \\right )}
       \\\\
-      \\Gamma^{\\theta_{p}}_{\\theta_{p} \\theta_{p}}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{\\theta_{p}}g_{\\theta_{p} \\theta_{p}}
-      +\\partial_{\\theta_{p}}g_{\\theta_{p} \\theta_{p}}
-      -\\partial_{\\theta_{p}}g_{\\theta_{p} \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{\\theta_{p} \\theta_{e}}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{\\theta_{p}}g_{\\theta_{e} \\theta_{p}}
-      +\\partial_{\\theta_{e}}g_{\\theta_{p} \\theta_{p}}
-      -\\partial_{\\theta_{p}}g_{\\theta_{p} \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{\\theta_{e} t}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{\\theta_{e}}g_{t \\theta_{p}}
-      +\\partial_{t}g_{\\theta_{p} \\theta_{e}}
-      -\\partial_{\\theta_{p}}g_{\\theta_{e} t}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{\\theta_{e} r}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{\\theta_{e}}g_{r \\theta_{p}}
-      +\\partial_{r}g_{\\theta_{p} \\theta_{e}}
-      -\\partial_{\\theta_{p}}g_{\\theta_{e} r}
-      )
-      \\\\
-      \\Gamma^{\\theta_{p}}_{\\theta_{e} \\theta_{p}}=
-      \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
-      \\partial_{\\theta_{e}}g_{\\theta_{p} \\theta_{p}}
-      +\\partial_{\\theta_{p}}g_{\\theta_{p} \\theta_{e}}
-      -\\partial_{\\theta_{p}}g_{\\theta_{e} \\theta_{p}}
-      )
-      \\\\
+
       \\Gamma^{\\theta_{p}}_{\\theta_{e} \\theta_{e}}=
       \\frac{1}{2}g^{\\theta_{p}\\theta_{p}}(
       \\partial_{\\theta_{e}}g_{\\theta_{e} \\theta_{p}}
       +\\partial_{\\theta_{e}}g_{\\theta_{p} \\theta_{e}}
       -\\partial_{\\theta_{p}}g_{\\theta_{e} \\theta_{e}}
       )
+      =
+      - \\frac{1}{2} \\sin{\\left (2 \\theta_{p} \\right )}
       \\\\
-      \\Gamma^{\\theta_{e}}_{t t}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{t}g_{t \\theta_{e}}
-      +\\partial_{t}g_{\\theta_{e} t}
-      -\\partial_{\\theta_{e}}g_{t t}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{t r}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{t}g_{r \\theta_{e}}
-      +\\partial_{r}g_{\\theta_{e} t}
-      -\\partial_{\\theta_{e}}g_{t r}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{t \\theta_{p}}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{t}g_{\\theta_{p} \\theta_{e}}
-      +\\partial_{\\theta_{p}}g_{\\theta_{e} t}
-      -\\partial_{\\theta_{e}}g_{t \\theta_{p}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{t \\theta_{e}}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{t}g_{\\theta_{e} \\theta_{e}}
-      +\\partial_{\\theta_{e}}g_{\\theta_{e} t}
-      -\\partial_{\\theta_{e}}g_{t \\theta_{e}}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{r t}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{r}g_{t \\theta_{e}}
-      +\\partial_{t}g_{\\theta_{e} r}
-      -\\partial_{\\theta_{e}}g_{r t}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{r r}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{r}g_{r \\theta_{e}}
-      +\\partial_{r}g_{\\theta_{e} r}
-      -\\partial_{\\theta_{e}}g_{r r}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{r \\theta_{p}}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{r}g_{\\theta_{p} \\theta_{e}}
-      +\\partial_{\\theta_{p}}g_{\\theta_{e} r}
-      -\\partial_{\\theta_{e}}g_{r \\theta_{p}}
-      )
-      \\\\
+
       \\Gamma^{\\theta_{e}}_{r \\theta_{e}}=
       \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
       \\partial_{r}g_{\\theta_{e} \\theta_{e}}
       +\\partial_{\\theta_{e}}g_{\\theta_{e} r}
       -\\partial_{\\theta_{e}}g_{r \\theta_{e}}
       )
+      =
+      \\frac{d}{d r} C{\\left (r \\right )}
       \\\\
-      \\Gamma^{\\theta_{e}}_{\\theta_{p} t}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{\\theta_{p}}g_{t \\theta_{e}}
-      +\\partial_{t}g_{\\theta_{e} \\theta_{p}}
-      -\\partial_{\\theta_{e}}g_{\\theta_{p} t}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{\\theta_{p} r}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{\\theta_{p}}g_{r \\theta_{e}}
-      +\\partial_{r}g_{\\theta_{e} \\theta_{p}}
-      -\\partial_{\\theta_{e}}g_{\\theta_{p} r}
-      )
-      \\\\
-      \\Gamma^{\\theta_{e}}_{\\theta_{p} \\theta_{p}}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{\\theta_{p}}g_{\\theta_{p} \\theta_{e}}
-      +\\partial_{\\theta_{p}}g_{\\theta_{e} \\theta_{p}}
-      -\\partial_{\\theta_{e}}g_{\\theta_{p} \\theta_{p}}
-      )
-      \\\\
+
       \\Gamma^{\\theta_{e}}_{\\theta_{p} \\theta_{e}}=
       \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
       \\partial_{\\theta_{p}}g_{\\theta_{e} \\theta_{e}}
       +\\partial_{\\theta_{e}}g_{\\theta_{e} \\theta_{p}}
       -\\partial_{\\theta_{e}}g_{\\theta_{p} \\theta_{e}}
       )
+      =
+      \\frac{1}{\\tan{\\left (\\theta_{p} \\right )}}
       \\\\
-      \\Gamma^{\\theta_{e}}_{\\theta_{e} t}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{\\theta_{e}}g_{t \\theta_{e}}
-      +\\partial_{t}g_{\\theta_{e} \\theta_{e}}
-      -\\partial_{\\theta_{e}}g_{\\theta_{e} t}
-      )
-      \\\\
+
       \\Gamma^{\\theta_{e}}_{\\theta_{e} r}=
       \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
       \\partial_{\\theta_{e}}g_{r \\theta_{e}}
       +\\partial_{r}g_{\\theta_{e} \\theta_{e}}
       -\\partial_{\\theta_{e}}g_{\\theta_{e} r}
       )
+      =
+      \\frac{d}{d r} C{\\left (r \\right )}
       \\\\
+
       \\Gamma^{\\theta_{e}}_{\\theta_{e} \\theta_{p}}=
       \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
       \\partial_{\\theta_{e}}g_{\\theta_{p} \\theta_{e}}
       +\\partial_{\\theta_{p}}g_{\\theta_{e} \\theta_{e}}
       -\\partial_{\\theta_{e}}g_{\\theta_{e} \\theta_{p}}
       )
+      =
+      \\frac{1}{\\tan{\\left (\\theta_{p} \\right )}}
       \\\\
-      \\Gamma^{\\theta_{e}}_{\\theta_{e} \\theta_{e}}=
-      \\frac{1}{2}g^{\\theta_{e}\\theta_{e}}(
-      \\partial_{\\theta_{e}}g_{\\theta_{e} \\theta_{e}}
-      +\\partial_{\\theta_{e}}g_{\\theta_{e} \\theta_{e}}
-      -\\partial_{\\theta_{e}}g_{\\theta_{e} \\theta_{e}}
-      )
-      \\\\
-
       `,
-      explanation: "NA"
+      explanation: "These are the non-vanishing components of the christoffel symbols."
     },
     {
       //involves 256*(2*7+9*2)=8192 derivatives

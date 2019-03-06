@@ -26,6 +26,13 @@ def christoffel_template(et1,eb1,eb2):
         +')'
     return prefix+template
 
+def riemann_template(et1, eb1, eb2, eb3):
+    chart1 = returnMathjaxify(et1)
+    charb1 = returnMathjaxify(eb1)
+    charb2 = returnMathjaxify(eb2)
+    charb3 = returnMathjaxify(eb3)
+    prefix = 'R^{%s}_{\\\\;\\\\;%s %s %s}' %(chart1, charb1, charb2, charb3)
+
 def symbolic_christoff(metric, coords, indt1, indb1, indb2):
     coeff = 1/(2*metric[indt1][indt1])
     term1 = sympy.diff(metric[indb2][indt1], coords[indb1] )
@@ -71,11 +78,15 @@ def all_christofs(metric, coords):
         for indb1 in range(4):
             for indb2 in range(4):
                 christoff = symbolic_christoff(metric, coords, indt, indb1, indb2)
-                if not christoff == 0:
-                    nonzerro+=1
-                    sympy.pprint([coords[indt], coords[indb1], coords[indb2]])
-                    sympy.pprint(christoff)
-                    print('\n')
+                if christoff == 0:
+                    continue
+                nonzerro+=1
+                # sympy.pprint([coords[indt], coords[indb1], coords[indb2]])
+                # sympy.pprint(christoff)
+                print(christoffel_template(coords[indt], coords[indb1], coords[indb2]))
+                print('=')
+                print(returnMathjaxify(christoff))
+                print('\\\\\\\\ \n')
     print(nonzerro)
 
 
@@ -87,14 +98,15 @@ def all_riemanns(metric, coords):
                 for indb3 in range(4):
                     riem = symbolic_riemann(metric, coords,
                         indt, indb1, indb2, indb3)
-                    if not riem == 0:
-                        nonzerro+=1
-                        sympy.pprint([
-                            coords[indt], coords[indb1],
-                            coords[indb2], coords[indb3]
-                            ])
-                        sympy.pprint(riem)
-                        print('\n')
+                    if riem == 0:
+                        continue
+                    nonzerro+=1
+                    sympy.pprint([
+                        coords[indt], coords[indb1],
+                        coords[indb2], coords[indb3]
+                        ])
+                    sympy.pprint(riem)
+                    print('\n')
     print(nonzerro)
 
 def all_ricci_ten(metric, coords):
@@ -135,10 +147,10 @@ def prob1():
     #             print(christoffel_template(elt1, elb1, elb2))
     #             print('\\'*4)
     all_christofs(metric, coords)
-    all_riemanns(metric, coords)
-    all_ricci_ten(metric, coords)
-    ricci_s = ricci_scalar(metric, coords)
-    sympy.pprint(ricci_s)
+    # all_riemanns(metric, coords)
+    # all_ricci_ten(metric, coords)
+    # ricci_s = ricci_scalar(metric, coords)
+    # sympy.pprint(ricci_s)
 
 def expand_riemann():
     g1,g2,g3 = sympy.symbols('gamma_1 gamma_2 gamma_3')
@@ -160,6 +172,6 @@ def expand_ricci_ten():
     print(christoffel_template(b1, a, g2))
     print(christoffel_template(a, b1, g1))
 
-# prob1()
+prob1()
 # expand_riemann()
-expand_ricci_ten()
+# expand_ricci_ten()
