@@ -32,6 +32,13 @@ def riemann_template(et1, eb1, eb2, eb3):
     charb2 = returnMathjaxify(eb2)
     charb3 = returnMathjaxify(eb3)
     prefix = 'R^{%s}_{\\\\;\\\\;%s %s %s}' %(chart1, charb1, charb2, charb3)
+    return prefix
+
+def ricci_template(et1, eb1):
+    chart1 = returnMathjaxify(et1)
+    charb1 = returnMathjaxify(eb1)
+    prefix = 'R_{%s %s}' %(chart1, charb1)
+    return prefix
 
 def symbolic_christoff(metric, coords, indt1, indb1, indb2):
     coeff = 1/(2*metric[indt1][indt1])
@@ -101,12 +108,13 @@ def all_riemanns(metric, coords):
                     if riem == 0:
                         continue
                     nonzerro+=1
-                    sympy.pprint([
-                        coords[indt], coords[indb1],
-                        coords[indb2], coords[indb3]
-                        ])
-                    sympy.pprint(riem)
-                    print('\n')
+                    print(riemann_template(
+                        coords[indt],
+                        coords[indb1], coords[indb2], coords[indb3]))
+                    print('=')
+                    print(returnMathjaxify(riem))
+                    print('\\\\\\\\ \n')
+                # print('\n')
     print(nonzerro)
 
 def all_ricci_ten(metric, coords):
@@ -115,13 +123,15 @@ def all_ricci_ten(metric, coords):
         for indb2 in range(4):
             ricci_t = ricci_ten(metric, coords,
                 indb1, indb2)
-            if not ricci_t == 0:
-                nonzerro+=1
-                sympy.pprint([
-                    coords[indb1], coords[indb2]
-                    ])
-                sympy.pprint(ricci_t)
-                print('\n')
+            if ricci_t == 0:
+                continue
+            nonzerro+=1
+            print(ricci_template(
+                coords[indb1],
+                coords[indb2]))
+            print('=')
+            print(returnMathjaxify(ricci_t))
+            print('\\\\\\\\ \n')
     print(nonzerro)
 
 def prob1():
@@ -141,16 +151,12 @@ def prob1():
     coords = [t, r, thtp, thte]
     # print(christoffel_template(r, thtp, t))
     # print(christoffel_template(mu, nu, sig))
-    # for elt1 in coords:
-    #     for elb1 in coords:
-    #         for elb2 in coords:
-    #             print(christoffel_template(elt1, elb1, elb2))
-    #             print('\\'*4)
     all_christofs(metric, coords)
-    # all_riemanns(metric, coords)
-    # all_ricci_ten(metric, coords)
-    # ricci_s = ricci_scalar(metric, coords)
-    # sympy.pprint(ricci_s)
+    all_riemanns(metric, coords)
+    all_ricci_ten(metric, coords)
+    ricci_s = ricci_scalar(metric, coords)
+    sympy.pprint(ricci_s)
+    print(returnMathjaxify(ricci_s))
 
 def expand_riemann():
     g1,g2,g3 = sympy.symbols('gamma_1 gamma_2 gamma_3')
@@ -172,6 +178,143 @@ def expand_ricci_ten():
     print(christoffel_template(b1, a, g2))
     print(christoffel_template(a, b1, g1))
 
-prob1()
+def prob2ijk():
+    t, r, thtp, thte = sympy.symbols('t r theta_p theta_e', real=True)
+    x,y,z = sympy.symbols('x,y,z', real=True)
+    m, g, Q = sympy.symbols('m g Q', positive=True)
+    sin = sympy.sin
+    dt2 = -(r**2*(1+g**2*r**2) - 2*m*r+Q**2)/(r**2)
+    dr2 = (r**2)/(r**2*(1+g**2*r**2) - 2*m*r+Q**2)
+    dt2 = dt2.subs([(m,0),(g,0),(Q,0)])
+    dr2 = dr2.subs([(m,0),(g,0),(Q,0)])
+    metric = [
+        [dt2,0,0,0],
+        [0,dr2,0,0],
+        [0,0,r**2,0],
+        [0,0,0,sin(thtp)**2*r**2]
+    ]
+    cart_metric = [
+        [-1,0,0,0],
+        [0,1,0,0],
+        [0,0,1,0],
+        [0,0,0,1]
+    ]
+    sympy.pprint(metric)
+    coords = [t, r, thtp, thte]
+    cart_coords = [t, x,y,z]
+    # all_ricci_ten(metric, coords)
+    all_christofs(metric, coords)
+    all_christofs(cart_metric, cart_coords)
+
+def prob2l():
+    t, r, thtp, thte = sympy.symbols('t r theta_p theta_e', real=True)
+    m, g, Q = sympy.symbols('m g Q', positive=True)
+    sin = sympy.sin
+    dt2 = -(r**2*(1+g**2*r**2) - 2*m*r+Q**2)/(r**2)
+    dr2 = (r**2)/(r**2*(1+g**2*r**2) - 2*m*r+Q**2)
+    dt2 = dt2.subs([(g,0),(Q,0)]).simplify()
+    dr2 = dr2.subs([(g,0),(Q,0)]).simplify()
+    metric = [
+        [dt2,0,0,0],
+        [0,dr2,0,0],
+        [0,0,r**2,0],
+        [0,0,0,sin(thtp)**2*r**2]
+    ]
+    sympy.pprint(metric)
+    coords = [t, r, thtp, thte]
+    all_ricci_ten(metric, coords)
+    all_riemanns(metric, coords)
+
+def prob2m():
+    t, r, thtp, thte = sympy.symbols('t r theta_p theta_e', real=True)
+    m, g, Q = sympy.symbols('m g Q', positive=True)
+    sin = sympy.sin
+    dt2 = -(r**2*(1+g**2*r**2) - 2*m*r+Q**2)/(r**2)
+    dr2 = (r**2)/(r**2*(1+g**2*r**2) - 2*m*r+Q**2)
+    dt2 = dt2.subs([(m,m),(g,g),(Q,0)]).simplify()
+    dr2 = dr2.subs([(m,m),(g,g),(Q,0)]).simplify()
+    metric = [
+        [dt2,0,0,0],
+        [0,dr2,0,0],
+        [0,0,r**2,0],
+        [0,0,0,sin(thtp)**2*r**2]
+    ]
+    sympy.pprint(metric)
+    coords = [t, r, thtp, thte]
+    all_ricci_ten(metric, coords)
+
+def prob2o():
+    t, r, thtp, thte = sympy.symbols('t r theta_p theta_e', real=True)
+    m, g, Q = sympy.symbols('m g Q', positive=True)
+    sin = sympy.sin
+    dt2 = -(r**2*(1+g**2*r**2) - 2*m*r+Q**2)/(r**2)
+    dr2 = (r**2)/(r**2*(1+g**2*r**2) - 2*m*r+Q**2)
+    dt2 = dt2.subs([(m,m),(g,g),(Q,Q)]).simplify()#AAdS
+    dr2 = dr2.subs([(m,m),(g,g),(Q,Q)]).simplify()#AAdS
+    # dt2 = dt2.subs([(m,m),(g,0),(Q,Q)]).simplify()#AF
+    # dr2 = dr2.subs([(m,m),(g,0),(Q,Q)]).simplify()#AF
+    metric = [
+        [dt2,0,0,0],
+        [0,dr2,0,0],
+        [0,0,r**2,0],
+        [0,0,0,sin(thtp)**2*r**2]
+    ]
+    sympy.pprint(metric)
+    coords = [t, r, thtp, thte]
+    all_ricci_ten(metric, coords)
+    # all_riemanns(metric, coords)
+
+def prob2_tidy():
+    t, r, thtp, thte = sympy.symbols('t r theta_p theta_e', real=True)
+    m, g, Q = sympy.symbols('m g Q', positive=True)
+    sin = sympy.sin
+    dp2 = r**2
+    de2 = sin(thtp)**2*r**2
+    time = (r**2*(1+g**2*r**2) - 2*m*r+Q**2)/(r**2)
+    metric = [
+        [-1,0,0,0],
+        [0,1,0,0],
+        [0,0,dp2,0],
+        [0,0,0,de2]
+    ]
+    coords = [t, r, thtp, thte]
+    #part l m neq 0
+    dt2_l = time.subs([(m,m),(g,0),(Q,0)])
+    metric[0][0]= -dt2_l
+    metric[1][1]= 1/dt2_l
+    sympy.pprint(metric)
+    all_ricci_ten(metric, coords)
+    #part m g neq 0
+    dt2_m = time.subs([(m,0),(g,g),(Q,0)])
+    metric[0][0]= -dt2_m
+    metric[1][1]= 1/dt2_m
+    sympy.pprint(metric)
+    all_ricci_ten(metric, coords)
+    #part n g neq 0, m neq 0
+    dt2_n = time.subs([(m,m),(g,g),(Q,0)])
+    metric[0][0]= -dt2_n
+    metric[1][1]= 1/dt2_n
+    sympy.pprint(metric)
+    all_ricci_ten(metric, coords)
+    #part o.1 q, m neq 0
+    dt2_o1 = time.subs([(m,m),(g,0),(Q,Q)])
+    metric[0][0]= -dt2_o1
+    metric[1][1]= 1/dt2_o1
+    sympy.pprint(metric)
+    all_ricci_ten(metric, coords)
+    #part o.2 all non zero
+    dt2_o2 = time.subs([(m,m),(g,g),(Q,Q)])
+    metric[0][0]= -dt2_o2
+    metric[1][1]= 1/dt2_o2
+    sympy.pprint(metric)
+    all_ricci_ten(metric, coords)
+
+# prob1()
+
+# prob2ijk()
+# prob2l()
+# prob2m()
+# prob2o()
+prob2_tidy()
 # expand_riemann()
 # expand_ricci_ten()

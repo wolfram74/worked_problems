@@ -24,7 +24,9 @@ nabla/covariant derivative defined by 3.19 or 3.1
       ds^2 =
       g_{\\mu \\nu}dx^\\mu dx^\\nu
       =
-      -e^{2A}dt^2+e^{2B}dr^2+e^{2C}(d\\theta_p^2+sin(\\theta_p)^2 d\\theta_e^2)
+      -e^{2A}dt^2
+      +e^{2B}dr^2
+      +e^{2C}(d\\theta_p^2+sin(\\theta_p)^2 d\\theta_e^2)
       \\\\
       g_{t t} = -e^{2A},
       g_{r r} = e^{2B},
@@ -274,8 +276,129 @@ nabla/covariant derivative defined by 3.19 or 3.1
       +\\partial_{\\gamma_{1}}g_{\\alpha \\gamma_{2}}
       -\\partial_{\\alpha}g_{\\gamma_{2} \\gamma_{1}}
       )
+      \\\\
+      R^{t}_{\\;\\;r t r}
+      =
+      - \\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} + \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} - \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )}
+      \\\\
+
+      R^{t}_{\\;\\;r r t}
+      =
+      \\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} - \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} + \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )}
+      \\\\
+
+      R^{t}_{\\;\\;\\theta_{p} t \\theta_{p}}
+      =
+      - e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{t}_{\\;\\;\\theta_{p} \\theta_{p} t}
+      =
+      e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{t}_{\\;\\;\\theta_{e} t \\theta_{e}}
+      =
+      - e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{t}_{\\;\\;\\theta_{e} \\theta_{e} t}
+      =
+      e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{r}_{\\;\\;t t r}
+      =
+      \\left(- \\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} + \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} - \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )}\\right) e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}}
+      \\\\
+
+      R^{r}_{\\;\\;t r t}
+      =
+      \\left(\\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} - \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} + \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )}\\right) e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}}
+      \\\\
+
+      R^{r}_{\\;\\;\\theta_{p} r \\theta_{p}}
+      =
+      \\left(\\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}}
+      \\\\
+
+      R^{r}_{\\;\\;\\theta_{p} \\theta_{p} r}
+      =
+      \\left(- \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} + \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}}
+      \\\\
+
+      R^{r}_{\\;\\;\\theta_{e} r \\theta_{e}}
+      =
+      \\left(\\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )}
+      \\\\
+
+      R^{r}_{\\;\\;\\theta_{e} \\theta_{e} r}
+      =
+      \\left(- \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} + \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{- 2 B{\\left (r \\right )} + 2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )}
+      \\\\
+
+      R^{\\theta_{p}}_{\\;\\;t t \\theta_{p}}
+      =
+      - e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{p}}_{\\;\\;t \\theta_{p} t}
+      =
+      e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{p}}_{\\;\\;r r \\theta_{p}}
+      =
+      - \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} + \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{p}}_{\\;\\;r \\theta_{p} r}
+      =
+      \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{p}}_{\\;\\;\\theta_{e} \\theta_{p} \\theta_{e}}
+      =
+      \\sin^{2}{\\left (\\theta_{p} \\right )} - e^{- 2 B{\\left (r \\right )}} e^{2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )} \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2}
+      \\\\
+
+      R^{\\theta_{p}}_{\\;\\;\\theta_{e} \\theta_{e} \\theta_{p}}
+      =
+      - \\sin^{2}{\\left (\\theta_{p} \\right )} + e^{- 2 B{\\left (r \\right )}} e^{2 C{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )} \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2}
+      \\\\
+
+      R^{\\theta_{e}}_{\\;\\;t t \\theta_{e}}
+      =
+      - e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{e}}_{\\;\\;t \\theta_{e} t}
+      =
+      e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{e}}_{\\;\\;r r \\theta_{e}}
+      =
+      - \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} + \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{e}}_{\\;\\;r \\theta_{e} r}
+      =
+      \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}
+      \\\\
+
+      R^{\\theta_{e}}_{\\;\\;\\theta_{p} \\theta_{p} \\theta_{e}}
+      =
+      -1 + e^{- 2 B{\\left (r \\right )}} e^{2 C{\\left (r \\right )}} \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2}
+      \\\\
+
+      R^{\\theta_{e}}_{\\;\\;\\theta_{p} \\theta_{e} \\theta_{p}}
+      =
+      1 - e^{- 2 B{\\left (r \\right )}} e^{2 C{\\left (r \\right )}} \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2}
+      \\\\
+
       `,
-      explanation: "equation 3.67 from carrol's notes, different anti-symmetry relation"
+      explanation: "equation 3.67 from carrol's notes, different anti-symmetry relation, we can see from inspection that it holds in our case."
     },
     {
       expression: `
@@ -333,15 +456,38 @@ nabla/covariant derivative defined by 3.19 or 3.1
       +\\partial_{\\gamma_{1}}g_{\\alpha \\beta_{1}}
       -\\partial_{\\alpha}g_{\\beta_{1} \\gamma_{1}}
       )
+      \\\\
+      R_{t t}
       =
+      \\left(\\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} - \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} + 2 \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )}\\right) e^{2 A{\\left (r \\right )} - 2 B{\\left (r \\right )}}
+      \\\\
+
+      R_{r r}
+      =
+      - \\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} + \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} + 2 \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - 2 \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )} - 2 \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}
+      \\\\
+
+      R_{\\theta_{p} \\theta_{p}}
+      =
+      \\left(e^{2 B{\\left (r \\right )}} - e^{2 C{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + e^{2 C{\\left (r \\right )}} \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - 2 e^{2 C{\\left (r \\right )}} \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - e^{2 C{\\left (r \\right )}} \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{- 2 B{\\left (r \\right )}}
+      \\\\
+
+      R_{\\theta_{e} \\theta_{e}}
+      =
+      \\left(e^{2 B{\\left (r \\right )}} - e^{2 C{\\left (r \\right )}} \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + e^{2 C{\\left (r \\right )}} \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} - 2 e^{2 C{\\left (r \\right )}} \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - e^{2 C{\\left (r \\right )}} \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{- 2 B{\\left (r \\right )}} \\sin^{2}{\\left (\\theta_{p} \\right )}
+      \\\\
       `,
-      explanation: "equation 3.90 from carrols notes"
+      explanation: "equation 3.90 from carrols notes, we see only diagonal terms in this tensor."
     },
     {
       expression: `
       R = g^{\\mu \\nu} R^{\\; \\; \\lambda}_{\\mu \\lambda \\nu}
+      =
+      2 \\left(\\left(- \\left(\\frac{d}{d r} A{\\left (r \\right )}\\right)^{2} + \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} B{\\left (r \\right )} - 2 \\frac{d}{d r} A{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )} + 2 \\frac{d}{d r} B{\\left (r \\right )} \\frac{d}{d r} C{\\left (r \\right )}
+        \\\\
+        - 3 \\left(\\frac{d}{d r} C{\\left (r \\right )}\\right)^{2} - \\frac{d^{2}}{d r^{2}}  A{\\left (r \\right )} - 2 \\frac{d^{2}}{d r^{2}}  C{\\left (r \\right )}\\right) e^{2 C{\\left (r \\right )}} + e^{2 B{\\left (r \\right )}}\\right) e^{- 2 B{\\left (r \\right )} - 2 C{\\left (r \\right )}}
       `,
-      explanation: "equation 3.92"
+      explanation: "equation 3.92, quite a hefty expression."
     },
     {
       //given killing vectors are upper indexed
