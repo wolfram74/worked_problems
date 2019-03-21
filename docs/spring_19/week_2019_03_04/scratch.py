@@ -1,4 +1,5 @@
 import sympy
+import time
 
 def mathjaxify(expr):
     print(returnMathjaxify(expr))
@@ -88,11 +89,11 @@ def all_christofs(metric, coords):
                 if christoff == 0:
                     continue
                 nonzerro+=1
-                # sympy.pprint([coords[indt], coords[indb1], coords[indb2]])
-                # sympy.pprint(christoff)
-                print(christoffel_template(coords[indt], coords[indb1], coords[indb2]))
-                print('=')
-                print(returnMathjaxify(christoff))
+                sympy.pprint([coords[indt], coords[indb1], coords[indb2]])
+                sympy.pprint(christoff)
+                # print(christoffel_template(coords[indt], coords[indb1], coords[indb2]))
+                # print('=')
+                # print(returnMathjaxify(christoff))
                 print('\\\\\\\\ \n')
     print(nonzerro)
 
@@ -108,11 +109,12 @@ def all_riemanns(metric, coords):
                     if riem == 0:
                         continue
                     nonzerro+=1
-                    print(riemann_template(
-                        coords[indt],
-                        coords[indb1], coords[indb2], coords[indb3]))
-                    print('=')
-                    print(returnMathjaxify(riem))
+                    sympy.pprint(riem)
+                    # print(riemann_template(
+                    #     coords[indt],
+                    #     coords[indb1], coords[indb2], coords[indb3]))
+                    # print('=')
+                    # print(returnMathjaxify(riem))
                     print('\\\\\\\\ \n')
                 # print('\n')
     print(nonzerro)
@@ -149,14 +151,18 @@ def prob1():
         [0,0,0,sin(thtp)**2*exp(2*C)]
     ]
     coords = [t, r, thtp, thte]
+    start_time = time.time()
     # print(christoffel_template(r, thtp, t))
     # print(christoffel_template(mu, nu, sig))
-    all_christofs(metric, coords)
+    # all_christofs(metric, coords)
     all_riemanns(metric, coords)
-    all_ricci_ten(metric, coords)
+    # all_ricci_ten(metric, coords)
     ricci_s = ricci_scalar(metric, coords)
     sympy.pprint(ricci_s)
+    end_time = time.time()
     print(returnMathjaxify(ricci_s))
+    print(end_time-start_time)
+    #10.4909830093 uncurried
 
 def expand_riemann():
     g1,g2,g3 = sympy.symbols('gamma_1 gamma_2 gamma_3')
@@ -284,6 +290,7 @@ def prob2_tidy():
     metric[1][1]= 1/dt2_l
     sympy.pprint(metric)
     all_ricci_ten(metric, coords)
+    sympy.pprint(ricci_scalar(metric, coords) )
     #part m g neq 0
     dt2_m = time.subs([(m,0),(g,g),(Q,0)])
     metric[0][0]= -dt2_m
@@ -309,12 +316,12 @@ def prob2_tidy():
     sympy.pprint(metric)
     all_ricci_ten(metric, coords)
 
-# prob1()
+prob1()
 
 # prob2ijk()
 # prob2l()
 # prob2m()
 # prob2o()
-prob2_tidy()
+# prob2_tidy()
 # expand_riemann()
 # expand_ricci_ten()
