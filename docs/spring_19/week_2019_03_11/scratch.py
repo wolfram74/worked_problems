@@ -45,4 +45,21 @@ def eigen_diaganols(mat_in):
     # sympy.pprint(mat_in)
     # sympy.pprint(U_mat*(D_mat*U_mat.inv()))
 
-prob3()
+def ladder_prob():
+   p, tht = sympy.symbols('p_theta theta', real=True)
+   L, mp, m, g = sympy.symbols('L m_p m g', positive=True)
+   cos = sympy.cos
+   sin = sympy.sin
+   T = p**2/(L**2*cos(tht)**2*(mp+m/4))
+   U = g*L*sin(tht)*(mp+m/2)
+   H = T+U
+   sympy.pprint(H)
+   dpdt = -H.diff(tht).subs(p,0)
+   dthdt = H.diff(p)
+   sympy.pprint(dpdt)
+   sympy.pprint(dpdt.expand().simplify())
+   print('theta dot')
+   sympy.pprint(dthdt.expand().simplify())
+
+# prob3()
+ladder_prob()
