@@ -626,3 +626,6 @@ var problems = [
     },]
   },
 ]
+// r =2 G m
+// =2 G rho r^3
+// r^2 = 1/(2 G rho)
