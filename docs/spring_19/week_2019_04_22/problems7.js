@@ -35,14 +35,14 @@ problems.push(
       =
       \\frac{1}{6}
       (
-        2<u \\uparrow u \\uparrow d \\downarrow|
+        4<u \\uparrow u \\uparrow d \\downarrow|
         \\mu_z
         |u \\uparrow u \\uparrow d \\downarrow>
-        -
+        +
         <u \\uparrow u \\downarrow d \\uparrow|
         \\mu_z
         |u \\uparrow u \\downarrow d \\uparrow>
-        -
+        +
         <u \\downarrow u \\uparrow d \\uparrow|
         \\mu_z
         |u \\downarrow u \\uparrow d \\uparrow>
@@ -51,25 +51,25 @@ problems.push(
       =
       \\frac{\\gamma}{6}
       (
-        2 (+2/3+2/3+1/3)
-        -
+        4 (+2/3+2/3+1/3)
+        +
         (2/3-2/3-1/3)
-        -
+        +
         (-2/3+2/3-1/3)
         )
       \\\\
       =
       \\frac{\\gamma}{6}
       (
-        10/3
-        +
+        20/3
+        -
         1/3
-        +
+        -
         1/3
         )
       =
       \\frac{\\gamma}{6}
-      4
+      6
       `,
       explanation: "the expectation dipole moment for the proton"
     },
@@ -80,14 +80,14 @@ problems.push(
       =
       \\frac{1}{6}
       (
-        2<d \\uparrow d \\uparrow u \\downarrow|
+        4<d \\uparrow d \\uparrow u \\downarrow|
         \\mu_z
         |d \\uparrow d \\uparrow u \\downarrow>
-        -
+        +
         <d \\uparrow d \\downarrow u \\uparrow|
         \\mu_z
         |d \\uparrow d \\downarrow u \\uparrow>
-        -
+        +
         <d \\downarrow d \\uparrow u \\uparrow|
         \\mu_z
         |d \\downarrow d \\uparrow u \\uparrow>
@@ -96,72 +96,72 @@ problems.push(
       =
       \\frac{\\gamma}{6}
       (
-        2(-1/3 -1/3 -2/3)
-        -
+        4(-1/3 -1/3 -2/3)
+        +
         (-1/3 +1/3 +2/3)
-        -
+        +
         (+1/3 -1/3 +2/3)
         )
       \\\\
       =
       \\frac{\\gamma}{6}
       (
-        -8/3
-        -2/3
-        -2/3
+        -16/3
+        +2/3
+        +2/3
         )
-      =-\\frac{\\gamma}{6} 4
+      =-\\frac{\\gamma}{6} 3
       `,
-      explanation: "the expected dipole for a neutron. The ratio of these two would be -1. These calculations have been taking the assumption that the mass of each quark is the same. Cursory research suggests that the down quark is better approximated as twice as heavy as the upquark."
+      explanation: "the expected dipole for a neutron. The ratio of these two would be -2. These calculations have been taking the assumption that the mass of each quark is the same. Cursory research suggests that the down quark is better approximated as twice as heavy as the upquark."
     },
     {
       expression: `
       <\\mu_p>=
       \\frac{\\gamma}{6}
       (
-        2 (+2/3+2/3+1/6)
-        -
+        4 (+2/3+2/3+1/6)
+        +
         (2/3-2/3-1/6)
-        -
+        +
         (-2/3+2/3-1/6)
         )
       \\\\
       =
       \\frac{\\gamma}{6}
       (
-        18/6
-        +
+        36/6
+        -
         1/6
-        +
+        -
         1/6
         )
       =
       \\frac{\\gamma}{6}
-      20/6
+      34/6
       \\\\
       <\\mu_n>
       =
       \\frac{\\gamma}{6}
       (
-        2(-1/6 -1/6 -4/6)
-        -
+        4(-1/6 -1/6 -4/6)
+        +
         (-1/6 +1/6 +2/3)
-        -
+        +
         (+1/6 -1/6 +2/3)
         )
       \\\\
       =
       \\frac{\\gamma}{6}
       (
-        -6/3
-        -2/3
-        -2/3
+        -12/3
+        +2/3
+        +2/3
         )
-      =-\\frac{\\gamma}{6} 10/3
+      =-\\frac{\\gamma}{6} 8/3
       \\\\
-      \\mu_p/\\mu_n = -\\frac{20*3}{6*10}=-1
+      \\mu_p/\\mu_n = -\\frac{34*3}{6*8}=-2.125
       `,
-      explanation: "Attempting to account for the mass difference produces surprisingly no change."
+      explanation: "Attempting to account for the mass difference produces a small change. Both of these values over estimate experimental data (-1.46) by over 30%."
     },
     {
       expression: `NA`,
