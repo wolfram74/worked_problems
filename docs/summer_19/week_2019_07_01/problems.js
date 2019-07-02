@@ -105,17 +105,27 @@ var problems = [
       \\\\
       =(1+2^{1/2}, 2^{-1/2}+1)((2r)^{-1/2} + \\frac{r^{-5/2}}{5})
       `,
-      explanation: "Examining what the total angular momentum will be for circular orbits, it will have the same sign as p theta up until a point and then have the opposite sign."
+      explanation: "Examining what the total angular momentum will be for circular orbits."
     },
     {
       expression: `
       H =
-      0 + 0 + \\frac{3\\pm 1}{20}r^3
-      + \\frac{1}{3 \\mp 1}\\frac{1}{r^{3}}
+      0 + 0 +
+      \\frac{3\\pm 1}{20}
+        \\frac{1}{r^5}
+      + \\frac{1}{3 \\mp 1}
+        \\frac{1}{r^{3}}
       - \\frac{1}{12 r^{3}} \\left(
         3
         \\pm 1
-        \\right)
+        \\right)=
+      \\\\
+      \\frac{9 \\mp 1}{12(3 \\mp 1)}
+      \\frac{1}{r^{3}}
+      +
+      \\frac{3\\pm 1}{20}
+      \\frac{1}{r^5}
+
       `,
       explanation: "NA"
     },
