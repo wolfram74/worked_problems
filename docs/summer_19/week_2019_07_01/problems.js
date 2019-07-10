@@ -120,7 +120,7 @@ var problems = [
         \\pm 1
         \\right)=
       \\\\
-      \\frac{9 \\mp 1}{12(3 \\mp 1)}
+      \\frac{12 - 8}{12(3 \\mp 1)}
       \\frac{1}{r^{3}}
       +
       \\frac{3\\pm 1}{20}
