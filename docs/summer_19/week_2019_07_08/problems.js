@@ -87,7 +87,7 @@ var problems = [
     },]
   },
 
-  {
+  {3
     location:`self`,
     description:"generic symmetry central force problem, bounded-ness and perturbation",
     steps:[
