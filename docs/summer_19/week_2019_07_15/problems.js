@@ -87,20 +87,41 @@ var problems = [
   },
 
   {
-    location:`NA`,
-    description:"NA",
+    // chap 6 of goldstein on oscillations
+    // maybe chap 12 of goldstein on canonical perturbation theory
+    location:`self`,
+    description:"Describe stability/perturbation frequencies of circular orbits.",
     steps:[
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\Gamma  = (\\phi_d, \phi_d, \\theta, r, p_{\\phi_d},p_{\\phi_t},p_{\\theta},p_{r},)
+      \\\\
+      \\Gamma_0
+      = (0,0,0,r_0,0,p_{\\phi_t 0},p_{\\theta 0},0)
+      = (0,0,0,r_0,0,\\frac{\\sqrt{2}}{10}(r_0)^{-5/2},\\frac{\\sqrt{2}}{2}(r_0)^{-1/2},0)
+      `,
+      explanation: "Our state vector and a circular equilibrium"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot \\Gamma_i = 0 \\ or \\ v_i t
+      \\\\
+      if \\ \\Gamma_0`,
+      explanation: "our definition of our equilibrium"
     },
     {
-      expression: `NA`,
-      explanation: "NA"
+      expression: `
+      \\dot q = \\partial_p H
+      \\approx
+      (\\partial_p H)|_{\\Gamma_0}+
+      \\partial_{\\Gamma_i} (\\partial_p H)|_{\\Gamma_0} (\\Gamma_{1i}-\\Gamma_{0i})
+      \\\\
+      \\dot p = -\\partial_q H
+      \\approx
+      (-\\partial_q H)|_{\\Gamma_0}+
+      \\partial_{\\Gamma_i} (-\\partial_q H)|_{\\Gamma_0} (\\Gamma_{1i}-\\Gamma_{0i})
+      `,
+      explanation: "taylor expansion of time evolution equations for a point in phase space where "
     },
     {
       expression: `NA`,
