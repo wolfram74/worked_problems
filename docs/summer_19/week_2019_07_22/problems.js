@@ -120,7 +120,7 @@ var problems = [
       0.0 & 0.0 & 0.0 & \\frac{1}{r_{0}^{5}} & 0.0 & 0.0 & \\frac{2 \\sqrt{2}}{r_{0}^{3}} \\sqrt{\\frac{1}{r_{0}}} & 0.0
       \\end{matrix}\\right]
       \\\\
-      \\dot{\\Gamma_1} = \\widehat H_1 \\Gamma_1 = \\omega \\Gamma_1
+      \\dot{\\Gamma_1} = \\widehat H_1 \\Gamma_1 = (-i\\omega) \\Gamma_1
       `,
       explanation: "A matrix form of the equations, reducing it to an eigenvalue problem."
     },
