@@ -30,7 +30,10 @@ var problems = [
     },
     {
       expression: `
-      \\theta{i,j}=\\theta{j,i}
+      \\theta_{i,j} \\neq \\theta_{j,i}
+      \\\\
+      \\theta_{0,i} = 2 i \\pi/6
+
       `,
       explanation: "NA"
     },
