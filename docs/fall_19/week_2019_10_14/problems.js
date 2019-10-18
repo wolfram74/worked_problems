@@ -33,7 +33,12 @@ var problems = [
       \\theta_{i,j} \\neq \\theta_{j,i}
       \\\\
       \\theta_{0,i} = 2 i \\pi/6
-
+      \\\\
+      |\\theta_{i,j}| + |\\theta_{j,i}| = \\pi
+      \\\\
+      \\theta_{i,j} =
+      \\frac{(1+2i+(j-i)\\%6)\\%12}
+      {6}\\pi
       `,
       explanation: "NA"
     },
