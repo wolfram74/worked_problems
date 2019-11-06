@@ -54,21 +54,21 @@ var problems = [
       \\frac{\\mu_i \\mu_j}{2}
       \\frac{1}{r_{i,j}^3}
       [
-      [
+      x_i x_j
+      +y_i y_j
+      +
+      3[
         x_i x_j
-        -y_i
-        y_j
+        -y_i y_j
       ]cos(2\\theta_{i,j})
-      +[
-        y_i
-        x_j
+      +3[
+        y_i x_j
         +
-        x_i
-        y_j
+        x_i y_j
       ]sin(2\\theta_{i,j})
       ]
       `,
-      explanation: "NA"
+      explanation: "building the potential in this coordinate system."
     },
     {
       expression: `NA`,
