@@ -2,7 +2,7 @@ var problems = [
 
   {
     location:`NA`,
-    description:"NA",
+    description:"Normal mode analysis of heptamagnet in large alpha (mono) regime",
     steps:[
     {
       expression: `NA`,
