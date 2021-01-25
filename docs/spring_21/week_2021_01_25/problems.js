@@ -49,7 +49,7 @@ var problems = [
       \\\\
       T = {\\frac{4 \\pi I r^3}{\\mu_0 m^2}}^{1/2}
       `,
-      explanation: "by analogy"
+      explanation: "by analogy with the simple harmonic oscillator, time measured in the above listed and unit T and distance measured relative to the space between two adjacent dipoles will allow for the moment of inertia and interaction potential to be 1 or $&\\alpha&$."
     },
     {
       expression: `NA`,
